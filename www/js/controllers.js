@@ -7,10 +7,6 @@ angular.module('starter.controllers', [])
   $scope.destinations = Destinations.all();
 })
 
-.controller('DestinationDetailCtrl', function($scope, $stateParams, Destinations) {
-  $scope.destination = Destinations.get($stateParams.destinationId);
-})
-
 .controller('AccountCtrl', function($scope) {
 })
 
