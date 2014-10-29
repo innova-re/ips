@@ -15,8 +15,7 @@ angular.module('starter.controllers', [])
   $scope.destination = Destinations.get($stateParams.destinationId);
 
   function initialize() {
-    var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
-    console.log(myLatlng);
+    var myLatlng = new google.maps.LatLng($scope.destination.lat, $scope.destination.lng);
 
     var mapOptions = {
       center: myLatlng,
