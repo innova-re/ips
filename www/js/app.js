@@ -62,7 +62,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-destinations': {
           templateUrl: 'templates/destination-detail.html',
-          controller: 'DestinationDetailCtrl'
+          controller: 'MapCtrl'
         }
       }
     })
