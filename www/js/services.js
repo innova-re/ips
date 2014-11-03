@@ -8,10 +8,11 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var destinations = [
-    { id: 0, name: 'Polo Umanistico' },
-    { id: 1, name: 'Polo Scienze Sociali' },
-    { id: 2, name: 'Polo Ingegneria e Architettura' },
-    { id: 3, name: 'Polo Scientifico' }
+    // TODO - Update the right values of lat and lng for each name
+    { id: 0, name: 'Polo Umanistico', lat: 39.2292587, lng: 9.1109665},
+    { id: 1, name: 'Polo Scienze Sociali', lat: 39.2292587, lng: 9.1109665},
+    { id: 2, name: 'Polo Ingegneria e Architettura', lat: 39.2292587, lng: 9.1109665},
+    { id: 3, name: 'Polo Scientifico', lat: 39.2292587, lng: 9.1109665}
   ];
 
   return {
