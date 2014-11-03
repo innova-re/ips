@@ -41,6 +41,7 @@ Supported Platforms
 References to build an app
 --------------------------
 
+- [Dependency Injection using RequireJS & AngularJS](http://solutionoptimist.com/2013/09/30/requirejs-angularjs-dependency-injection/)
 - [AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide#single-responsibility)
 - [Angular-requirejs-seed](https://github.com/tnajdek/angular-requirejs-seed)
 - [Ionic](http://ionicframework.com/)
