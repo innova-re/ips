@@ -2,7 +2,8 @@
 	'use strict';
 
 	define([
-		'app'
+		'app',
+		'controllers/main.controller'
 	], function (app) {
 
 		return app.config(function($stateProvider, $urlRouterProvider) {

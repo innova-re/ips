@@ -8,8 +8,6 @@
 
 		app.controller('DashCtrl', function($scope) {
 
-			console.log('Scope: ', $scope);
-
         });
 
 		return app;

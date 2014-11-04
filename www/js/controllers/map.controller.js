@@ -1,12 +1,13 @@
 /* global define */
 (function () {
-	'use strict';
+    'use strict';
 
-	define([
-		'../app'
-	], function (app) {
+    define([
+        'app',
+        'services/destination.service'
+    ], function (app, Destinations) {
 
-		app.controller('MapCtrl', function($scope, $ionicLoading, $compile, $stateParams, Destinations) {
+        app.controller('MapCtrl', function($scope, $ionicLoading, $compile, $stateParams, Destinations) {
 
             $scope.destination = Destinations.get($stateParams.destinationId);
             var initialize =  function () {
@@ -32,7 +33,7 @@
 
         });
 
-		return app;
+        return app;
 
-	});
+    });
 })();

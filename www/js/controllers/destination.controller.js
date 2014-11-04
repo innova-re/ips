@@ -3,9 +3,9 @@
 	'use strict';
 
 	define([
-		'../app',
-		'../services/destination.service'
-	], function (app, Destinations) {
+		'app',
+		'services/destination.service'
+	], function (app) {
 
 		app.controller('DestinationsCtrl', function($scope, Destinations) {
 

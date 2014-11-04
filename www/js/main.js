@@ -21,12 +21,8 @@
 
 	require([
 		'app',
-        // TODO you should have a main.controller
-        'controllers/dash.controller',
-        'controllers/destination.controller',
-        'controllers/map.controller',
         'app.config'
-	], function () {
+	], function (app) {
         // TODO - use angular.resumeBootstrap() or angular.bootstrap to manually start up angular application
 	});
 

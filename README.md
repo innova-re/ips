@@ -61,11 +61,13 @@ If you experience
 
 Depending on the platform you want to simulate, for ios you can run:
 
+    cordova platform add ios
     ionic build ios
     ionic emulate ios
 
 for android you can run:
 
+    cordova platform add android
     ionic build android
     ionic emulate android
 
