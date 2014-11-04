@@ -1,5 +1,5 @@
-/* global require*/
-(function () {
+/*global angular*/
+(function (document, requirejs, require) {
 	'use strict';
 
 	var vendorDir = '../lib/';
@@ -20,10 +20,12 @@
 	});
 
 	require([
-		'app',
-        'app.config'
-	], function (app) {
-        // TODO - use angular.resumeBootstrap() or angular.bootstrap to manually start up angular application
+		'app.config'
+	], function () {
+
+		// manually start up angular application
+		angular.bootstrap(document, ['starter']);
+
 	});
 
-})();
+}(this.document, this.requirejs, this.require));
