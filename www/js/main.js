@@ -20,49 +20,14 @@
 	});
 
 	require([
-		'app'
-	], function (app) {
-
-		app.config(function($stateProvider, $urlRouterProvider) {
-            $stateProvider
-                // setup an abstract state for the tabs directive
-                .state('tab', {
-                    url: "/tab",
-                    abstract: true,
-                    templateUrl: "templates/tabs.html"
-                })
-                // Each tab has its own nav history stack:
-                .state('tab.dash', {
-                    url: '/dash',
-                    views: {
-                        'tab-dash': {
-                            templateUrl: 'templates/tab-dash.html',
-                            controller: 'DashCtrl'
-                        }
-                    }
-                })
-                .state('tab.destinations', {
-                    url: '/destinations',
-                    views: {
-                        'tab-destinations': {
-                            templateUrl: 'templates/tab-destinations.html',
-                            controller: 'DestinationsCtrl'
-                        }
-                    }
-                })
-                .state('tab.destination-detail', {
-                    url: '/destination/:destinationId',
-                    views: {
-                        'tab-destinations': {
-                            templateUrl: 'templates/destination-detail.html',
-                            controller: 'MapCtrl'
-                        }
-                    }
-                })
-            // if none of the above states are matched, use this as the fallback
-            $urlRouterProvider.otherwise('/tab/dash');
-        });
-
+		'app',
+        // TODO you should have a main.controller
+        'controllers/dash.controller',
+        'controllers/destination.controller',
+        'controllers/map.controller',
+        'app.config'
+	], function () {
+        // TODO - use angular.resumeBootstrap() or angular.bootstrap to manually start up angular application
 	});
 
 })();

@@ -2,14 +2,12 @@
     'use strict';
 
     define([
-        'ionic'
-    ], function (ionic) {
-
-        return angular.module('starter.services', [])
-            /**
-             * A simple example service that returns some data.
-             */
-            .factory('Destinations', function() {
+        'app'
+    ], function (app) {
+        /**
+         * A simple example service that returns some data.
+         */
+        return app.factory('Destinations', function() {
                 // Might use a resource here that returns a JSON array. For now ,some fake testing data.
                 var destinations = [
                     // TODO - Update the right values of lat and lng for each name

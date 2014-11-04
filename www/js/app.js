@@ -2,12 +2,10 @@
     'use strict';
 
     define([
-        'ionic',
-        'controllers',
-        'services'
-    ], function (ionic, controllers, services) {
+        'ionic'
+    ], function (ionic) {
 
-        return angular.module('starter', ['ionic', 'starter.controllers', 'starter.services']);
+        return angular.module('starter', ['ionic']);
 
     });
 })();
