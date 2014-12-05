@@ -1,39 +1,34 @@
-/* global define */
-(function () {
+(function (define, google, document) {
     'use strict';
 
     define([
-        'app',
-        'services/destination.service'
-    ], function (app, Destinations) {
+        '../services/destination.service'
+    ], function (destinations) {
 
-        app.controller('MapCtrl', function($scope, $ionicLoading, $compile, $stateParams, Destinations) {
+        return function ($scope, $stateParams) {
 
-            $scope.destination = Destinations.get($stateParams.destinationId);
-            var initialize =  function () {
-                var myLatlng = new google.maps.LatLng($scope.destination.lat, $scope.destination.lng);
-                var mapOptions = {
-                    center: myLatlng,
-                    zoom: 19,
-                    mapTypeId: google.maps.MapTypeId.SATELLITE
-                };
-                var map = new google.maps.Map(document.getElementById("map"),
-                    mapOptions);
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: 'Uluru (Ayers Rock)'
-                });
-                $scope.map = map;
-            }
+            var latLng,
+                map,
+                mapOptions,
+                marker;
 
-            // TODO - fix the call of initialize
-            google.maps.event.addDomListener(window, 'load', initialize);
-            initialize();
-
-        });
-
-        return app;
-
+            $scope.destination = destinations.get($stateParams.id);
+            latLng = new google.maps.LatLng($scope.destination.lat, $scope.destination.lng);
+            mapOptions = {
+                center: latLng,
+                zoom: 19,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+            map = new google.maps.Map(document.getElementById('map'),
+                mapOptions);
+            marker = new google.maps.Marker({
+                position: latLng,
+                map: map
+            });
+            google.maps.event.addListener(marker, 'click', function () {
+                // TODO - change the route in order to display the internal image
+            });
+            $scope.map = map;
+        };
     });
-})();
+}(this.define, this.google, this.document));
