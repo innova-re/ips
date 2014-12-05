@@ -1,19 +1,13 @@
-/* global define */
-(function () {
-	'use strict';
+(function (define) {
+    'use strict';
 
-	define([
-		'app',
-		'services/destination.service'
-	], function (app) {
+    define([
+        '../services/destination.service'
+    ], function (destinationService) {
 
-		app.controller('DestinationsCtrl', function($scope, Destinations) {
+        return function ($scope) {
+            $scope.destinations = destinationService.all();
+        };
 
-			$scope.destinations = Destinations.all();
-
-        });
-
-		return app;
-
-	});
-})();
+    });
+}(this.define));

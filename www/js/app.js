@@ -2,10 +2,16 @@
     'use strict';
 
     define([
-        'ionic'
-    ], function (ionic) {
+        'ionic',
+        'route'
+    ], function (ionic, route) {
 
-        return angular.module('starter', ['ionic']);
+        var app = angular.module('ipsApp', ['ionic']);
+
+        app.config(route);
+        angular.element().ready(function () {
+            angular.bootstrap(document, ['ipsApp']);
+        });
 
     });
 })();
