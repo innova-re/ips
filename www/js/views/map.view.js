@@ -2,14 +2,14 @@
     'use strict';
 
     define([
-        'text!../../templates/destination.html',
+        'text!../../templates/map.html',
         '../controllers/map.controller'
-    ], function (destinationTemplate, mapController) {
+    ], function (mapTemplate, mapController) {
         return {
-            url: '/destination/:id',
+            url: '/map/:id',
             views: {
-                'tab-destinations': {
-                    template: destinationTemplate,
+                'container': {
+                    template: mapTemplate,
                     controller: mapController
                 }
             }

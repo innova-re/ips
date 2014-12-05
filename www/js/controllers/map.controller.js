@@ -25,7 +25,7 @@
                 map: map
             });
             google.maps.event.addListener(marker, 'click', function () {
-                location.href = '#/tab/interior/' + $stateParams.id;
+                location.href = '#/tab/planimetry/' + $stateParams.id;
             });
         };
     });

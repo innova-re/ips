@@ -2,13 +2,13 @@
     'use strict';
 
     define([
-        'text!../../templates/interior.html',
-        '../controllers/interior.controller'
+        'text!../../templates/planimetry.html',
+        '../controllers/planimetry.controller'
     ], function (interiorTemplate, interiorController) {
         return {
-            url: '/interior/:id',
+            url: '/planimetry/:id',
             views: {
-                'tab-destinations': {
+                'container': {
                     template: interiorTemplate,
                     controller: interiorController
                 }
