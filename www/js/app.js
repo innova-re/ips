@@ -3,10 +3,14 @@
 
     define([
         'ionic',
-        'route'
+        'route',
+        'uiRouter'
     ], function (ionic, route) {
 
-        var app = angular.module('ipsApp', ['ionic']);
+        var app = angular.module('ipsApp', [
+            'ionic',
+            'ui.router'
+        ]);
 
         app.config(route);
         angular.element().ready(function () {

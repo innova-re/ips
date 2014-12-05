@@ -7,8 +7,8 @@
         urlArgs: 'bust=' + Date.now(),
         paths: {
             ionic: vendorDir + 'ionic/js/ionic.bundle',
-            angularRouter: vendorDir + 'angular-ui-router/release/angular-ui-router',
-            text: vendorDir + 'text/text'
+            text: vendorDir + 'text/text',
+            uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router'
         },
         deps: ['app']
     });

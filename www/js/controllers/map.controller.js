@@ -1,4 +1,4 @@
-(function (define, google, document) {
+(function (define, google, document, location) {
     'use strict';
 
     define([
@@ -19,16 +19,14 @@
                 zoom: 19,
                 mapTypeId: google.maps.MapTypeId.SATELLITE
             };
-            map = new google.maps.Map(document.getElementById('map'),
-                mapOptions);
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
             marker = new google.maps.Marker({
                 position: latLng,
                 map: map
             });
             google.maps.event.addListener(marker, 'click', function () {
-                // TODO - change the route in order to display the internal image
+                location.href = '#/tab/interior/' + $stateParams.id;
             });
-            $scope.map = map;
         };
     });
-}(this.define, this.google, this.document));
+}(this.define, this.google, this.document, this.location));
