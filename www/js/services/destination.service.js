@@ -9,25 +9,25 @@
                 name: 'Polo Umanistico',
                 lat: 39.228842,
                 lng: 9.111931,
-                src: 'img/interior.svg'
+                src: 'img/planimetry.svg'
             }, {
                 id: 1,
                 name: 'Polo Scienze Sociali',
                 lat: 39.223481,
                 lng: 9.111309,
-                src: 'img/interior.svg'
+                src: 'img/planimetry.svg'
             }, {
                 id: 2,
                 name: 'Polo Ingegneria e Architettura',
                 lat: 39.230142,
                 lng: 9.108063,
-                src: 'img/interior.svg'
+                src: 'img/planimetry.svg'
             }, {
                 id: 3,
                 name: 'Polo Scientifico',
                 lat: 39.222339,
                 lng: 9.114032,
-                src: 'img/interior.svg'
+                src: 'img/planimetry.svg'
             }
         ];
 

@@ -4,12 +4,12 @@
     define([
         'text!../../templates/planimetry.html',
         '../controllers/planimetry.controller'
-    ], function (interiorTemplate, interiorController) {
+    ], function (planimetryTemplate, interiorController) {
         return {
             url: '/planimetry/:id',
             views: {
                 'container': {
-                    template: interiorTemplate,
+                    template: planimetryTemplate,
                     controller: interiorController
                 }
             }

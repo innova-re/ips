@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "requirejs": "~2.1.15",
-    "text": "~2.0.12"
+    "text": "~2.0.12",
+    "svg-pan-zoom": "~3.0.0"
   }
 }
