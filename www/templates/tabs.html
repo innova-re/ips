@@ -7,21 +7,14 @@
 
 
   <!-- Dashboard Tab -->
-  <ion-tab title="Dashboard" icon="icon ion-home" href="#/tab/dash">
+  <ion-tab ui-sref="tab.home" title="Home" icon="icon ion-home">
     <ion-nav-view name="tab-home"></ion-nav-view>
   </ion-tab>
 
 
-  <!-- Friends Tab -->
-  <ion-tab title="Destionations" icon="icon ion-heart" href="#/tab/destinations">
-    <ion-nav-view name="tab-destinations"></ion-nav-view>
+  <!-- Destinations Tab -->
+  <ion-tab ui-sref="tab.destinations" title="Destionations" icon="icon ion-heart">
+    <ion-nav-view name="container"></ion-nav-view>
   </ion-tab>
-
-
-  <!-- Account Tab -->
-  <ion-tab title="Account" icon="icon ion-gear-b" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
-  </ion-tab>
-
 
 </ion-tabs>

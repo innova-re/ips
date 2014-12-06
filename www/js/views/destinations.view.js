@@ -9,7 +9,7 @@
         return {
             url: '/destinations',
             views: {
-                'tab-destinations': {
+                'container': {
                     template: destinationsTemplate,
                     controller: destinationsController
                 }

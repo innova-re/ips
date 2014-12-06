@@ -5,8 +5,9 @@
         'views/tab.view',
         'views/home.view',
         'views/destinations.view',
-        'views/destination.view'
-    ], function (tabView, homeView, destinationsView, destinationView) {
+        'views/map.view',
+        'views/planimetry.view'
+    ], function (tabView, homeView, destinationsView, mapView, planimetryView) {
 
         return function ($stateProvider, $urlRouterProvider) {
 
@@ -15,7 +16,8 @@
                 // Each tab has its own nav history stack:
                 .state('tab.home', homeView)
                 .state('tab.destinations', destinationsView)
-                .state('tab.destination-detail', destinationView);
+                .state('tab.map', mapView)
+                .state('tab.planimetry', planimetryView);
                 // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/tab/home');
 
