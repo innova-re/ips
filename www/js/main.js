@@ -15,7 +15,9 @@
             uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router'
         },
         shim: {
-            angular : {exports : 'angular'},
+            angular : {
+                exports : 'angular'
+            },
             angularAnimate : {deps: ['angular']},
             angularSanitize : {deps: ['angular']},
             ionic :  {deps: ['angular'], exports : 'ionic'},
