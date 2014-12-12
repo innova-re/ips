@@ -1,7 +1,9 @@
 (function (define, svgPanZoom) {
     'use strict';
 
-    define([], function () {
+    define([
+        'angular'
+    ], function (angular) {
 
         return function () {
 
@@ -12,8 +14,9 @@
                         svgPanZoom(angular.element(element[0].getSVGDocument()).find('svg')[0]);
                     };
 
-                    element.on('load', setSvgPanZoom)
-                }
+                    element.on('load', setSvgPanZoom);
+                },
+                restrict: 'A'
             };
         };
     });

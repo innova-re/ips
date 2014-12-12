@@ -1,23 +1,24 @@
-(function() {
+(function (define, document) {
     'use strict';
 
     define([
-        'ionic',
+        'angular',
         'route',
         'directives/planimetry.directive',
+        'ionicAngular',
         'uiRouter'
-    ], function (ionic, route, planimetryDirective) {
+    ], function (angular, route, planimetryDirective) {
 
-        var app = angular.module('ipsApp', [
-            'ionic',
-            'ui.router'
-        ]);
-
-        app.directive('svgPanZoom', planimetryDirective);
-        app.config(route);
+        angular
+            .module('ipsApp', [
+                'ionic',
+                'ui.router'
+            ])
+            .directive('svgPanZoom', planimetryDirective)
+            .config(route);
         angular.element().ready(function () {
             angular.bootstrap(document, ['ipsApp']);
         });
 
     });
-})();
+}(this.define, this.document));
