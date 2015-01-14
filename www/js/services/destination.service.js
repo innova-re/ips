@@ -1,7 +1,9 @@
 (function (define) {
     'use strict';
 
-    define([], function () {
+    define([
+        'text!../../img/planimetry.svg'
+    ], function (svgObject) {
         // Might use a resource here that returns a JSON array. For now, some fake testing data.
         var destinations = [
             {
