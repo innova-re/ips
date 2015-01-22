@@ -83,7 +83,9 @@ for android you can run:
 
 ### Installation
 
-    Install the module with: npm install -g plato
+Install the module with
+
+    npm install -g plato
 
 ### Usage
 
