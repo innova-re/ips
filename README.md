@@ -79,6 +79,17 @@ for android you can run:
 
 - iPhone
 
+## Source Code Analysis 
+
+### Installation
+
+    Install the module with: npm install -g plato
+
+### Usage
+
+    plato -r -d report www/js/
+    open report/index.html
+
 ## References to build an app
 
 - [Dependency Injection using RequireJS & AngularJS](http://solutionoptimist.com/2013/09/30/requirejs-angularjs-dependency-injection/)
