@@ -4,17 +4,17 @@
     define([
         'angular',
         'route',
-        'directives/svgPanZoom.directive',
+        'directives/planimetry.directive',
         'ionicAngular',
         'uiRouter'
-    ], function (angular, route, svgPanZoomDirective) {
+    ], function (angular, route, planimetryDirective) {
 
         var app = angular.module('ipsApp', [
             'ionic',
             'ui.router'
         ]);
 
-        app.directive('svgPanZoom', svgPanZoomDirective);
+        app.directive('planimetry', planimetryDirective);
         app.config(route);
         angular.element().ready(function () {
             angular.bootstrap(document, ['ipsApp']);
