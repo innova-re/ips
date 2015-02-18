@@ -9,16 +9,18 @@
         'uiRouter'
     ], function (angular, route, planimetryDirective) {
 
-        angular
-            .module('ipsApp', [
-                'ionic',
-                'ui.router'
-            ])
-            .directive('svgPanZoom', planimetryDirective)
-            .config(route);
+        var app = angular.module('ipsApp', [
+            'ionic',
+            'ui.router'
+        ]);
+
+        app.directive('planimetry', planimetryDirective);
+        app.config(route);
         angular.element().ready(function () {
             angular.bootstrap(document, ['ipsApp']);
         });
+
+        return app;
 
     });
 }(this.define, this.document));

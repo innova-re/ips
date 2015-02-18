@@ -2,22 +2,18 @@
     'use strict';
 
     define([
-        'angular'
-    ], function (angular) {
-
+        'angular',
+        'text!../../svg/planimetry.svg'
+    ], function (angular, planimetrySVG) {
         return function () {
-
             return {
-                link: function (scope, element) {
-                    // enables panning and zooming of an SVG in an HTML document,
-                    // with mouse events or custom JavaScript hooks
-                    var setSvgPanZoom = function () {
-                        var svgElement = angular.element(element[0].getSVGDocument()).find('svg');
-                        svgPanZoom(svgElement[0]);
-                    };
-                    element.on('load', setSvgPanZoom);
+                compile: function (element) {
+                    svgPanZoom(element[0]);
                 },
-                restrict: 'A'
+                restrict: 'E',
+                replace: true,
+                transclude: true,
+                template: planimetrySVG
             };
         };
     });
