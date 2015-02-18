@@ -1,43 +1,66 @@
-<svg version="1.1"
-    id="Layer_1"
-    class="bulb"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    x="0px" y="0px"
-    width="840px"
-    height="433px" viewBox="0 0 340 333" enable-background="new 0 0 340 333" xml:space="preserve">
-    <path class="path"
-    fill="#FFFFFF"
-    stroke="#000000"
-    stroke-width="1"
-    stroke-miterlimit="10"
-    stroke-dasharray="5,5"
-    id="motion-path"
-    d="m227,268l28,-10l7,-37l0,-30l2,-42l10,-28l26,-17l39,-3l38,-3l42,0l37,0l15,3l11,12l7,19l-2,22"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+x="0px" y="0px" xml:space="preserve">
+    <path class="path" fill="#FFFFFF" stroke="#000000"
+    stroke-width="1" stroke-miterlimit="10"
+    stroke-dasharray="5,5" id="motion-path"
+    d="m227,268l28,-10l7,-37l0,-30l2,-42l10,-28l26,-17l39,-3l38,-3l42,0l37,0l15,3l11,12l7,19l-2,22"
+    />
     <g>
         <title>background</title>
-        <rect fill-opacity="0" id="svg_2" height="230" width="581" y="3" x="2" stroke-width="5" stroke="#000000" fill="#000000"/>
-    </g>
+        <rect fill-opacity="0"
+        height="230" width="581" y="3" x="2"
+        stroke-width="5" stroke="#000000"
+        fill="#000000" /> </g>
+    <g>
+        <image xlink:href="images/toilets.png"
+        x="400" y="70" height="30px" width="30px"
+        />
+        <image xlink:href="images/elevator.png"
+        x="300" y="140" height="40px" width="40px"
+        />
+        <image class="stairs" xlink:href="images/stairs.png"
+        height="40" width="40" y="-80" x="115"
+        transform="rotate(90, 40, 40) scale(2,3)"
+        /> </g>
     <g>
         <title>Layer 1</title>
-        <rect stroke="#555555" id="svg_3" height="101" width="112.000002" y="130" x="4" fill-opacity="0" stroke-width="2" fill="#000000"/>
-        <rect id="svg_4" stroke="#555555" height="101" width="112.000002" y="130" x="117" fill-opacity="0" stroke-width="2" fill="#000000"/>
-        <rect id="svg_5" stroke="#555555" height="101" width="112.000002" y="130" x="299" fill-opacity="0" stroke-width="2" fill="#000000"/>
-        <rect stroke="#555555" id="svg_6" height="101" width="170.000009" y="130" x="411.999994" fill-opacity="0" stroke-width="2" fill="#000000"/>
-        <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_7" y="188" x="493" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#555555" fill="#0c0000">Aula turing</text>
+        <rect stroke="#555555"
+        height="101" width="112.000002" y="130"
+        x="4" fill-opacity="0" stroke-width="2"
+        fill="#000000" />
+        <rect id="svg_4" stroke="#555555"
+        height="101" width="112.000002" y="130"
+        x="117" fill-opacity="0" stroke-width="2"
+        fill="#000000" />
+        <rect id="svg_5" stroke="#555555"
+        height="101" width="112.000002" y="130"
+        x="299" fill-opacity="0" stroke-width="2"
+        fill="#000000" />
+        <rect stroke="#555555" height="101"
+        width="170.000009" y="130" x="411.999994"
+        fill-opacity="0" stroke-width="2"
+        fill="#000000" />
+        <text xml:space="preserve" text-anchor="middle"
+        font-family="serif" font-size="24"
+        y="188" x="493" stroke-linecap="null"
+        stroke-linejoin="null" stroke-dasharray="null"
+        stroke-width="0" stroke="#555555"
+        fill="#0c0000">Aula turing</text>
     </g>
-    <circle
-        class="bulb-path"
-        id="circle"
-        r="10"
-        cx="0"
-        cy="0" />
-    <animateMotion
-        xlink:href="#circle"
-        dur="25s"
-        begin="0s"
-        fill="freeze"
-        repeatCount="indefinite">
-        <mpath xlink:href="#motion-path" />
-    </animateMotion>
+    <g>
+        <circle id="circle" cx="0" cy="0" r="10"
+        fill="#7EEC4A" linejoin="round" stroke-width="1"
+        fill-opacity="0.3" stroke="black"
+        stroke-width="3">
+            <animateMotion xlink:href="#circle"
+            dur="45s" begin="0s" fill="freeze"
+            r epeatCount="indefinite">
+                <mpath xlink:href="#motion-path"></mpath>
+            </animateMotion>
+            <animate attributeType="xml"
+            attributeName="r" from="0" to="15"
+            dur="0.8s" repeatCount="indefinite"
+            /> </circle>
+    </g>
 </svg>
