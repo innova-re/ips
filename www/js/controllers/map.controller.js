@@ -2,8 +2,8 @@
     'use strict';
 
     define([
-        '../services/destination.service'
-    ], function (destinations) {
+        '../services/laboratories.service'
+    ], function (laboratoriesService) {
 
         return function ($scope, $stateParams) {
 
@@ -12,8 +12,8 @@
                 mapOptions,
                 marker;
 
-            $scope.destination = destinations.get($stateParams.id);
-            latLng = new google.maps.LatLng($scope.destination.lat, $scope.destination.lng);
+            $scope.laboratory = laboratoriesService.get($stateParams.id);
+            latLng = new google.maps.LatLng($scope.laboratory.lat, $scope.laboratory.lng);
             mapOptions = {
                 center: latLng,
                 zoom: 19,

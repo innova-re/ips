@@ -2,10 +2,10 @@
     'use strict';
 
     define([
-        '../services/destination.service'
-    ], function (destinationService) {
+        '../services/laboratories.service'
+    ], function (laboratoriesService) {
         return function ($scope, $stateParams) {
-            $scope.destination = destinationService.get($stateParams.id);
+            $scope.laboratories = laboratoriesService.get($stateParams.id);
         };
     });
 }(this.define));
