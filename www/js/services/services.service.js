@@ -29,10 +29,6 @@
                 name: 'Fabbricazione Digitale'
             },
             {
-                id: 6,
-                name: 'Interpretazione di Dati Analitici - Analisi Statistica'
-            },
-            {
                 id: 7,
                 name: 'Metodiche di Biologia Molecolare'
             },
@@ -75,7 +71,28 @@
             {
                 id: 17,
                 name: 'Analisi Biomeccaniche ed Ergonomiche'
+            },
+            {
+                id: 6,
+                name: 'Interpretazione di Dati Analitici - Analisi Statistica'
+            },
+            {
+                id: 18,
+                name: 'Caratterizzazione Archeometrica'
+            },
+            {
+                id: 19,
+                name: 'Caratterizzazione Molecolare'
+            },
+            {
+                id: 20,
+                name: 'Caratterizzazione Morfologica e Cristallografica'
+            },
+            {
+                id: 21,
+                name: 'Caratterizzazione Spettroscopica'
             }
+
         ];
 
         return {
