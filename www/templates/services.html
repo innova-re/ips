@@ -8,8 +8,10 @@
         <button class="button button-clear">Cancel</button>
     </ion-header-bar>
     <ion-content>
-        <div class="list">
-            <li class="item" ng-repeat="service in services">{{service.name}}</li>
-        </div>
+        <ion-list>
+            <ion-item ng-repeat="service in services" href="#/tab/planimetry/1">
+                {{service.name}}
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>

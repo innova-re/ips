@@ -2,8 +2,8 @@
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="laboratory in laboratories" href="#/tab/planimetry/{{laboratory.id }}">
-            {{laboratory.name}}
-            <a class="btn btn-default" ui-sref="tab.map({ id: laboratory.id })" role="button">Outdoor</a>
+                {{laboratory.name}}
+                <a class="btn btn-default" ui-sref="tab.map({ id: laboratory.id })" role="button">Outdoor</a>
             </ion-item>
         </ion-list>
     </ion-content>
