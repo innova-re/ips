@@ -60,12 +60,13 @@ x="0px" y="0px" xml:space="preserve">
         stroke-width="3">
             <animateMotion xlink:href="#circle"
             dur="45s" begin="0s" fill="freeze"
-            r epeatCount="indefinite">
+            epeatCount="indefinite">
                 <mpath xlink:href="#motion-path"></mpath>
             </animateMotion>
             <animate attributeType="xml"
             attributeName="r" from="0" to="15"
             dur="0.8s" repeatCount="indefinite"
-            /> </circle>
+            /> 
+        </circle>
     </g>
 </svg>
