@@ -16,11 +16,11 @@
             $stateProvider
                 .state('tab', tabView)
                 .state('tab.home', homeView)
+                .state('tab.services', servicesView)
                 .state('tab.map', mapView)
                 .state('tab.poli', poliView)
                 .state('tab.laboratories', laboratoriesView)
                 .state('tab.planimetry', planimetryView)
-                .state('tab.services', servicesView)
                 // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/tab/home');
         };
