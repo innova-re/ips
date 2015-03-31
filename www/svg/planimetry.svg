@@ -1,11 +1,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink"
 x="0px" y="0px" xml:space="preserve">
-    <path class="path" fill="#FFFFFF" stroke="#000000"
-    stroke-width="1" stroke-miterlimit="10"
-    stroke-dasharray="5,5" id="motion-path"
-    d="m227,268l28,-10l7,-37l0,-30l2,-42l10,-28l26,-17l39,-3l38,-3l42,0l37,0l15,3l11,12l7,19l-2,22"
-    />
+  <path class="path" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="5,5" id="motion-path" d="m227,268l28,-8.76471l7,-32.4294l0,-26.29411l2,-36.81178l10,-24.54117l26,-14.89999l39,-2.62941l38,-2.6294l42,0l37,0l15,2.6294l11,10.51765l7,16.65292l-2,19.28235"/>
     <g>
         <title>background</title>
         <rect fill-opacity="0"
@@ -14,7 +10,7 @@ x="0px" y="0px" xml:space="preserve">
         fill="#000000" /> </g>
     <g>
         <image xlink:href="images/emergency-exit.png"
-        x="250" y="10" height="30px" width="30px"
+        x="250" y="5" height="30px" width="30px"
         />
         <image xlink:href="images/toilets.png"
         x="400" y="70" height="30px" width="30px"
@@ -26,7 +22,7 @@ x="0px" y="0px" xml:space="preserve">
         height="40" width="40" y="-80" x="115"
         transform="rotate(90, 40, 40) scale(2,3)"
         />
-        <image xlink:href="images/vending-machine.jpg" x="250" y="60" height="30px" width="30px"/>
+        <image xlink:href="images/vending-machine.jpg" x="250" y="65" height="25px" width="25px"/>
     </g>
     <g>
         <title>Layer 1</title>
@@ -34,11 +30,11 @@ x="0px" y="0px" xml:space="preserve">
         height="101" width="112.000002" y="130"
         x="4" fill-opacity="0" stroke-width="2"
         fill="#000000" />
-        <rect id="svg_4" stroke="#555555"
+        <rect stroke="#555555"
         height="101" width="112.000002" y="130"
         x="117" fill-opacity="0" stroke-width="2"
         fill="#000000" />
-        <rect id="svg_5" stroke="#555555"
+        <rect stroke="#555555"
         height="101" width="112.000002" y="130"
         x="299" fill-opacity="0" stroke-width="2"
         fill="#000000" />
@@ -46,12 +42,23 @@ x="0px" y="0px" xml:space="preserve">
         width="170.000009" y="130" x="411.999994"
         fill-opacity="0" stroke-width="2"
         fill="#000000" />
+        <rect fill="#FFFFFF" stroke="#555555" stroke-width="2" stroke-linejoin="null" stroke-linecap="null" x="4.63635" y="4" width="222" height="93" fill-opacity="0"/>
+        <rect id="svg_30" fill="#FFFFFF" stroke="#555555" stroke-width="2" stroke-linejoin="null" stroke-linecap="null" x="390.63634" y="3" width="191.00001" height="96" fill-opacity="0"/>
+        <rect id="svg_32" height="95" width="68" y="4" x="321.63635" stroke-width="2" stroke="#000000" fill="#FFFFFF" fill-opacity="0"/>
         <text xml:space="preserve" text-anchor="middle"
-        font-family="serif" font-size="24"
+        font-family="serif" font-size="12"
         y="188" x="493" stroke-linecap="null"
         stroke-linejoin="null" stroke-dasharray="null"
-        stroke-width="0" stroke="#555555"
-        fill="#0c0000">Aula turing</text>
+        stroke="#555555"
+        fill="#0c0000">AULA TURING</text>
+
+        <!-- Doors -->
+        <rect height="3.75" width="25" y="94.875" x="36.63635" stroke="#FFFFFF" fill="#FFFFFF"/>
+        <rect height="3.75" width="25" y="128.875" x="465.96968" stroke="#FFFFFF" fill="#FFFFFF"/>
+        <rect height="3.75" width="25" y="97.54167" x="338.63634" stroke="#FFFFFF" fill="#FFFFFF"/>
+        <rect height="4.75" width="35" y="0.875" x="253.96969" stroke="#FFFFFF" fill="#FFFFFF"/>
+
+
     </g>
     <g>
         <circle id="circle" cx="0" cy="0" r="10"
