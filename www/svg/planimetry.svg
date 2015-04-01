@@ -23,6 +23,7 @@ x="0px" y="0px" xml:space="preserve">
         transform="rotate(90, 40, 40) scale(2,3)"
         />
         <image xlink:href="images/vending-machine.jpg" x="250" y="65" height="25px" width="25px"/>
+        <image xlink:href="images/info.png" x="330" y="70" height="25px" width="25px"/>
     </g>
     <g>
         <title>Layer 1</title>
