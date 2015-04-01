@@ -7,7 +7,7 @@
     ], function (servicesTemplate, servicesController) {
 
         return {
-            url: '/services',
+            url: '/services/:name',
             views: {
                 'container': {
                     template: servicesTemplate,

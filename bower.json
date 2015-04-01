@@ -2,7 +2,8 @@
   "name": "ips",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.0.0-beta.13"
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.13",
+    "ionicons": "~2.0.1"
   },
   "dependencies": {
     "requirejs": "~2.1.15",

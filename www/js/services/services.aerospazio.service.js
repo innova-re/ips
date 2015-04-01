@@ -3,31 +3,31 @@
 
     define([], function () {
         // Might use a resource here that returns a JSON array. For now, some fake testing data.
-        var services = [
+        var servicesAerospazio = [
             {
-                name: 'Aerospazio'
+                name: 'Analisi Chimico-Fisiche'
             },
             {
-                name: 'Agrifood'
+                name: 'Calcoli Strutturali'
             },
             {
-                name: 'Edilizia e Tecnologia per gli Ambienti di Vita'
+                name: 'Caratterizzazione Archeometrica'
             },
             {
-                name: 'Energia e Ambiente'
+                name: 'Caratterizzazione Morfologica e Cristallografica'
             },
             {
-                name: 'Scienze della vita'
+                name: 'Caratterizzazione Spettroscopica'
             },
             {
-                name: 'Smart Communities'
+                name: 'Energia Rinnovabile'
             }
 
         ];
 
         return {
             get: function () {
-                return services;
+                return servicesAerospazio;
             }
         };
     });

@@ -9,7 +9,7 @@
     </ion-header-bar>
     <ion-content>
         <ion-list>
-            <ion-item ng-repeat="service in services" href="#/tab/planimetry/1">
+            <ion-item ng-repeat="service in services" href="#/tab/services/{{service.name}}">
                 {{service.name}}
             </ion-item>
         </ion-list>
