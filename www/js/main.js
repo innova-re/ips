@@ -12,7 +12,8 @@
             ionic: vendorDir + 'ionic/js/ionic',
             ionicAngular: vendorDir + 'ionic/js/ionic-angular',
             text: vendorDir + 'text/text',
-            uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router'
+            uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router',
+            angularTranslate: vendorDir + 'angular-translate/angular-translate'
         },
         shim: {
             angular : {
@@ -22,7 +23,8 @@
             angularSanitize : {deps: ['angular']},
             ionic :  {deps: ['angular'], exports : 'ionic'},
             ionicAngular: {deps: ['angular', 'ionic', 'uiRouter', 'angularAnimate', 'angularSanitize']},
-            uiRouter: ['angular']
+            uiRouter: ['angular'],
+            angularTranslate: ['angular']
         },
         deps: ['app']
     });
