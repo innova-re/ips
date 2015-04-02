@@ -3,10 +3,10 @@
 
     define([], function () {
 
-        return ['$q', '$timeout', '$stateParams', function($q, $timeout, $stateParams) {
+        return ['$q', '$timeout', function($q, $timeout) {
 
             var searchServices = function(searchFilter, items) {
-                
+
                 var deferred = $q.defer();
                 var matches = items.filter(function(service) {
                     if(service.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1 ) {

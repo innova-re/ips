@@ -5,17 +5,19 @@
         '../services/laboratories.service'
     ], function (laboratoriesService) {
 
-        return ['$scope', '$stateParams', function($scope, $stateParams) {
+        return ['$scope', 'searchFactory', function($scope, searchFactory) {
 
-            $scope.laboratories = laboratoriesService.get($stateParams);
+            var items = laboratoriesService.get();
 
-            // $scope.search = function() {
-            //     servicesFactory.searchServices($scope.data.search).then(
-            //         function(matches) {
-            //             $scope.services = matches;
-            //         }
-            //     )
-            // };
+            $scope.laboratories = items;
+
+            $scope.search = function() {
+                searchFactory.searchServices($scope.data.search, items).then(
+                    function(matches) {
+                        $scope.laboratories = matches;
+                    }
+                )
+            };
         }];
 
     });

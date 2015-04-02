@@ -31,15 +31,7 @@
         ];
 
         return {
-            get: function ($stateParams) {
-                if ($stateParams && $stateParams.name) {
-                    for(let index in services) {
-                        if (services[index].name === $stateParams.name) {
-                            return services[index].categories;
-                        }
-                    } 
-                }
-                
+            get: function () {
                 return services;
             }
         }

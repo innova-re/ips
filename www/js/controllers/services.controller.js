@@ -6,12 +6,12 @@
     ], function (servicesService) {
 
 
-        return ['$scope', '$stateParams', 'searchFactory', function($scope, $stateParams, searchFactory) {
+        return ['$scope', 'searchFactory', function($scope, searchFactory) {
 
-            var items = servicesService.get($stateParams);
+            var items = servicesService.get();
             
             $scope.services = items;
-            
+
             $scope.search = function() {
                 searchFactory.searchServices($scope.data.search, items).then(
                     function(matches) {
