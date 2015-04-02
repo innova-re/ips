@@ -2,12 +2,23 @@
     'use strict';
 
     define([
-        '../services/poli.service'
-    ], function (poliService) {
+        '../services/laboratories.service'
+    ], function (laboratoriesService) {
 
-        return function ($scope, $stateParams) {
-            $scope.laboratories = poliService.getLabs($stateParams.id);
-        };
+        return ['$scope', 'searchFactory', function($scope, searchFactory) {
+
+            var items = laboratoriesService.get();
+
+            $scope.laboratories = items;
+
+            $scope.search = function() {
+                searchFactory.searchServices($scope.data.search, items).then(
+                    function(matches) {
+                        $scope.laboratories = matches;
+                    }
+                )
+            };
+        }];
 
     });
 }(this.define));
