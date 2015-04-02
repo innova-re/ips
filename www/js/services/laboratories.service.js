@@ -2,132 +2,68 @@
     'use strict';
 
     define([], function () {
-        // Might use a resource here that returns a JSON array. For now, some fake testing data.
         var laboratories = [
             {
                 id: 0,
-                name: 'Laboratorio informatico A. Turing',
+                name: 'Laboratorio di Diffrattometria',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.228842,
                 lng: 9.111931
             },
             {
                 id: 1,
-                name: 'Laboratorio di cinema e multimedialità V. De Seta',
+                name: 'Laboratorio Osservazioni Astronomiche',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.228842,
                 lng: 9.111931
             },
             {
                 id: 2,
-                name: 'Aula videoconferenza L. Geymonat',
+                name: 'Laboratorio di Prototipazione Rapida',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.228842,
                 lng: 9.111931
             },
             {
                 id: 3,
-                name: 'Aula multimediale',
+                name: 'Laboratorio di Affidabilità e Diagnostica',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.228842,
                 lng: 9.111931
             },
             {
                 id: 4,
-                name: 'Mediateca',
+                name: 'Laboratorio di Materiali Nanofasici per l\'Energia e l\'Ambiente',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.228842,
                 lng: 9.111931
             },
             {
                 id: 5,
-                name: 'Laboratorio linguistico e di editing',
+                name: 'Laboratorio Glove-boxes',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.228842,
                 lng: 9.111931
             },
             {
                 id: 6,
-                name: 'Laboratorio di psicologia',
+                name: 'Laboratorio di Biologia e Bionanotecnologie',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.228842,
                 lng: 9.111931
             },
             {
                 id: 7,
-                name: 'Laboratorio LISS/A. Laboratorio ICT multimediale',
+                name: 'Laboratorio di Chimica Analitica',
+                info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
                 lat: 39.223481,
                 lng: 9.111309
-            },
-            {
-                id: 8,
-                name: 'Laboratorio LISS/B',
-                lat: 39.223481,
-                lng: 9.111309
-            },
-            {
-                id: 9,
-                name: 'Laboratorio LISS/C',
-                lat: 39.223481,
-                lng: 9.111309
-            },
-            {
-                id: 10,
-                name: 'Laboratorio multimediale LISS/D1',
-                lat: 39.223481,
-                lng: 9.111309
-            },
-            {
-                id: 11,
-                name: 'Laboratorio multimediale LISS/D2',
-                lat: 39.223481,
-                lng: 9.111309
-            },
-            {
-                id: 12,
-                name: 'Laboratorio Software',
-                lat: 39.230142,
-                lng: 9.108063
-            },
-            {
-                id: 13,
-                name: 'Laboratorio Multifunzionale',
-                lat: 39.230142,
-                lng: 9.108063
-            },
-            {
-                id: 14,
-                name: 'Laboratorio Grafica',
-                lat: 39.230142,
-                lng: 9.108063
-            },
-            {
-                id: 15,
-                name: 'Laboratorio Modelli',
-                lat: 39.230142,
-                lng: 9.108063
-            },
-            {
-                id: 16,
-                name: 'Laboratori didattici di Farmacia',
-                lat: 39.222339,
-                lng: 9.114032
-            },
-            {
-                id: 17,
-                name: 'Laboratori didattici di Medicina',
-                lat: 39.222339,
-                lng: 9.114032
-            },
-            {
-                id: 18,
-                name: 'Laboratori didattici di Scienze',
-                lat: 39.222339,
-                lng: 9.114032
             }
         ];
 
         return {
-            get: function (id) {
-                return laboratories[id] || {
-                    id: 0,
-                    name: 'Unknown laboratory',
-                    lat: 39.228842,
-                    lng: 9.111931
-                };
+            get: function () {
+                return laboratories;
             }
         };
     });

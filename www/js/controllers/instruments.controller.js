@@ -2,12 +2,12 @@
     'use strict';
 
     define([
-        '../services/laboratories.service'
-    ], function (laboratoriesService) {
+        '../services/instruments.service'
+    ], function (instrumentsService) {
 
         return ['$scope', '$stateParams', function($scope, $stateParams) {
 
-            $scope.laboratories = laboratoriesService.get($stateParams);
+            $scope.instruments = instrumentsService.get($stateParams);
 
             // $scope.search = function() {
             //     servicesFactory.searchServices($scope.data.search).then(

@@ -1,4 +1,5 @@
-<ion-view title="Laboratories">
+<!-- http://codepen.io/calendee/pen/pCwyx -->
+<ion-view title="Strumenti">
     <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
         <label class="item-input-wrapper">
             <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -8,10 +9,10 @@
     </ion-header-bar>
     <ion-content>
         <ion-list>
-            <ion-item ng-repeat="laboratory in laboratories" href="#/tab/planimetry/{{laboratory.id }}">
-                {{laboratory.name}}
-                <a class="btn btn-default" ui-sref="tab.map({ id: laboratory.id })" role="button">Outdoor</a>
-                <p>{{laboratory.info}}</p>
+            <ion-item 
+                ng-repeat="instrument in instruments" 
+                href="#/tab/laboratories">
+                {{instrument.name}}
             </ion-item>
         </ion-list>
     </ion-content>

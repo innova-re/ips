@@ -5,30 +5,43 @@
         // Might use a resource here that returns a JSON array. For now, some fake testing data.
         var services = [
             {
-                name: 'Aerospazio'
+                name: 'Analisi Chimico-Fisiche'
             },
             {
-                name: 'Agrifood'
+                name: 'Calcoli Strutturali'
             },
             {
-                name: 'Edilizia e Tecnologia per gli Ambienti di Vita'
+                name: 'Caratterizzazione Archeometrica'
             },
             {
-                name: 'Energia e Ambiente'
+                name: 'Caratterizzazione Morfologica e Cristallografica'
             },
             {
-                name: 'Scienze della vita'
+                name: 'Caratterizzazione Spettroscopica'
             },
             {
-                name: 'Smart Communities'
+                name: 'Energia Rinnovabile'
+            },
+            {
+                name: 'Fabbricazione Digitale'
+            },
+            {
+                name: 'Interpretazione di Dati Analitici - Analisi Statistica'
             }
-
         ];
 
         return {
-            get: function () {
+            get: function ($stateParams) {
+                if ($stateParams && $stateParams.name) {
+                    for(let index in services) {
+                        if (services[index].name === $stateParams.name) {
+                            return services[index].categories;
+                        }
+                    } 
+                }
+                
                 return services;
             }
-        };
+        }
     });
 }(this.define));

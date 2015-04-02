@@ -6,21 +6,19 @@
     ], function (servicesService) {
 
 
-        return ['$scope', 'servicesFactory', function($scope, servicesFactory) {
+        return ['$scope', '$stateParams', 'searchFactory', function($scope, $stateParams, searchFactory) {
 
-            $scope.services = servicesService.get();
-
+            var items = servicesService.get($stateParams);
+            
+            $scope.services = items;
+            
             $scope.search = function() {
-
-                servicesFactory.searchServices($scope.data.search).then(
+                searchFactory.searchServices($scope.data.search, items).then(
                     function(matches) {
                         $scope.services = matches;
                     }
                 )
-            }
-
+            };
         }];
-
-
     });
 }(this.define));

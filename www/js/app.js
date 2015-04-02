@@ -5,10 +5,10 @@
         'angular',
         'route',
         'directives/planimetry.directive',
-        'factories/services.factory',
+        'factories/search.factory',
         'ionicAngular',
         'uiRouter'
-    ], function (angular, route, planimetryDirective, servicesFactory) {
+    ], function (angular, route, planimetryDirective, searchFactory) {
 
         var app = angular.module('ipsApp', [
             'ionic',
@@ -16,7 +16,7 @@
         ]);
 
         app.directive('planimetry', planimetryDirective);
-        app.factory('servicesFactory', servicesFactory);
+        app.factory('searchFactory', searchFactory);
         app.config(route);
         angular.element().ready(function () {
             angular.bootstrap(document, ['ipsApp']);

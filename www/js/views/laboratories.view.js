@@ -7,7 +7,7 @@
     ], function (laboratoriesTemplate, laboratoriesController) {
 
         return {
-            url: '/laboratories/:id',
+            url: '/laboratories',
             views: {
                 'container': {
                     template: laboratoriesTemplate,

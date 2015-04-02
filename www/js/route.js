@@ -4,12 +4,12 @@
     define([
         'views/tab.view',
         'views/home.view',
-        'views/map.view',
-        'views/poli.view',
         'views/laboratories.view',
+        'views/instruments.view',
         'views/planimetry.view',
-        'views/services.view'
-    ], function (tabView, homeView, mapView, poliView, laboratoriesView, planimetryView, servicesView) {
+        'views/services.view',
+        'views/map.view'
+    ], function (tabView, homeView, laboratoriesView, instrumentsView, planimetryView, servicesView, mapView) {
 
         return function ($stateProvider, $urlRouterProvider) {
 
@@ -17,11 +17,10 @@
                 .state('tab', tabView)
                 .state('tab.home', homeView)
                 .state('tab.services', servicesView)
-                .state('tab.map', mapView)
-                .state('tab.poli', poliView)
                 .state('tab.laboratories', laboratoriesView)
+                .state('tab.instruments', instrumentsView)
+                .state('tab.map', mapView)
                 .state('tab.planimetry', planimetryView)
-                // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/tab/home');
         };
     });

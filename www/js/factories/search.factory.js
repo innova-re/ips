@@ -1,23 +1,20 @@
 (function (define) {
     'use strict';
 
-    define([
-        '../services/services.service'
-    ], function (servicesService) {
+    define([], function () {
 
-        return ['$q', '$timeout', function($q, $timeout) {
+        return ['$q', '$timeout', '$stateParams', function($q, $timeout, $stateParams) {
 
-            var searchServices = function(searchFilter) {
-
+            var searchServices = function(searchFilter, items) {
+                
                 var deferred = $q.defer();
-                var services = servicesService.get();
-                var matches = services.filter(function(service) {
+                var matches = items.filter(function(service) {
                     if(service.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1 ) {
                         return true;
                     }
                 })
 
-                $timeout( function(){
+                $timeout(function () {
                     deferred.resolve( matches );
                 }, 100);
 
