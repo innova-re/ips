@@ -10,6 +10,7 @@
     "svg-pan-zoom": "~3.0.0",
     "text": "~2.0.12",
     "bower": "*",
-    "install": "~1.0.4"
+    "install": "~1.0.4",
+    "angular-translate": "~2.6.1"
   }
 }

@@ -9,7 +9,7 @@
         return {
             url: '/laboratories',
             views: {
-                'container': {
+                'tab-laboratories': {
                     template: laboratoriesTemplate,
                     controller: laboratoriesController
                 }

@@ -1,11 +1,11 @@
 <!-- http://codepen.io/calendee/pen/pCwyx -->
-<ion-view title="Servizi">
+<ion-view title="{{ 'services' | translate }}">
     <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
         <label class="item-input-wrapper">
             <i class="icon ion-ios7-search placeholder-icon"></i>
-            <input type="search" placeholder="Ricerca il servizio di .... " ng-change="search()" ng-model="data.search">
+            <input type="search" placeholder="{{ 'services_search' | translate }}" ng-change="search()" ng-model="data.search">
         </label>
-        <button class="button button-clear">Cancel</button>
+        <button class="button button-clear">{{ 'cancel' | translate }}</button>
     </ion-header-bar>
     <ion-content>
         <ion-list>

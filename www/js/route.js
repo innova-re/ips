@@ -14,13 +14,13 @@
         return function ($stateProvider, $urlRouterProvider) {
 
             $stateProvider
-                .state('tab', tabView)
-                .state('tab.home', homeView)
-                .state('tab.services', servicesView)
-                .state('tab.laboratories', laboratoriesView)
-                .state('tab.instruments', instrumentsView)
-                .state('tab.map', mapView)
-                .state('tab.planimetry', planimetryView)
+                .state('tabs', tabView)
+                .state('tabs.home', homeView)
+                .state('tabs.services', servicesView)
+                .state('tabs.laboratories', laboratoriesView)
+                .state('tabs.instruments', instrumentsView)
+                .state('tabs.map', mapView)
+                .state('tabs.planimetry', planimetryView)
             $urlRouterProvider.otherwise('/tab/home');
         };
     });

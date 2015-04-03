@@ -3,7 +3,7 @@
 
     define([
         'text!../../templates/home.html'
-    ], function (homeTemplate) {
+    ], function (homeTemplate, homeController) {
         return {
             url: '/home',
             views: {

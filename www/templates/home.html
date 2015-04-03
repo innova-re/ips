@@ -1,21 +1,21 @@
-<ion-view title="Innovare Navigation">
+<ion-view title="{{ 'title' | translate }}">
     <ion-content class="padding">
         <div class="list">
             <!-- TODO: this text must be taken from a json file -->
-            <a class="item item-thumbnail-left" ui-sref="tab.services">
+            <a class="item item-thumbnail-left" ui-sref="tabs.services">
                 <img src="images/service.png">
-                <h2>Servizi</h2>
-                <p>I servizi offerti dai laboratori sono consultabili e accessibili mediante richiesta on-line.</p>
+                <h2>{{ 'services' | translate }}</h2>
+                <p>{{ 'services_text' | translate }}</p>
             </a>
-            <a class="item item-thumbnail-left" ui-sref="tab.laboratories">
+            <a class="item item-thumbnail-left" ui-sref="tabs.laboratories">
                 <img src="images/lab.png">
-                <h2>Laboratori</h2>
-                <p>Elenco dei laboratori della rete regionale RLAB Sardegna.</p>
+                <h2>{{ 'labs' | translate }}</h2>
+                <p>{{ 'labs_text' | translate }}</p>
             </a>
-            <a class="item item-thumbnail-left" ui-sref="tab.instruments">
+            <a class="item item-thumbnail-left" ui-sref="tabs.instruments">
                 <img src="images/instrument.png">
-                <h2>Strumenti</h2>
-                <p>Il catalogo degli strumenti è un servizio di rapida consultazione rivolto ai ricercatori e alle imprese interessati a conoscere l’offerta di apparecchiature legate a sperimentazione e analisi dei laboratori di RLAB Sardegna.</p>
+                <h2>{{ 'instruments' | translate }}</h2>
+                <p>{{ 'instruments_text' | translate }}</p>
             </a>
         </div>
     </ion-content>
