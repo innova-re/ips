@@ -2,13 +2,15 @@
     'use strict';
 
     define([
-        'text!../../templates/home.html'
-    ], function (homeTemplate) {
+        'text!../../templates/home.html',
+        '../controllers/home.controller'
+    ], function (homeTemplate, homeController) {
         return {
             url: '/home',
             views: {
                 'tab-home': {
-                    template: homeTemplate
+                    template: homeTemplate,
+                    controller: homeController
                 }
             }
         };

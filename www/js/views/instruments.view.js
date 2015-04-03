@@ -9,7 +9,7 @@
         return {
             url: '/instruments',
             views: {
-                'container': {
+                'tab-instruments': {
                     template: instrumentsTemplate,
                     controller: instrumentsController
                 }

@@ -1,9 +1,9 @@
 <!-- http://codepen.io/calendee/pen/pCwyx -->
-<ion-view title="Strumenti">
+<ion-view title="{{ 'instruments' | translate }}">
     <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
         <label class="item-input-wrapper">
             <i class="icon ion-ios7-search placeholder-icon"></i>
-            <input type="search" placeholder="Ricerca il strumento .... " ng-change="search()" ng-model="data.search">
+            <input type="search" placeholder="{{ 'instruments_search' | translate }}" ng-change="search()" ng-model="data.search">
         </label>
         <button class="button button-clear">Cancel</button>
     </ion-header-bar>
