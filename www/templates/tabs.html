@@ -3,26 +3,30 @@
   Each tab's child <ion-nav-view> directive will have its own
   navigation history that also transitions its views in and out.
 -->
+<ion-nav-back-button class="button-icon ion-arrow-left-c">Back
+</ion-nav-back-button>
+<ion-nav-buttons side="right">
+    <button class="button icon ion-ios-world"  ng-click="toggleLang()"></button>
+</ion-nav-buttons>
 <ion-tabs class="tabs-icon-top tabs-dark">
+    <!-- Dashboard Tab -->
+    <ion-tab ui-sref="tabs.home" title="Home" icon="icon ion-home">
+        <ion-nav-view name="tab-home"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Dashboard Tab -->
-  <ion-tab ui-sref="tab.home" title="Home" icon="icon ion-home">
-    <ion-nav-view name="tab-home"></ion-nav-view>
-  </ion-tab>
+    <!-- Servizi Tab -->
+    <ion-tab ui-sref="tabs.services" title="{{ 'services' | translate }}" icon="icon ion-gear-a">
+        <ion-nav-view name="tab-services"></ion-nav-view>
+    </ion-tab>
 
-  <!-- Servizi Tab -->
-  <ion-tab ui-sref="tab.services" title="{{ 'services' | translate }}" icon="icon ion-gear-a">
-    <ion-nav-view name="tab-services"></ion-nav-view>
-  </ion-tab>
+    <!-- LABORATORI Tab -->
+    <ion-tab ui-sref="tabs.laboratories" title="{{ 'labs' | translate }}" icon="icon ion-erlenmeyer-flask">
+        <ion-nav-view name="tab-laboratories"></ion-nav-view>
+    </ion-tab>
 
-  <!-- LABORATORI Tab -->
-  <ion-tab ui-sref="tab.laboratories" title="{{ 'labs' | translate }}" icon="icon ion-erlenmeyer-flask">
-    <ion-nav-view name="tab-laboratories"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Instruments Tab -->
-  <ion-tab ui-sref="tab.instruments" title="{{ 'instruments' | translate }}" icon="icon ion-settings">
-    <ion-nav-view name="tab-instruments"></ion-nav-view>
-  </ion-tab>
+    <!-- Instruments Tab -->
+    <ion-tab ui-sref="tabs.instruments" title="{{ 'instruments' | translate }}" icon="icon ion-settings">
+        <ion-nav-view name="tab-instruments"></ion-nav-view>
+    </ion-tab>
 
 </ion-tabs>

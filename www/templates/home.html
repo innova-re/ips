@@ -1,19 +1,18 @@
 <ion-view title="{{ 'title' | translate }}">
     <ion-content class="padding">
-        <button class="button icon ion-ios-world"  ng-click="toggleLang()"></button>
         <div class="list">
             <!-- TODO: this text must be taken from a json file -->
-            <a class="item item-thumbnail-left" ui-sref="tab.services">
+            <a class="item item-thumbnail-left" ui-sref="tabs.services">
                 <img src="images/service.png">
                 <h2>{{ 'services' | translate }}</h2>
                 <p>{{ 'services_text' | translate }}</p>
             </a>
-            <a class="item item-thumbnail-left" ui-sref="tab.laboratories">
+            <a class="item item-thumbnail-left" ui-sref="tabs.laboratories">
                 <img src="images/lab.png">
                 <h2>{{ 'labs' | translate }}</h2>
                 <p>{{ 'labs_text' | translate }}</p>
             </a>
-            <a class="item item-thumbnail-left" ui-sref="tab.instruments">
+            <a class="item item-thumbnail-left" ui-sref="tabs.instruments">
                 <img src="images/instrument.png">
                 <h2>{{ 'instruments' | translate }}</h2>
                 <p>{{ 'instruments_text' | translate }}</p>

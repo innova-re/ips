@@ -2,12 +2,14 @@
     'use strict';
 
     define([
-        'text!../../templates/tabs.html'
-    ], function (tabsTemplate) {
+        'text!../../templates/tabs.html',
+        '../controllers/home.controller'
+    ], function (tabsTemplate, homeController) {
         return {
             url: "/tab",
             abstract: true,
-            template: tabsTemplate
+            template: tabsTemplate,
+            controller: homeController
         };
     });
 }(this.define));
