@@ -8,7 +8,7 @@
         return {
             url: '/map/:id',
             views: {
-                'container': {
+                'tab-map': {
                     template: mapTemplate,
                     controller: mapController
                 }

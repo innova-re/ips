@@ -62,8 +62,8 @@
         ];
 
         return {
-            get: function () {
-                return laboratories;
+            get: function (id) {
+                return id ? laboratories[id] : laboratories;
             }
         };
     });
