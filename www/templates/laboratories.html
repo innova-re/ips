@@ -8,11 +8,12 @@
     </ion-header-bar>
     <ion-content>
         <ion-list>
-            <ion-item ng-repeat="laboratory in laboratories" href="#/tab/planimetry/{{laboratory.id }}">
-                {{laboratory.name}}
-                <a class="btn btn-default" ui-sref="tab.map({ id: laboratory.id })" role="button">Outdoor</a>
-                <p>{{laboratory.info}}</p>
-            </ion-item>
+            <ion-item
+                ng-repeat="laboratory in laboratories"
+                href="#/tab/planimetry/{{laboratory.id }}"
+                class="laboratory-title">
+                <div class="laboratory-title">{{laboratory.name}}</div>
+                <p class="laboratory-info">{{laboratory.info}}</p>
         </ion-list>
     </ion-content>
 </ion-view>
