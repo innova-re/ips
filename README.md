@@ -1,6 +1,6 @@
 # Innovare IPS
 
-## Prerequisites
+### Prerequisites
 
 - [Node.js®](http://nodejs.org/), a platform built on Chrome's JavaScript runtime.
 Download the Node.js source code or a pre-built installer for your platform from this [link](http://nodejs.org/download/).
@@ -17,7 +17,7 @@ Download the Node.js source code or a pre-built installer for your platform from
 
         sudo npm install -g ionic
 
-## Installation
+### Installation
 
     git clone git@github.com:innova-re/ips.git
     cd ips
@@ -26,26 +26,30 @@ Download the Node.js source code or a pre-built installer for your platform from
 Set up Sass for this project:
 
     ionic setup sass
+    
+### Pull requests
 
-## Running
+1. [Use phonegap googlemaps plugin](https://github.com/innova-re/ips/pull/34)
+
+### Running
 
 For running the application in a browser:
 
     ionic serve
 
-## Testing
+### Testing
 
 Run unit tests automatically whenever app changes:
 
     TODO
 
-## Troubleshooting
+### Troubleshooting
 
 If you experience
 
     TODO
 
-## Development Support Tools
+### Development Support Tools
 
 - [Ripple Emulator (Beta)](https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?hl=en), a mobile environment emulator. Ripple is targeted towards WebWorks, PhoneGap, and mobile web development and testing!
 
