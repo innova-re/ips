@@ -46,7 +46,7 @@
                 map = plugin.google.maps.Map.getMap(div, mapOptions);
 
                 map.addEventListener(plugin.google.maps.event.MAP_READY, function onMapInit(map) {
-                  // The map is initialized, then show a map dialog
+                    // The map is initialized, then show a map dialog
                     map.showDialog();
                 });
 
