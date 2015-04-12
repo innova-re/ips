@@ -46,4 +46,9 @@ div.laboratory-title {
 div.map.map-canvas {
     height: 100%;
     width: 100%;
+    z-index: -1;
+}
+
+div.map.map-actions {
+    z-index: 1;
 }

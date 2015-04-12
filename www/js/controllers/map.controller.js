@@ -3,8 +3,8 @@
 
     define([
         '../services/laboratories.service',
-        '../controllers/map-web.controller',
-        '../controllers/map-app.controller'
+        '../controllers/map-controllers/map-web.controller',
+        '../controllers/map-controllers/map-app.controller'
     ], function (laboratoriesService, mapWebController, mapAppController) {
 
         return function ($scope, $stateParams) {

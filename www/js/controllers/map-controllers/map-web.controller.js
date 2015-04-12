@@ -1,4 +1,4 @@
-(function (define, google) {
+(function (define) {
     'use strict';
 
     define([], function () {
@@ -22,4 +22,4 @@
             });
         };
     });
-}(this.define, this.google));
+}(this.define));
