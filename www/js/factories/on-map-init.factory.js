@@ -9,6 +9,7 @@
                 getDirectionButton,
                 MapBase,
                 mapBase,
+                mapTextConfirm,
                 onLocationSuccess,
                 onGetDirection;
 
@@ -23,14 +24,10 @@
                     title: "Destination"
                 }, function (marker) {
                     marker.showInfoWindow();
-                    setTimeout(function () {
-                        if (confirm('Do you want to go?')) {
-                            plugin.google.maps.external.launchNavigation({
-                                from: currentLocation,
-                                to: latLng
-                            });
-                        }
-                    }, 0);
+                    plugin.google.maps.external.launchNavigation({
+                        from: currentLocation,
+                        to: 'Cittadella Universitaria di Monserrato, Monserrato Cagliari'
+                    });
                 });
             };
             MapBase = function () {
