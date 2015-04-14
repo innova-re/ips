@@ -5,7 +5,8 @@
         return function($translateProvider) {
             $translateProvider
             .translations('en', {
-                cancel: 'Cancel',
+                back: 'Back',
+                getDirection: 'Get Direction',
                 title: 'Innovare Navigation',
                 services: 'Services',
                 services_text: 'The services offered by the laboratories are available and accessible through online form',
@@ -18,7 +19,8 @@
                 instruments_search: 'Enter some letters to see a list of instruments'
             })
             .translations('it', {
-                cancel: 'Cancella',
+                back: 'Indietro',
+                getDirection: 'Calcola percorso',
                 title: 'Navigazione Innovare',
                 services: 'Servizi',
                 services_text: 'I servizi offerti dai laboratori sono consultabili e accessibili mediante richiesta on-line',

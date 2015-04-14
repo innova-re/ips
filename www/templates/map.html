@@ -1,5 +1,8 @@
 <ion-view title="{{ laboratory.name }}">
     <ion-content has-header="true" padding="true">
+        <div class="map map-actions">
+            <button class="map map-get-direction">{{ 'getDirection' | translate }}</button>
+        </div>
         <div class="map map-canvas"></div>
     </ion-content>
 </ion-view>
