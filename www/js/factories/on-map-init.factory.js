@@ -1,34 +1,29 @@
-(function (define, document, setTimeout, confirm, plugin) {
+(function (define, document, plugin, launchnavigator, alert) {
     'use strict';
 
     define([
     ], function () {
-        return function (map, latLng) {
+        return function (latLng) {
 
-            var currentLocation,
-                getDirectionButton,
+            var getDirectionButton,
                 MapBase,
                 mapBase,
-                mapTextConfirm,
-                onLocationSuccess,
                 onGetDirection;
 
             getDirectionButton = document.getElementsByClassName('map-get-direction')[0];
-            onLocationSuccess = function (result) {
-                currentLocation = result;
-            };
-            map.getMyLocation({}, onLocationSuccess);
+
             onGetDirection = function (latLng) {
-                map.addMarker({
-                    position: latLng,
-                    title: "Destination"
-                }, function (marker) {
-                    marker.showInfoWindow();
-                    plugin.google.maps.external.launchNavigation({
-                        from: currentLocation,
-                        to: 'Cittadella Universitaria di Monserrato, Monserrato Cagliari'
-                    });
-                });
+                // TODO - use latLng
+                launchnavigator.navigate(
+                    'Cittadella Universitaria di Monserrato, Monserrato Cagliari',
+                    null,
+                    function () {
+                        return true;
+                    },
+                    function (error) {
+                        alert('Plugin error: ' + error);
+                    }
+                );
             };
             MapBase = function () {
                 plugin.google.maps.BaseClass.apply(this);
@@ -41,4 +36,4 @@
             });
         };
     });
-}(this.define, this.document, this.setTimeout, this.confirm, this.plugin));
+}(this.define, this.document, this.plugin, this.launchnavigator, this.alert));
