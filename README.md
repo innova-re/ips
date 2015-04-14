@@ -75,6 +75,12 @@ for android you can run:
     ionic build android
     ionic emulate android
 
+for Windows Phone 8.1 you can run:
+
+    cordova platform add wp8
+    ionic build wp8
+    ionic emulate wp8
+
 ## Supported Platforms
 
 - Android
@@ -82,6 +88,8 @@ for android you can run:
 - BlackBerry WebWorks (OS 5.0 and higher)
 
 - iPhone
+
+- Windows Phone 8.1
 
 ## Source Code Analysis 
 
