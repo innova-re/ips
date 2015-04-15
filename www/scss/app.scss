@@ -52,3 +52,26 @@ div.map.map-canvas {
 div.map.map-actions {
     z-index: 1;
 }
+
+/**
+ * Service
+ */
+.service div.service-info {
+    font-weight: bold;
+}
+
+.service div.service-descripiton {
+    white-space: normal;
+}
+
+.service div.laboratory-name {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/**
+ * Services
+ */
+.services div.service-name {
+    cursor: pointer;
+}

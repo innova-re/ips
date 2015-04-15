@@ -8,8 +8,9 @@
         'views/instruments.view',
         'views/planimetry.view',
         'views/services.view',
+        'views/service.view',
         'views/map.view'
-    ], function (tabView, homeView, laboratoriesView, instrumentsView, planimetryView, servicesView, mapView) {
+    ], function (tabView, homeView, laboratoriesView, instrumentsView, planimetryView, servicesView, serviceView, mapView) {
 
         return function ($stateProvider, $urlRouterProvider) {
 
@@ -17,6 +18,7 @@
                 .state('tabs', tabView)
                 .state('tabs.home', homeView)
                 .state('tabs.services', servicesView)
+                .state('tabs.service', serviceView)
                 .state('tabs.laboratories', laboratoriesView)
                 .state('tabs.instruments', instrumentsView)
                 .state('tabs.map', mapView)
