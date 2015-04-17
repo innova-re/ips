@@ -3,7 +3,10 @@
 
     define([
     ], function () {
-        return function (latLng) {
+        return function (lat, lng) {
+
+            var latLng = new plugin.google.maps.LatLng(lat, lng);
+
             return {
                 backgroundColor: 'white',
                 mapType: plugin.google.maps.MapTypeId.HYBRID,

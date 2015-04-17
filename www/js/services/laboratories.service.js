@@ -7,8 +7,8 @@
                 id: 0,
                 name: 'Laboratorio di Diffrattometria',
                 info: 'Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell\'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari.',
-                lat: 37.615856,
-                lng: -122.389382
+                lat: 39.270376,
+                lng: 9.124142
             },
             {
                 id: 1,
