@@ -46,9 +46,9 @@
                 });
 
                 // Add a GroundOverlay
-                var bounds = [
-                    new plugin.google.maps.LatLng(39.270148, 9.123533),
-                    new plugin.google.maps.LatLng(39.270630, 9.124764)
+                var bounds = [ 
+                    new plugin.google.maps.LatLng(39.269903, 9.123625),
+                    new plugin.google.maps.LatLng(39.2709, 9.124589)
                 ];
                 map.addGroundOverlay({
                     url: 'www/images/monserrato-blocco-G-0.png',
@@ -59,6 +59,7 @@
                     map.animateCamera({
                         'target': bounds
                     });
+                    groundOverlay.setBearing(-33.7696);
                 });
             };
             map.on(plugin.google.maps.event.MAP_READY, onMapReady);

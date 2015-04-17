@@ -13,8 +13,8 @@
                 overlay;
 
             imageBounds = new google.maps.LatLngBounds(
-                  new google.maps.LatLng(39.270148, 9.123533),
-                  new google.maps.LatLng(39.270630, 9.124764)
+                  new google.maps.LatLng(39.269903, 9.123625), // Southwest corner of the bound.
+                  new google.maps.LatLng(39.2709, 9.124589) // Northeast corner of the bound.
             );
             latLng = new google.maps.LatLng($scope.laboratory.lat, $scope.laboratory.lng);
             mapOptions = {
