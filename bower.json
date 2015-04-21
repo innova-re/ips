@@ -11,6 +11,7 @@
     "text": "~2.0.12",
     "bower": "*",
     "install": "~1.0.4",
-    "angular-translate": "~2.6.1"
+    "angular-translate": "~2.6.1",
+    "jquery": "~2.1.3"
   }
 }
