@@ -8,7 +8,7 @@
         return {
             url: '/map/:id',
             views: {
-                'tab-laboratories': {
+                'tab-services': {
                     template: mapTemplate,
                     controller: mapController
                 }

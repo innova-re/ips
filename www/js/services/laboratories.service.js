@@ -63,7 +63,8 @@
 
         return {
             get: function (id) {
-                return id ? laboratories[id] : laboratories;
+                // TODO you need to pass the id` parameter when the real laboratories data will be available.
+                return id ? laboratories[0] : laboratories;
             }
         };
     });

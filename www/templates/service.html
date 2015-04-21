@@ -1,13 +1,19 @@
-<ion-view title="{{ 'services' | translate }}">
+<ion-view title="{{ 'service_category' | translate }} {{service_category_name}}">
+    <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input type="search" placeholder="{{ 'services_search' | translate }}" ng-change="search()" ng-model="data.search">
+        </label>
+    </ion-header-bar>
     <ion-content>
         <ion-list>
             <ion-item
                 class="service"
-                ng-repeat="lab in labs"
-                ui-sref="tabs.map({id: lab.id})">
-                <div class="service-info">{{lab.serviceInfo}}</div>
-                <p class="service-descripiton">{{lab.serviceDescription}}</p>
-                <div class="laboratory-name">{{lab.name}}</div>
+                ng-repeat="service in services"
+                ui-sref="tabs.map({id: service.laboratory_id})">
+                <div class="service-info">{{service.service_name}}</div>
+                <p class="service-descripiton">{{service.service_description}}</p>
+                <div class="laboratory-name">{{service.laboratory_name}}</div>
             </ion-item>
         </ion-list>
     </ion-content>

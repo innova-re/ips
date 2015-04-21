@@ -11,18 +11,22 @@
             angularSanitize:  vendorDir + 'angular-sanitize/angular-sanitize',
             ionic: vendorDir + 'ionic/js/ionic',
             ionicAngular: vendorDir + 'ionic/js/ionic-angular',
+            lodash: vendorDir + 'lodash/lodash',
             text: vendorDir + 'text/text',
             uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router',
             angularTranslate: vendorDir + 'angular-translate/angular-translate',
             jquery: vendorDir + 'jquery/dist/jquery'
         },
         shim: {
-            angular : {
+            angular: {
                 exports : 'angular'
             },
-            angularAnimate : {deps: ['angular']},
-            angularSanitize : {deps: ['angular']},
-            ionic :  {deps: ['angular'], exports : 'ionic'},
+            lodash: {
+                exports: '_'
+            },
+            angularAnimate: {deps: ['angular']},
+            angularSanitize: {deps: ['angular']},
+            ionic:  {deps: ['angular'], exports : 'ionic'},
             ionicAngular: {deps: ['angular', 'ionic', 'uiRouter', 'angularAnimate', 'angularSanitize']},
             uiRouter: ['angular'],
             angularTranslate: ['angular']
