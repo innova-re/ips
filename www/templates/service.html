@@ -1,13 +1,13 @@
-<ion-view title="{{ 'services' | translate }}">
+<ion-view title="{{ 'service_category' | translate }} {{service_category_name}}">
     <ion-content>
         <ion-list>
             <ion-item
                 class="service"
                 ng-repeat="lab in labs"
                 ui-sref="tabs.map({id: lab.id})">
-                <div class="service-info">{{lab.serviceInfo}}</div>
-                <p class="service-descripiton">{{lab.serviceDescription}}</p>
-                <div class="laboratory-name">{{lab.name}}</div>
+                <div class="service-info">{{lab.service_name}}</div>
+                <p class="service-descripiton">{{lab.service_description}}</p>
+                <div class="laboratory-name">{{lab.laboratory_name}}</div>
             </ion-item>
         </ion-list>
     </ion-content>

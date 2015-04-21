@@ -9,7 +9,7 @@
 
                 var deferred = $q.defer();
                 var matches = items.filter(function(service) {
-                    if(service.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1 ) {
+                    if(service.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1 ) {
                         return true;
                     }
                 })

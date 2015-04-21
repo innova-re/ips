@@ -8,7 +8,10 @@
         MapBase = function () {
             plugin.google.maps.BaseClass.apply(this);
         };
-        MapBase.prototype = new plugin.google.maps.BaseClass();
+
+        if (plugin) {
+            MapBase.prototype = new plugin.google.maps.BaseClass();
+        }
 
         return MapBase;
     });

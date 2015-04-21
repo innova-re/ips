@@ -8,9 +8,9 @@
 
         return ['$scope', '$stateParams', function ($scope, $stateParams) {
 
-            var items = servicesService.get($stateParams.name);
+            $scope.service_category_name = $stateParams.name;
+            $scope.labs = servicesService.getServicesByServiceName($stateParams.name);
 
-            $scope.labs = items;
         }];
     });
 }(this.define));

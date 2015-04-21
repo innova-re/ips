@@ -1,89 +1,43 @@
 (function (define) {
     'use strict';
 
-    define([], function () {
+    define([
+        'lodash'
+    ], function (_) {
         // Might use a resource here that returns a JSON array. For now, some fake testing data.
-        var services = [
-            {
-                name: "Analisi Chimico-Fisiche",
-                labs: [
-                    {
-                        id: 0,
-                        serviceInfo: "Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali",
-                        name: "Laboratorio di Materiali Nanofasici per l'Energia e l'Ambiente",
-                        serviceDescription: "Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari."
-                    },
-                    {
-                        id: 0,
-                        serviceInfo: "Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali",
-                        name: "Laboratorio di Materiali Nanofasici per l'Energia e l'Ambiente",
-                        serviceDescription: "Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari."
-                    },
-                    {
-                        id: 0,
-                        serviceInfo: "Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali",
-                        name: "Laboratorio di Materiali Nanofasici per l'Energia e l'Ambiente",
-                        serviceDescription: "Caratterizzazione Chimico-Fisica di Diverse Classi di Materiali mediante: diffrazione ai raggi x, tecniche calorimetriche, termogravimetriche, analisi delle superifici dei materiali, studio dell'interazione solido-gas, microscopia ottica, gas cromatografia, studio delle dimensioni di materiali nanoparticellari."
-                    }
-                ]
-            },
-            {
-                name: "Calcoli Strutturali"
-            },
-            {
-                name: "Caratterizzazione Archeometrica"
-            },
-            {
-                name: "Caratterizzazione Morfologica e Cristallografica"
-            },
-            {
-                name: "Caratterizzazione Spettroscopica"
-            },
-            {
-                name: "Energia Rinnovabile"
-            },
-            {
-                name: "Fabbricazione Digitale"
-            },
-            {
-                name: "Interpretazione di Dati Analitici - Analisi Statistica"
-            },
-            {
-                name: "Metodiche di Biologia Molecolare"
-            },
-            {
-                name: "Microelettronica e Dispositivi ElettroniciAvanzati"
-            },
-            {
-                name: "Misure Elettriche ed Elettroniche"
-            },
-            {
-                name: "Monitoraggio Ambientale"
-            },
-            {
-                name: "Osservazioni Astronomiche"
-            },
-            {
-                name: "Preparazione Campioni"
-            },
-            {
-                name: "Prove sui materiali"
-            },
-            {
-                name: "Sintesi e/o Purificazione di Molecole"
-            },
-            {
-                name: "Sviluppo Materiali"
-            }
-        ];
-
+        var services = [ { name: 'Analisi Chimico-Fisiche',
+    service_name: 'Caratterizzazione di terre, minerali, rocce',
+    service_description: 'Stima del contenuto in sostanza organica per termogravimetria o LOI (Loss of Weight on Ignition).',
+    laboratory_name: 'Laboratorio Preparazione Minerali',
+    laboratory_id: 69 },
+  { name: 'Analisi Chimico-Fisiche',
+    service_name: 'Analisi',
+    service_description: 'Esecuzione di misure di analisi termica differenziale e termo gravimetrica (in simultanea)',
+    laboratory_name: 'Laboratorio Mulini',
+    laboratory_id: 74 },
+  { name: 'Analisi Chimico-Fisiche',
+    service_name: 'Analitica per risolvere problemi',
+    service_description: 'Analitica per risolvere problemi',
+    laboratory_name: 'Laboratorio Analitica delle Superfici',
+    laboratory_id: 75 },
+  { name: 'Analisi Chimico-Fisiche',
+    service_name: 'Caratterizzazione dei materiali',
+    service_description: 'Determinazione della composizione  elementare di un campione',
+    laboratory_name: 'Laboratorio di Diffrattometria Raggi X - Materiali',
+    laboratory_id: 72 },
+  { name: 'Diff Analisi Chimico-Fisiche',
+    service_name: 'Misure di densità',
+    service_description: 'Misure di densità su campioni liquidi',
+    laboratory_name: 'Laboratorio Fluidi Supercritici',
+    laboratory_id: 64 } ];
         return {
-            // If the serviceName is undefined then it returns services
-            // If the serviceName is defined then it returns the labs array associated to the serviceName
-            get: function (serviceName) {
-                return serviceName ? services.filter(function (service) {
-                    return service.name === serviceName;
-                })[0].labs : services;
+            getDistinctServices: function () {
+                return _.unique(services.map(function (object) {
+                    return object.name;
+                }));
+            },
+            getServicesByServiceName: function (serviceName) {
+                return _.where(services, {name: serviceName});
             }
         };
     });
