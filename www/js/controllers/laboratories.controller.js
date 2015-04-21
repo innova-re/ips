@@ -12,7 +12,7 @@
             $scope.laboratories = items;
 
             $scope.search = function() {
-                searchFactory.searchServices($scope.data.search, items).then(
+                searchFactory.searchLaboratories($scope.data.search, items).then(
                     function(matches) {
                         $scope.laboratories = matches;
                     }
