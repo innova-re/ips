@@ -13,7 +13,8 @@
             ionicAngular: vendorDir + 'ionic/js/ionic-angular',
             text: vendorDir + 'text/text',
             uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router',
-            angularTranslate: vendorDir + 'angular-translate/angular-translate'
+            angularTranslate: vendorDir + 'angular-translate/angular-translate',
+            jquery: vendorDir + 'jquery/dist/jquery'
         },
         shim: {
             angular : {
