@@ -10,8 +10,8 @@
                 searchServices,
                 searchServiceByDescrition,
                 searchLaboratories,
-                searchIntruments;
-
+                searchIntruments,
+                searchIntrumentsByDescrition;
 
             searchServices = function (searchFilter, items) {
 
@@ -68,7 +68,26 @@
             searchIntruments = function (searchFilter, items) {
 
                 matches = items.filter(function (instrument) {
-                    if (instrument.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1 ) {
+                    if (instrument.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1) {
+                        return true;
+                    }
+                });
+                deferred = $q.defer();
+                $timeout(function () {
+                    deferred.resolve(matches);
+                }, 100);
+
+                return deferred.promise;
+            };
+            searchIntrumentsByDescrition = function (searchFilter, items) {
+
+                var descriptionMatch,
+                    nameMatch;
+
+                matches = items.filter(function (instrument) {
+                    descriptionMatch = instrument.instrument_description.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
+                    nameMatch = instrument.instrument_name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
+                    if (descriptionMatch || nameMatch) {
                         return true;
                     }
                 });
@@ -84,7 +103,8 @@
                 searchServices: searchServices,
                 searchServiceByDescrition: searchServiceByDescrition,
                 searchLaboratories: searchLaboratories,
-                searchIntruments: searchIntruments
+                searchIntruments: searchIntruments,
+                searchIntrumentsByDescrition: searchIntrumentsByDescrition
             };
         }];
     });

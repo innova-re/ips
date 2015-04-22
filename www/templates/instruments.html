@@ -8,10 +8,11 @@
     </ion-header-bar>
     <ion-content>
         <ion-list>
-            <ion-item 
+            <ion-item
+                class="instruments"
                 ng-repeat="instrument in instruments" 
-                href="#/tab/laboratories">
-                {{instrument.name}}
+                ui-sref="tabs.instrument({name: instrument})">
+                <div class="instrument-name">{{instrument}}</div>
             </ion-item>
         </ion-list>
     </ion-content>

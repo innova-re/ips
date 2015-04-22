@@ -3,36 +3,14 @@
 
     define([], function () {
         // Might use a resource here that returns a JSON array. For now, some fake testing data.
-        var instruments = [
-            {
-                name: 'Analizzatori'
-            },
-            {
-                name: 'Convertitori, macchine ad azionamenti elettrici'
-            },
-            {
-                name: 'Cromatografi'
-            },
-            {
-                name: 'Microscopi'
-            },
-            {
-                name: 'Misuratori di grandezze fisiche'
-            },
-            {
-                name: 'Misuratori elettrochimici'
-            },
-            {
-                name: 'Rivelatori'
-            },
-            {
-                name: 'Sistemi a condizioni controllate'
-            }
-        ];
-
         return {
-            get: function ($stateParams) {
-                return instruments;
+            getDistinctInstruments: function () {
+                return _.unique(this.map(function (object) {
+                    return object.name;
+                }));
+            },
+            getInstrumentsByInstrumentName: function (instrumentName) {
+                return _.where(this, {name: instrumentName});
             }
         }
     });

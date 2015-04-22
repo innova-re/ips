@@ -1,4 +1,4 @@
-<ion-view title="{{ 'category' | translate }} {{service_category_name}}">
+<ion-view title="{{ 'category' | translate }} {{instrument_category_name}}">
     <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
         <label class="item-input-wrapper">
             <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -9,11 +9,11 @@
         <ion-list>
             <ion-item
                 class="service"
-                ng-repeat="service in services"
-                ui-sref="tabs.map({id: service.laboratory_id})">
-                <div class="service-info">{{service.service_name}}</div>
-                <p class="service-descripiton">{{service.service_description}}</p>
-                <div class="laboratory-name">{{service.laboratory_name}}</div>
+                ng-repeat="instrument in instruments"
+                ui-sref="tabs.map({id: instrument.laboratory_id})">
+                <div class="service-info">{{instrument.instrument_name}}</div>
+                <p class="service-descripiton">{{instrument.instrument_description}}</p>
+                <div class="laboratory-name">{{instrument.laboratory_name}}</div>
             </ion-item>
         </ion-list>
     </ion-content>
