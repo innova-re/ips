@@ -68,7 +68,7 @@
             searchIntruments = function (searchFilter, items) {
 
                 matches = items.filter(function (instrument) {
-                    if (instrument.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1) {
+                    if (instrument.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1) {
                         return true;
                     }
                 });
