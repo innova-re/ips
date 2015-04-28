@@ -5,20 +5,26 @@
         '../services/laboratories.service'
     ], function (laboratoriesService) {
 
-        return ['$scope', 'searchFactory', function($scope, searchFactory) {
+        return ['$scope', 'searchFactory', '$http', function ($scope, searchFactory, $http) {
 
-            var items = laboratoriesService.get();
 
-            $scope.laboratories = items;
+            var items,
+                promise,
+                searchAction;
 
-            $scope.search = function() {
+            promise = $http.get('json/laboratories.json');
+            searchAction = function () {
                 searchFactory.searchLaboratories($scope.data.search, items).then(
-                    function(matches) {
+                    function (matches) {
                         $scope.laboratories = matches;
                     }
-                )
+                );
             };
+            promise.then(function (payload) {
+                items = laboratoriesService.getLaboratories.call(payload.data);
+                $scope.laboratories = items;
+                $scope.search = searchAction;
+            });
         }];
-
     });
 }(this.define));

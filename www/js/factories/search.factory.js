@@ -48,13 +48,13 @@
             };
             searchLaboratories = function (searchFilter, items) {
 
-                var infoMatch,
+                var descriptionMatch,
                     nameMatch;
 
                 matches = items.filter(function (laboratories) {
-                    infoMatch = laboratories.info.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
+                    descriptionMatch = laboratories.description.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
                     nameMatch = laboratories.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    if (infoMatch || nameMatch) {
+                    if (descriptionMatch || nameMatch) {
                         return true;
                     }
                 });

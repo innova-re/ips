@@ -1,7 +1,9 @@
 (function (define) {
     'use strict';
 
-    define([], function () {
+    define([
+        'lodash'
+    ], function (_) {
         // Might use a resource here that returns a JSON array. For now, some fake testing data.
         return {
             getDistinctInstruments: function () {
