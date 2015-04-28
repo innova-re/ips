@@ -7,16 +7,20 @@
         '../controllers/map-controllers/map-app.controller'
     ], function (laboratoriesService, mapWebController, mapAppController) {
 
-        return function ($scope, $stateParams) {
+        return ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
 
             var app,
-                div;
+                div,
+                promise;
 
             app = document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
             div = document.getElementsByClassName('map-canvas')[0];
-            $scope.laboratory = laboratoriesService.get($stateParams.id);
+            promise = $http.get('json/laboratories.json');
 
-            app ? mapAppController($scope, div) : mapWebController($scope, div);
-        };
+            promise.then(function (payload) {
+                $scope.laboratory = laboratoriesService.getLaboratoryById.call(payload.data, $stateParams.id);
+                app ? mapAppController($scope, div) : mapWebController($scope, div);
+            });
+        }];
     });
 }(this.define, this.document));
