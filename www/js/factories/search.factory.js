@@ -1,24 +1,28 @@
 (function (define) {
     'use strict';
 
-    define([], function () {
+    define([
+        'lodash'
+    ], function (_) {
 
         return ['$q', '$timeout', function ($q, $timeout) {
 
             var deferred,
                 matches,
-                searchServices,
-                searchServiceByDescrition,
-                searchLaboratories,
-                searchIntruments,
-                searchIntrumentsByDescrition;
+                searchItem,
+                searchObject;
 
-            searchServices = function (searchFilter, items) {
+            // TODO - you should have just a method to search items
+            // TODO - you should pass the keys to search (for know you search in all keys)
+            searchItem = function (searchFilterString) {
+                matches = this.filter(function (items) {
 
-                matches = items.filter(function (service) {
-                    if (service.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1) {
-                        return true;
-                    }
+                    var result = _.map(searchFilterString.split(' '), function (searchFilter) {
+                        return items.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
+                    });
+
+                    return _.every(result, Boolean);
+
                 });
                 deferred = $q.defer();
                 $timeout(function () {
@@ -27,70 +31,24 @@
 
                 return deferred.promise;
             };
-            searchServiceByDescrition = function (searchFilter, items) {
+            searchObject = function (searchFilterString) {
+                matches = this.filter(function (items) {
 
-                var descriptionMatch,
-                    nameMatch;
+                    var result = _.map(searchFilterString.split(' '), function (searchFilter) {
 
-                matches = items.filter(function (service) {
-                    descriptionMatch = service.service_description.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    nameMatch = service.service_name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    if (descriptionMatch || nameMatch) {
-                        return true;
-                    }
+                        var results = [];
+
+                        _.forIn(items, function (value) {
+                            if (typeof value === 'string') {
+                                results.push(value.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1);
+                            }
+                        });
+                        return results.indexOf(true) !== -1;
+                    });
+
+                    return _.every(result, Boolean);
                 });
-                deferred = $q.defer();
-                $timeout(function () {
-                    deferred.resolve(matches);
-                }, 100);
 
-                return deferred.promise;
-            };
-            searchLaboratories = function (searchFilter, items) {
-
-                var descriptionMatch,
-                    nameMatch;
-
-                matches = items.filter(function (laboratories) {
-                    descriptionMatch = laboratories.description.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    nameMatch = laboratories.name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    if (descriptionMatch || nameMatch) {
-                        return true;
-                    }
-                });
-                deferred = $q.defer();
-                $timeout(function () {
-                    deferred.resolve(matches);
-                }, 100);
-
-                return deferred.promise;
-            };
-            searchIntruments = function (searchFilter, items) {
-
-                matches = items.filter(function (instrument) {
-                    if (instrument.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1) {
-                        return true;
-                    }
-                });
-                deferred = $q.defer();
-                $timeout(function () {
-                    deferred.resolve(matches);
-                }, 100);
-
-                return deferred.promise;
-            };
-            searchIntrumentsByDescrition = function (searchFilter, items) {
-
-                var descriptionMatch,
-                    nameMatch;
-
-                matches = items.filter(function (instrument) {
-                    descriptionMatch = instrument.instrument_description.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    nameMatch = instrument.instrument_name.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    if (descriptionMatch || nameMatch) {
-                        return true;
-                    }
-                });
                 deferred = $q.defer();
                 $timeout(function () {
                     deferred.resolve(matches);
@@ -100,11 +58,8 @@
             };
 
             return {
-                searchServices: searchServices,
-                searchServiceByDescrition: searchServiceByDescrition,
-                searchLaboratories: searchLaboratories,
-                searchIntruments: searchIntruments,
-                searchIntrumentsByDescrition: searchIntrumentsByDescrition
+                searchItem: searchItem,
+                searchObject: searchObject
             };
         }];
     });
