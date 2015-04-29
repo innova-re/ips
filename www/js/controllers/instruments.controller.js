@@ -13,7 +13,7 @@
 
             promise = $http.get('json/instruments.json');
             searchAction = function () {
-                searchFactory.searchIntruments($scope.data.search, items).then(
+                searchFactory.searchItem.call(items, $scope.data.search).then(
                     function (matches) {
                         $scope.instruments = matches;
                     }

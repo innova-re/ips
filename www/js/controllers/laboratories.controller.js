@@ -14,7 +14,7 @@
 
             promise = $http.get('json/laboratories.json');
             searchAction = function () {
-                searchFactory.searchLaboratories($scope.data.search, items).then(
+                searchFactory.searchObject.call(items, $scope.data.search).then(
                     function (matches) {
                         $scope.laboratories = matches;
                     }
