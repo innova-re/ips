@@ -15,7 +15,6 @@
             text: vendorDir + 'text/text',
             uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router',
             angularTranslate: vendorDir + 'angular-translate/angular-translate',
-            jquery: vendorDir + 'jquery/dist/jquery',
             leaflet: vendorDir + 'leaflet/dist/leaflet',
             // TODO - the angular-leaflet-directive taken with bower does not display the map on android!
             angularLeafletDirective: 'vendors/angular-leaflet-directive'
@@ -28,7 +27,7 @@
                 exports: '_'
             },
             angularLeafletDirective: {
-                deps: ['angular', 'leaflet', 'jquery']
+                deps: ['angular', 'leaflet']
             },
             angularAnimate: {deps: ['angular']},
             angularSanitize: {deps: ['angular']},
