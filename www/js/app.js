@@ -9,13 +9,15 @@
         'factories/search.factory',
         'ionicAngular',
         'uiRouter',
-        'angularTranslate'
+        'angularTranslate',
+        'angularLeafletDirective'
     ], function (angular, route, appLocale, planimetryDirective, searchFactory) {
 
         var app = angular.module('ipsApp', [
             'ionic',
             'ui.router',
-            'pascalprecht.translate'
+            'pascalprecht.translate',
+            'leaflet-directive'
         ]);
 
         app.directive('planimetry', planimetryDirective);
