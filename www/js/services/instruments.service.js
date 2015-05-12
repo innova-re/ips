@@ -8,11 +8,11 @@
         return {
             getDistinctInstruments: function () {
                 return _.unique(this.map(function (object) {
-                    return object.name;
+                    return object.instrument_category_name;
                 }));
             },
             getInstrumentsByInstrumentName: function (instrumentName) {
-                return _.where(this, {name: instrumentName});
+                return _.where(this, {instrument_category_name: instrumentName});
             }
         }
     });

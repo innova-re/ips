@@ -9,28 +9,8 @@
 
             var deferred,
                 matches,
-                searchItem,
                 searchObject;
 
-            // TODO - you should have just a method to search items
-            // TODO - you should pass the keys to search (for know you search in all keys)
-            searchItem = function (searchFilterString) {
-                matches = this.filter(function (items) {
-
-                    var result = _.map(searchFilterString.split(' '), function (searchFilter) {
-                        return items.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1;
-                    });
-
-                    return _.every(result, Boolean);
-
-                });
-                deferred = $q.defer();
-                $timeout(function () {
-                    deferred.resolve(matches);
-                }, 100);
-
-                return deferred.promise;
-            };
             searchObject = function (searchFilterString) {
                 matches = this.filter(function (items) {
 
@@ -58,7 +38,6 @@
             };
 
             return {
-                searchItem: searchItem,
                 searchObject: searchObject
             };
         }];

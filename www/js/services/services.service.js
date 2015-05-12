@@ -8,11 +8,11 @@
         return {
             getDistinctServices: function () {
                 return _.unique(this.map(function (object) {
-                    return object.name;
+                    return object.service_category_name;
                 }));
             },
             getServicesByServiceName: function (serviceName) {
-                return _.where(this, {name: serviceName});
+                return _.where(this, {service_category_name: serviceName});
             }
         };
     });

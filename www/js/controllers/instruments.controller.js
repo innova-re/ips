@@ -9,18 +9,26 @@
 
             var items,
                 promise,
-                searchAction;
+                searchAction,
+                itemsToSearch,
+                getItems;
 
+            getItems = function (matches) {
+                return _.unique(matches.map(function (object) {
+                    return object.instrument_category_name;
+                }));
+            };
             promise = $http.get('json/instruments.json');
             searchAction = function () {
-                searchFactory.searchItem.call(items, $scope.data.search).then(
+                searchFactory.searchObject.call(itemsToSearch, $scope.data.search).then(
                     function (matches) {
-                        $scope.instruments = matches;
+                        $scope.instruments = getItems(matches);
                     }
                 );
             };
             promise.then(function (payload) {
                 items = instrumentsService.getDistinctInstruments.call(payload.data);
+                itemsToSearch = payload.data;
                 $scope.instruments = items;
                 $scope.search = searchAction;
             });
