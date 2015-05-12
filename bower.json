@@ -12,6 +12,7 @@
     "bower": "*",
     "install": "~1.0.4",
     "angular-translate": "~2.6.1",
-    "lodash": "~3.7.0"
+    "lodash": "~3.7.0",
+    "spinjs": "~2.0.2"
   }
 }
