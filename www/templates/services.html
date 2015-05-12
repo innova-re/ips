@@ -10,7 +10,7 @@
             <ion-item
                 class="services"
                 ng-repeat="service in services" 
-                ui-sref="tabs.service({name: service})">
+                ui-sref="tabs.service({name: service, search: data.search})">
                 <div class="service-name">{{service}}</div>
             </ion-item>
         </ion-list>

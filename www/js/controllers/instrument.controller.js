@@ -24,7 +24,13 @@
                 $scope.instrument_category_name = $stateParams.name;
                 $scope.instruments = items;
                 $scope.search = searchAction;
+                // TODO - DRY see the service controller
+                $scope.data = {
+                    search: $stateParams.search
+                };
+                searchAction();
             });
+
         }];
     });
 }(this.define));
