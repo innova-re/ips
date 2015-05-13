@@ -52,6 +52,10 @@ div.map.map-actions {
 /**
  * Service
  */
+.service a {
+  cursor: pointer;
+}
+
 .service div.service-info {
     font-weight: bold;
 }
