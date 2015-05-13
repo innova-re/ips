@@ -5,7 +5,6 @@
         '../services/services.service'
     ], function (servicesService) {
 
-
         return ['$scope', '$stateParams', 'searchFactory', '$http', function ($scope, $stateParams, searchFactory, $http) {
 
             var items,
@@ -25,6 +24,11 @@
                 $scope.service_category_name = $stateParams.name;
                 $scope.services = items;
                 $scope.search = searchAction;
+                // TODO - DRY see the instrument controller
+                $scope.data = {
+                    search: $stateParams.search
+                };
+                searchAction();
             });
         }];
     });
