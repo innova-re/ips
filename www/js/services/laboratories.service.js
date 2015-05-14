@@ -5,6 +5,7 @@
         'lodash'
     ], function (_) {
         return {
+            // TODO - move into utils
             getLaboratories: function () {
                 return this;
             },

@@ -12,12 +12,14 @@
             ionic: vendorDir + 'ionic/js/ionic',
             ionicAngular: vendorDir + 'ionic/js/ionic-angular',
             lodash: vendorDir + 'lodash/lodash',
-            text: vendorDir + 'text/text',
+            text: vendorDir + 'requirejs-plugins/lib/text',
+            json : vendorDir + 'requirejs-plugins/src/json',
             uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router',
             angularTranslate: vendorDir + 'angular-translate/angular-translate',
             leaflet: vendorDir + 'leaflet/dist/leaflet',
             // TODO - the angular-leaflet-directive taken with bower does not display the map on android!
             angularLeafletDirective: 'vendors/angular-leaflet-directive',
+            // TODO - remove spin to use ionic spin
             spin: vendorDir + 'spinjs/spin'
         },
         shim: {
