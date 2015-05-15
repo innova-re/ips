@@ -14,7 +14,7 @@
             searchObject = function (searchFilterString) {
                 matches = this.filter(function (items) {
 
-                    var result = _.map(searchFilterString.split(' '), function (searchFilter) {
+                    var result = !searchFilterString ? true : _.map(searchFilterString.split(' '), function (searchFilter) {
 
                         var results = [];
 
