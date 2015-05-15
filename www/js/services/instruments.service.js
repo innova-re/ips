@@ -4,7 +4,7 @@
     define([
         'lodash'
     ], function (_) {
-        // Might use a resource here that returns a JSON array. For now, some fake testing data.
+        // TODO - move into utils
         return {
             getDistinctInstruments: function () {
                 return _.unique(this.map(function (object) {

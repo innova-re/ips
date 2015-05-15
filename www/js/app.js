@@ -7,11 +7,12 @@
         '../locales/app.locale',
         'directives/planimetry.directive',
         'factories/search.factory',
+        'factories/service.factory',
         'ionicAngular',
         'uiRouter',
         'angularTranslate',
         'angularLeafletDirective'
-    ], function (angular, route, appLocale, planimetryDirective, searchFactory) {
+    ], function (angular, route, appLocale, planimetryDirective, searchFactory, serviceFactory) {
 
         var app = angular.module('ipsApp', [
             'ionic',
@@ -22,6 +23,7 @@
 
         app.directive('planimetry', planimetryDirective);
         app.factory('searchFactory', searchFactory);
+        app.factory('serviceFactory', serviceFactory);
         app.config(route);
         app.config(appLocale);
         angular.element().ready(function () {

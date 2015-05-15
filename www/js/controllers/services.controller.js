@@ -2,15 +2,15 @@
     'use strict';
 
     define([
-        '../services/services.service',
+        '../utils/services.util',
         'lodash'
-    ], function (servicesService, _) {
+    ], function (servicesUtil, _) {
 
 
-        return ['$scope', 'searchFactory', '$http', function ($scope, searchFactory, $http) {
+        return ['$scope', 'searchFactory', 'serviceFactory',
+                function ($scope, searchFactory, serviceFactory) {
 
             var items,
-                promise,
                 searchAction,
                 itemsToSearch,
                 getItems;
@@ -20,7 +20,6 @@
                     return object.service_category_name;
                 }));
             };
-            promise = $http.get('json/services.json');
             searchAction = function () {
                 searchFactory.searchObject.call(itemsToSearch, $scope.data.search).then(
                     function (matches) {
@@ -28,12 +27,10 @@
                     }
                 );
             };
-            promise.then(function (payload) {
-                items = servicesService.getDistinctServices.call(payload.data);
-                itemsToSearch = payload.data;
-                $scope.services = items;
-                $scope.search = searchAction;
-            });
+            items = servicesUtil.getDistinctServices.call(serviceFactory.servicesJson);
+            itemsToSearch = serviceFactory.servicesJson;
+            $scope.services = items;
+            $scope.search = searchAction;
         }];
     });
 }(this.define));

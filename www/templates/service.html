@@ -9,11 +9,16 @@
         <ion-list>
             <ion-item
                 class="service"
-                ng-repeat="service in services"
-                ui-sref="tabs.map({id: service.laboratory_id})">
+                ng-repeat="service in services">
                 <div class="service-info">{{service.service_name}}</div>
-                <p class="service-descripiton">{{service.service_description}}</p>
-                <div class="laboratory-name">{{service.laboratory_name}}</div>
+                <p class="service-descripiton"
+                    ng-click="showPopup({{service.service_id}}, 'service')">
+                    {{service.service_description}}
+                </p>
+                <div class="laboratory-name"
+                    ng-click="showPopup({{service.service_id}}, 'laboratory')">
+                    {{service.laboratory_name}}
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>
