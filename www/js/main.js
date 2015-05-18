@@ -12,6 +12,7 @@
             ionic: vendorDir + 'ionic/js/ionic',
             ionicAngular: vendorDir + 'ionic/js/ionic-angular',
             lodash: vendorDir + 'lodash/lodash',
+            markercluster: vendorDir + 'leaflet.markercluster/dist/leaflet.markercluster',
             text: vendorDir + 'requirejs-plugins/lib/text',
             json : vendorDir + 'requirejs-plugins/src/json',
             uiRouter: vendorDir + 'angular-ui-router/release/angular-ui-router',
@@ -36,6 +37,7 @@
             angularSanitize: {deps: ['angular']},
             ionic:  {deps: ['angular'], exports : 'ionic'},
             ionicAngular: {deps: ['angular', 'ionic', 'uiRouter', 'angularAnimate', 'angularSanitize']},
+            markercluster: ['angular', 'leaflet'],
             uiRouter: ['angular'],
             angularTranslate: ['angular']
         },

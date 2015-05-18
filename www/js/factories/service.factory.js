@@ -24,7 +24,7 @@
                             text: 'Cancel' 
                         },
                         {
-                            text: '<a>Go</a>',
+                            text: '<a>Vai</a>',
                             type: 'button-positive',
                             onTap: function (event) {
                                 event.preventDefault();
