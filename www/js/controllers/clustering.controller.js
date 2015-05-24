@@ -2,64 +2,41 @@
     'use strict';
 
     define([
-        'lodash',
         'angular',
         'json!../../json/laboratories.json',
-        '../utils/provincie.util',
+        'json!../../json/macroarea.json',
+        '../utils/clustering.util',
         'markercluster'
-    ], function (_, angular, laboratories, provincieUtil) {
+    ], function (angular, laboratories, macroarea, clusteringUtil) {
 
-        return ['$scope', function ($scope) {
+        return ['$scope', 'leafletData', function ($scope, leafletData) {
 
-            var addressPointsToMarkers,
-                getOverlays;
-
-            addressPointsToMarkers = function (laboratories) {
-                return laboratories.map(function (object) {
-                    return {
-                        layer: provincieUtil[object.id_provincia],
-                        lat: object.lat,
-                        lng: object.lng,
-                        message: '<h4>' + object.name + '</h4>' + object.description
-                    };
-                });
-            };
-            getOverlays = function (laboratories) {
-                var city_names,
-                    key,
-                    overlays = {};
-
-                city_names = _.uniq(laboratories, 'id_provincia');
-
-                city_names.map(function (object) {
-                    key = provincieUtil[object.id_provincia];
-                    overlays[key] = {
-                        name: key,
-                        type: 'markercluster',
-                        visible: true
-                    };
-                });
-
-                return overlays;
-            };
             angular.extend($scope, {
                 center: {
                     lat: 39.214699,
                     lng: 9.112757,
                     zoom: 7
                 },
-                layers: {
-                    baselayers: {
-                        osm: {
-                            name: 'OpenStreetMap',
-                            type: 'xyz',
-                            url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                        }
-                    }
-                }
+                layers: clusteringUtil.getLayers()
             });
-            $scope.layers.overlays = getOverlays(laboratories);
-            $scope.markers = addressPointsToMarkers(laboratories);
+            leafletData.getMap().then(function (map) {
+                map.on('baselayerchange', function (event) {
+                    // TODO - when changing the layer I got the following errors:
+                    // Uncaught TypeError: Cannot read property 'layerId' of undefined
+                    // Uncaught TypeError: Cannot read property 'hasLayer' of null
+                    // TODO - when changing the layer the radio input is not updated
+                    var clusteringName,
+                        items;
+
+                    clusteringName = event.name;
+                    items = (clusteringName === 'macroarea') ? macroarea : laboratories;
+                    $scope.layers.overlays = clusteringUtil.getOverlays(items, clusteringName);
+                    $scope.markers = clusteringUtil.addressPointsToMarkers(items, clusteringName);
+                });
+            });
+
+            $scope.layers.overlays = clusteringUtil.getOverlays(laboratories, 'ente');
+            $scope.markers = clusteringUtil.addressPointsToMarkers(laboratories, 'ente');
         }];
     });
 }(this.define));
