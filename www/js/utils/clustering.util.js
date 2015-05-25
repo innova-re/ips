@@ -60,7 +60,6 @@
             return overlays;
         };
 
-
         return {
             addressPointsToMarkers: addressPointsToMarkers,
             getOverlays: getOverlays,
