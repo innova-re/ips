@@ -10,8 +10,9 @@
         'views/planimetry.view',
         'views/services.view',
         'views/service.view',
-        'views/map.view'
-    ], function (tabView, homeView, laboratoriesView, instrumentsView, instrumentView, planimetryView, servicesView, serviceView, mapView) {
+        'views/map.view',
+        'views/clustering.view'
+    ], function (tabView, homeView, laboratoriesView, instrumentsView, instrumentView, planimetryView, servicesView, serviceView, mapView, clusteringView) {
 
         return function ($stateProvider, $urlRouterProvider) {
 
@@ -25,6 +26,7 @@
                 .state('tabs.instrument', instrumentView)
                 .state('tabs.map', mapView)
                 .state('tabs.planimetry', planimetryView)
+                .state('tabs.clustering', clusteringView)
             $urlRouterProvider.otherwise('/tab/home');
         };
     });
