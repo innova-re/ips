@@ -1,0 +1,25 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{ modal.laboratory.name }}</h1>
+        <div class="button button-clear" ng-click="modal.hide()">
+            <span class="icon ion-close"></span>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider">
+                <!-- TODO - use locales-->
+                Descrizione
+            </div>
+            <div class="item item-text-wrap">
+                {{ modal.laboratory.description }}
+            </div>
+            <div class="item item-divider">
+                Ente di Afferenza
+            </div>
+            <div class="item item-text-wrap">
+                {{ modal.laboratory.ente_name }}
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

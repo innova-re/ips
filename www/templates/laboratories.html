@@ -9,9 +9,10 @@
         <ion-list>
             <ion-item
                 ng-repeat="laboratory in laboratories"
-                href="#/tab/map/{{laboratory.id }}"
                 class="laboratory-title">
-                <div class="laboratory-title">{{laboratory.name}}</div>
+                <div class="laboratory-title"
+                    ng-click="openModal({{laboratory.id}})">{{laboratory.name}}
+                </div>
                 <p class="laboratory-description">{{laboratory.description}}</p>
         </ion-list>
     </ion-content>

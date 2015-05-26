@@ -16,6 +16,9 @@
             },
             getLaboratoryByServiceId: function (serviceId) {
                 return _.where(this, {service_id: serviceId})[0];
+            },
+            getLaboratoryByLaboratoryId: function (laboratoryId) {
+                return _.where(this, {id: laboratoryId})[0];
             }
         };
     });

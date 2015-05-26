@@ -6,13 +6,14 @@
         'spin'
     ], function (laboratoriesService, Spinner) {
 
-        return ['$scope', 'searchFactory', '$http', function ($scope, searchFactory, $http) {
+        return ['$scope', 'searchFactory', '$http', 'modalFactory', function ($scope, searchFactory, $http, modalFactory) {
 
             var items,
                 promise,
                 searchAction,
                 spinner;
-
+ 
+            modalFactory.init($scope);
             spinner = new Spinner().spin();
             document.querySelector('body').appendChild(spinner.el);
             promise = $http.get('json/laboratories.json');
