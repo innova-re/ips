@@ -9,17 +9,41 @@
         <div class="card">
             <div class="item item-divider">
                 <!-- TODO - use locales-->
-                Descrizione
-            </div>
-            <div class="item item-text-wrap">
-                {{ modal.laboratory.description }}
-            </div>
-            <div class="item item-divider">
                 Ente di Afferenza
             </div>
             <div class="item item-text-wrap">
-                {{ modal.laboratory.ente_name }}
+                {{ laboratory.ente_name }}
             </div>
+            <div class="item item-divider">
+                Area
+            </div>
+            <div class="item item-text-wrap">
+                {{ laboratory.area_name }}
+            </div>
+            <div class="item item-divider">
+                Sede
+            </div>
+            <div class="item item-text-wrap">
+                {{ laboratory.sede }}
+            </div>
+            <div class="item item-divider">
+                Descrizione
+            </div>
+            <div class="item item-text-wrap">
+                {{ laboratory.description }}
+            </div>
+            <!-- TODO - add Servizi del Laboratorio and Strumenti del Laboratorio -->
         </div>
     </ion-content>
+    <ion-footer-bar class="bar-positive">
+        <a class="button button-light"
+            ui-sref="tabs.map({id: laboratory.id})"
+            ng-click="modal.hide()">
+            Vai al laboratorio
+        </a>
+        <button class="button button-light"
+            ng-click="modal.hide()">
+            Torna indietro
+        </button>
+    </ion-footer-bar>
 </ion-modal-view>

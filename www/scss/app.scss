@@ -33,6 +33,7 @@ object {
  * Laboratory
  */
 div.laboratory-title {
+    cursor: pointer;
     white-space: normal;
 }
 
@@ -53,7 +54,7 @@ div.map.map-actions {
  * Service
  */
 .service a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .service div.service-info {

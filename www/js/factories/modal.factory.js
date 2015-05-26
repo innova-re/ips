@@ -11,13 +11,12 @@
 
             var init = function ($scope) {
 
-                $scope.modal = $ionicModal.fromTemplate(laboratoryModalTemplate, {
-                    scope: $scope,
-                    animation: 'slide-in-up'
-                });
-
                 $scope.openModal = function (laboratoryId) {
-                    $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId.call(laboratoriesJson, laboratoryId);
+                    $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId.call(laboratoriesJson, laboratoryId);
+                    $scope.modal = $ionicModal.fromTemplate(laboratoryModalTemplate, {
+                        scope: $scope,
+                        animation: 'slide-in-up'
+                    });
                     $scope.modal.show();
                 };
             };
