@@ -2,10 +2,9 @@
     'use strict';
 
     define([
-        '../utils/services.util',
-        'json!../../json/services.json'
-    ], function (servicesUtil, servicesJson) {
-
+        '../utils/services.util'
+    ], function (servicesUtil) {
+        // TODO - rename in popup or remove it because you will use modal
         return ['$ionicPopup', function ($ionicPopup) {
 
             var showPopup;
@@ -15,7 +14,7 @@
                 var item,
                     popup;
 
-                item = servicesUtil.getLaboratoryByServiceId.call(servicesJson, serviceId);
+                item = servicesUtil.getLaboratoryByServiceId(serviceId);
                 popup = $ionicPopup.show({
                     title: item[entity + '_name'],
                     template: item[entity + '_description'],
@@ -37,8 +36,7 @@
             };
 
             return {
-                showPopup: showPopup,
-                servicesJson: servicesJson
+                showPopup: showPopup
             };
         }];
     });

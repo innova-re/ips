@@ -3,8 +3,9 @@
 
     define([
         '../utils/services.util',
+        'json!../../json/services.json',
         'lodash'
-    ], function (servicesUtil, _) {
+    ], function (servicesUtil, servicesJson, _) {
 
 
         return ['$scope', 'searchFactory', 'serviceFactory',
@@ -27,8 +28,8 @@
                     }
                 );
             };
-            items = servicesUtil.getDistinctServices.call(serviceFactory.servicesJson);
-            itemsToSearch = serviceFactory.servicesJson;
+            items = servicesUtil.getDistinctServices();
+            itemsToSearch = servicesJson;
             $scope.services = items;
             $scope.search = searchAction;
         }];

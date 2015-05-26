@@ -19,9 +19,7 @@
             angularTranslate: vendorDir + 'angular-translate/angular-translate',
             leaflet: vendorDir + 'leaflet/dist/leaflet-src',
             // TODO - the angular-leaflet-directive taken with bower does not display the map on android!
-            angularLeafletDirective: 'vendors/angular-leaflet-directive',
-            // TODO - remove spin to use ionic spin
-            spin: vendorDir + 'spinjs/spin'
+            angularLeafletDirective: 'vendors/angular-leaflet-directive'
         },
         shim: {
             angular: {

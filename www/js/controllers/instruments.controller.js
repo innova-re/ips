@@ -2,8 +2,8 @@
     'use strict';
 
     define([
-        '../services/instruments.service'
-    ], function (instrumentsService) {
+        '../utils/services.util'
+    ], function (servicesUtil) {
 
         return ['$scope', 'searchFactory', '$http', function ($scope, searchFactory, $http) {
 
@@ -27,7 +27,7 @@
                 );
             };
             promise.then(function (payload) {
-                items = instrumentsService.getDistinctInstruments.call(payload.data);
+                items = servicesUtil.getDistinctInstruments();
                 itemsToSearch = payload.data;
                 $scope.instruments = items;
                 $scope.search = searchAction;

@@ -4,15 +4,17 @@
     define([
         'text!../../templates/modals/laboratory.modal.html',
         '../utils/services.util',
-        'json!../../json/laboratories.json'
-    ], function (laboratoryModalTemplate, servicesUtil, laboratoriesJson) {
+        'json!../../json/services.json'
+    ], function (laboratoryModalTemplate, servicesUtil, servicesJson) {
 
         return ['$ionicModal', function ($ionicModal) {
 
             var init = function ($scope) {
 
                 $scope.openModal = function (laboratoryId) {
-                    $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId.call(laboratoriesJson, laboratoryId);
+                    $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
+                    $scope.services = servicesUtil.getServicesByLaboratoryId(laboratoryId);
+                    $scope.instruments = servicesUtil.getInstrumentsByLaboratoryId(laboratoryId);
                     $scope.modal = $ionicModal.fromTemplate(laboratoryModalTemplate, {
                         scope: $scope,
                         animation: 'slide-in-up'

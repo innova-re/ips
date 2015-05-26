@@ -5,7 +5,6 @@
         'angular',
         'route',
         '../locales/app.locale',
-        'directives/planimetry.directive',
         'factories/search.factory',
         'factories/service.factory',
         'factories/modal.factory',
@@ -13,7 +12,7 @@
         'uiRouter',
         'angularTranslate',
         'angularLeafletDirective'
-    ], function (angular, route, appLocale, planimetryDirective, searchFactory, serviceFactory, modalFactory) {
+    ], function (angular, route, appLocale, searchFactory, serviceFactory, modalFactory) {
 
         var app = angular.module('ipsApp', [
             'ionic',
@@ -22,7 +21,6 @@
             'leaflet-directive'
         ]);
 
-        app.directive('planimetry', planimetryDirective);
         app.factory('searchFactory', searchFactory);
         app.factory('serviceFactory', serviceFactory);
         app.factory('modalFactory', modalFactory);

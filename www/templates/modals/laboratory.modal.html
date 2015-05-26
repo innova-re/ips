@@ -1,6 +1,6 @@
 <ion-modal-view>
     <ion-header-bar class="bar-positive">
-        <h1 class="title">{{ modal.laboratory.name }}</h1>
+        <h1 class="title">{{ laboratory.name }}</h1>
         <div class="button button-clear" ng-click="modal.hide()">
             <span class="icon ion-close"></span>
         </div>
@@ -9,6 +9,12 @@
         <div class="card">
             <div class="item item-divider">
                 <!-- TODO - use locales-->
+                Telefono
+            </div>
+            <div class="item item-text-wrap">
+                {{ laboratory.telephone }}
+            </div>
+            <div class="item item-divider">
                 Ente di Afferenza
             </div>
             <div class="item item-text-wrap">
@@ -27,12 +33,41 @@
                 {{ laboratory.sede }}
             </div>
             <div class="item item-divider">
+                Sito web
+            </div>
+            <div class="item item-text-wrap">
+                <a href="{{ laboratory.web_site }}">{{ laboratory.web_site }}</a>
+            </div>
+            <div class="item item-divider">
+                Servizi
+            </div>
+            <div class="item item-text-wrap">
+                <ion-list>
+                    <ion-item
+                        class="services"
+                        ng-repeat="service in services">
+                        <div class="service-name">{{service.service_name}}</div>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <div class="item item-divider">
+                Strumenti
+            </div>
+            <div class="item item-text-wrap">
+                <ion-list>
+                    <ion-item
+                        class="services"
+                        ng-repeat="instrument in instruments">
+                        <div class="service-name">{{instrument.instrument_name}}</div>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <div class="item item-divider">
                 Descrizione
             </div>
             <div class="item item-text-wrap">
                 {{ laboratory.description }}
             </div>
-            <!-- TODO - add Servizi del Laboratorio and Strumenti del Laboratorio -->
         </div>
     </ion-content>
     <ion-footer-bar class="bar-positive">
