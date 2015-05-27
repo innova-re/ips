@@ -42,20 +42,27 @@
             getInstrumentsByLaboratoryId: function (laboratoryId) {
                 return _.where(instruments, {laboratory_id: laboratoryId});
             },
-            getLaboratories: function () {
-                return laboratories;
+
+            /*
+             * Laboratories Methods
+             */
+            getLaboratories: function (parameters) {
+
+                var laboratoriesFound = function () {
+                    console.log(parameters);
+                };
+                return parameters ? laboratoriesFound() : laboratories;
             },
-            getLaboratoryById: function (laboratoryId) {
+            getLaboratoryByLaboratoryId: function (laboratoryId) {
                 return _.where(laboratories, {
                     id: parseInt(laboratoryId, 10)
                 })[0];
             },
-            getLaboratoryByLaboratoryId: function (laboratoryId) {
-                return _.where(laboratories, {id: laboratoryId})[0];
-            },
             getLaboratoryByServiceId: function (serviceId) {
+                console.log('serviceId:', serviceId);
                 return _.where(services, {service_id: serviceId})[0];
             },
+
             getMacroarea: function () {
                 return macroarea;
             },
