@@ -5,8 +5,9 @@
         'lodash',
         'json!../../json/laboratories.json',
         'json!../../json/services.json',
-        'json!../../json/instruments.json'
-    ], function (_, laboratories, services, instruments) {
+        'json!../../json/instruments.json',
+        'json!../../json/macroarea.json'
+    ], function (_, laboratories, services, instruments, macroarea) {
         
         return {
             getDistinctInstruments: function () {
@@ -54,6 +55,12 @@
             },
             getLaboratoryByServiceId: function (serviceId) {
                 return _.where(services, {service_id: serviceId})[0];
+            },
+            getMacroarea: function () {
+                return macroarea;
+            },
+            getServices: function () {
+                return services;
             },
             getServicesByServiceName: function (serviceName) {
                 return _.where(services, {service_category_name: serviceName});

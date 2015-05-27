@@ -3,9 +3,8 @@
 
     define([
         'text!../../templates/modals/laboratory.modal.html',
-        '../utils/services.util',
-        'json!../../json/services.json'
-    ], function (laboratoryModalTemplate, servicesUtil, servicesJson) {
+        '../utils/services.util'
+    ], function (laboratoryModalTemplate, servicesUtil) {
 
         return ['$ionicModal', function ($ionicModal) {
 
