@@ -6,9 +6,17 @@
     ], function (_) {
 
         var addressPointsToMarkers,
+            getCenter,
             getOverlays,
             getLayers;
 
+        getCenter = function () {
+            return {
+                lat: 39.214699,
+                lng: 9.112757,
+                zoom: 7
+            };
+        };
         getLayers = function () {
 
             var baselayersUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -62,6 +70,7 @@
 
         return {
             addressPointsToMarkers: addressPointsToMarkers,
+            getCenter: getCenter,
             getOverlays: getOverlays,
             getLayers: getLayers
         };

@@ -2,8 +2,8 @@
     'use strict';
 
     define([
-        '../services/instruments.service'
-    ], function (instrumentsService) {
+        '../utils/services.util'
+    ], function (servicesUtil) {
 
         return ['$scope', '$stateParams', 'searchFactory', '$http', function ($scope, $stateParams, searchFactory, $http) {
 
@@ -20,7 +20,7 @@
                 );
             };
             promise.then(function (payload) {
-                items = instrumentsService.getInstrumentsByInstrumentName.call(payload.data, $stateParams.name);
+                items = servicesUtil.getInstrumentsByInstrumentName($stateParams.name);
                 $scope.instrument_category_name = $stateParams.name;
                 $scope.instruments = items;
                 $scope.search = searchAction;

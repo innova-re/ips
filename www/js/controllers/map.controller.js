@@ -2,13 +2,11 @@
     'use strict';
 
     define([
-        '../services/laboratories.service',
+        '../utils/services.util',
         '../utils/geo-json.util'
-    ], function (laboratoriesService, geoJsonUtil) {
+    ], function (servicesUtil, geoJsonUtil) {
 
-        return ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
-
-            var promise = $http.get('json/laboratories.json');
+        return ['$scope', '$stateParams', function ($scope, $stateParams) {
 
             $scope.defaults = {
                 tileLayer: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
@@ -16,11 +14,9 @@
             };
             // if missed it raise 'The "center" property is not defined in the main scope'
             $scope.center = geoJsonUtil.getCenter.call({});
-            promise.then(function (payload) {
-                $scope.laboratory = laboratoriesService.getLaboratoryById.call(payload.data, $stateParams.id);
-                $scope.center = geoJsonUtil.getCenter.call($scope.laboratory);
-                $scope.geojson = geoJsonUtil.getGeoData.call($scope.laboratory);
-            });
+            $scope.laboratory = servicesUtil.getLaboratoryById($stateParams.id);
+            $scope.center = geoJsonUtil.getCenter.call($scope.laboratory);
+            $scope.geojson = geoJsonUtil.getGeoData.call($scope.laboratory);
         }];
     });
 }(this.define));

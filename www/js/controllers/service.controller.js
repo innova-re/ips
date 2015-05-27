@@ -18,8 +18,7 @@
                     }
                 );
             };
-
-            items = servicesUtil.getServicesByServiceName.call(serviceFactory.servicesJson, $stateParams.name);
+            items = servicesUtil.getServicesByServiceName($stateParams.name);
             $scope.service_category_name = $stateParams.name;
             $scope.services = items;
             $scope.search = searchAction;

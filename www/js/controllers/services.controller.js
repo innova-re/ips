@@ -27,8 +27,8 @@
                     }
                 );
             };
-            items = servicesUtil.getDistinctServices.call(serviceFactory.servicesJson);
-            itemsToSearch = serviceFactory.servicesJson;
+            items = servicesUtil.getDistinctServices();
+            itemsToSearch = servicesUtil.getServices();
             $scope.services = items;
             $scope.search = searchAction;
         }];
