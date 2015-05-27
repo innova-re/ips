@@ -13,8 +13,8 @@
 
                 $scope.openModal = function (laboratoryId) {
                     $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
-                    $scope.services = servicesUtil.getServicesByLaboratoryId(laboratoryId);
-                    $scope.instruments = servicesUtil.getInstrumentsByLaboratoryId(laboratoryId);
+                    $scope.services = servicesUtil.getDistinctServicesByLaboratoryId(laboratoryId);
+                    $scope.instruments = servicesUtil.getDistinctInstrumentsByLaboratoryId(laboratoryId);
                     $scope.modal = $ionicModal.fromTemplate(laboratoryModalTemplate, {
                         scope: $scope,
                         animation: 'slide-in-up'

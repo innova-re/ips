@@ -14,9 +14,25 @@
                     return object.instrument_category_name;
                 }));
             },
+            getDistinctInstrumentsByLaboratoryId: function (laboratoryId) {
+
+                var  instrumentsByLaboratoryId = _.where(instruments, {laboratory_id: laboratoryId});
+
+                return _.unique(instrumentsByLaboratoryId.map(function (object) {
+                    return object.instrument_name;
+                }));
+            },
             getDistinctServices: function () {
                 return _.unique(services.map(function (object) {
                     return object.service_category_name;
+                }));
+            },
+            getDistinctServicesByLaboratoryId: function (laboratoryId) {
+
+                var  servicesByLaboratoryId = _.where(services, {laboratory_id: laboratoryId});
+
+                return _.unique(servicesByLaboratoryId.map(function (object) {
+                    return object.service_name;
                 }));
             },
             getInstrumentsByInstrumentName: function (instrumentName) {
