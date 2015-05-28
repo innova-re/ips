@@ -7,7 +7,6 @@
     "ionicons": "~2.0.1",
     "prefixfree": "*",
     "requirejs": "~2.1.15",
-    "svg-pan-zoom": "~3.0.0",
     "bower": "*",
     "install": "~1.0.4",
     "angular-translate": "~2.6.1",

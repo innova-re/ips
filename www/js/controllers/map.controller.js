@@ -13,10 +13,10 @@
                 maxZoom: 20
             };
             // if missed it raise 'The "center" property is not defined in the main scope'
-            $scope.center = geoJsonUtil.getCenter.call({});
+            $scope.center = geoJsonUtil.getCenter({});
             $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId($stateParams.id);
-            $scope.center = geoJsonUtil.getCenter.call($scope.laboratory);
-            $scope.geojson = geoJsonUtil.getGeoData.call($scope.laboratory);
+            $scope.center = geoJsonUtil.getCenter($scope.laboratory);
+            $scope.geojson = geoJsonUtil.getGeoData($scope.laboratory);
         }];
     });
 }(this.define));

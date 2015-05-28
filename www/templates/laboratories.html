@@ -4,18 +4,26 @@
             <i class="icon ion-ios7-search placeholder-icon"></i>
             <input type="search" placeholder="{{ 'labs_search' | translate }}" ng-change="search()" ng-model="data.search">
         </label>
-        <button class="button button-light">
-            Visualizza su mappa
+        <button class="button button-light" ng-click="openMap()">
+            <!-- TODO - use locals -->
+            {{ mapOn && 'Nascondi la mappa' || 'Visualizza sulla mapp' }}
         </button>
     </ion-header-bar>
     <ion-content>
-        <ion-list>
+        <!-- map ion-modal-view -->
+        <leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
+                bounds="bounds" center="center" markers="markers">
+        </leaflet>
+
+        <!-- laboratories ion-list -->
+        <ion-list ng-if="!mapOn">
             <ion-item
                 ng-repeat="laboratory in laboratories"
                 class="laboratory-title">
                 <div class="laboratory-title"
-                    ng-click="openModal({{laboratory.id}})">{{laboratory.name}}
+                    ng-click="openLaboratoryModal({{laboratory.id}})">{{laboratory.name}}
                 </div>
         </ion-list>
+
     </ion-content>
 </ion-view>
