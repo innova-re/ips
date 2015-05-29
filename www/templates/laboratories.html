@@ -4,9 +4,9 @@
             <i class="icon ion-ios7-search placeholder-icon"></i>
             <input type="search" placeholder="{{ 'labs_search' | translate }}" ng-change="search()" ng-model="data.search">
         </label>
-        <button class="button button-light" ng-click="openMap()">
+        <button class="button button-balanced" ng-click="openMap()">
             <!-- TODO - use locals -->
-            {{ mapOn && 'Nascondi la mappa' || 'Visualizza sulla mapp' }}
+            {{ mapOn && 'Nascondi la mappa' || 'Visualizza sulla mappa' }}
         </button>
     </ion-header-bar>
     <ion-content>

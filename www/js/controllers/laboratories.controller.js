@@ -3,13 +3,15 @@
 
     define([
         '../utils/services.util',
-        '../utils/geo-json.util'
+        '../utils/geo-json.util',
+        'markercluster'
     ], function (servicesUtil, geoJsonUtil) {
 
         return ['$scope', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers', function ($scope, searchFactory, modalFactory, leafletBoundsHelpers) {
 
             var items,
-                toggleTemplate;
+                toggleTemplate,
+                inputSearch;
 
             items = servicesUtil.getLaboratories();
             toggleTemplate = function () {
@@ -18,7 +20,7 @@
             $scope.laboratories = items;
             $scope.mapOn = false;
             $scope.openMap = function () {
-                $scope.markers = geoJsonUtil.getMarkers($scope.laboratories);
+                $scope.markers = geoJsonUtil.getMarkers($scope.laboratories, inputSearch || ' ');
                 $scope.bounds = leafletBoundsHelpers.createBoundsFromArray(geoJsonUtil.getBounds($scope.laboratories));
                 toggleTemplate();
             };
@@ -26,7 +28,8 @@
                 toggleTemplate();
             };
             $scope.search = function () {
-                searchFactory.searchObject.call(items, $scope.data.search).then(
+                inputSearch = $scope.data.search;
+                searchFactory.searchObject.call(items, inputSearch).then(
                     function (matches) {
                         $scope.laboratories = matches;
                     }

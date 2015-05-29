@@ -17,9 +17,10 @@
                 zoom: 17
             };
         };
-        getMarkers = function (laboratories) {
+        getMarkers = function (laboratories, groupClusteringName) {
             return laboratories.map(function (laboratory) {
                 return {
+                    group: groupClusteringName,
                     lat: laboratory.lat,
                     lng: laboratory.lng,
                     id: laboratory.id
