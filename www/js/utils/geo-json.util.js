@@ -2,45 +2,64 @@
     'use strict';
 
     define([
-    ], function () {
+        'lodash'
+    ], function (_) {
 
         var getCenter,
-            getGeoData;
+            getGeoData,
+            getBounds,
+            getMarkers;
 
-        getCenter = function () {
+        getCenter = function (laboratory) {
             return {
-                lat: this.lat || 0,
-                lng: this.lng || 0,
-                zoom: 18
+                lat: laboratory.lat || 0,
+                lng: laboratory.lng || 0,
+                zoom: 17
             };
         };
+        getMarkers = function (laboratories, groupClusteringName) {
+            return laboratories.map(function (laboratory) {
+                return {
+                    group: groupClusteringName,
+                    lat: laboratory.lat,
+                    lng: laboratory.lng,
+                    id: laboratory.id
+                };
+            });
+        };
 
-        getGeoData = function () {
-            var geoData = {
-                "type": "FeatureCollection",
-                "features": [
-                    {
-                        "type": "Feature",
-                        "properties": {},
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                this.lng,
-                                this.lat
-                            ]
-                        }
-                    }
-                ]
-            };
-
+        getGeoData = function (laboratory) {
             return {
-                data: geoData
+                data: {
+                    type: 'FeatureCollection',
+                    features: [
+                        {
+                            type: 'Feature',
+                            properties: {},
+                            geometry: {
+                                type: 'Point',
+                                coordinates: [
+                                    laboratory.lng,
+                                    laboratory.lat
+                                ]
+                            }
+                        }
+                    ]
+                }
             };
+        };
+        getBounds = function (laboratories, leafletBoundsHelpers) {
+            return leafletBoundsHelpers.createBoundsFromArray([
+                [_.min(laboratories, 'lat').lat, _.min(laboratories, 'lng').lng],
+                [_.max(laboratories, 'lat').lat, _.max(laboratories, 'lng').lng]
+            ]);
         };
 
         return {
             getCenter: getCenter,
-            getGeoData: getGeoData
+            getGeoData: getGeoData,
+            getBounds: getBounds,
+            getMarkers: getMarkers
         };
     });
 }(this.define));

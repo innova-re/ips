@@ -10,7 +10,7 @@
 
             var init = function ($scope) {
 
-                $scope.openModal = function (laboratoryId) {
+                $scope.openLaboratoryModal = function (laboratoryId) {
                     $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
                     $scope.services = servicesUtil.getDistinctServicesByLaboratoryId(laboratoryId);
                     $scope.instruments = servicesUtil.getDistinctInstrumentsByLaboratoryId(laboratoryId);

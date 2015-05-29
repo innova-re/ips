@@ -10,6 +10,10 @@
     ], function (_, laboratories, services, instruments, macroarea) {
         
         return {
+
+            /*
+             * Instruments Methods
+             */
             getDistinctInstruments: function () {
                 return _.unique(instruments.map(function (object) {
                     return object.instrument_category_name;
@@ -23,6 +27,38 @@
                     return object.instrument_name;
                 }));
             },
+            getInstrumentsByInstrumentName: function (instrumentName) {
+                return _.where(instruments, {instrument_category_name: instrumentName});
+            },
+            getInstrumentsByLaboratoryId: function (laboratoryId) {
+                return _.where(instruments, {laboratory_id: laboratoryId});
+            },
+
+            /*
+             * Laboratories Methods
+             */
+            getLaboratories: function (parameters) {
+                return laboratories;
+            },
+            getLaboratoryByLaboratoryId: function (laboratoryId) {
+                return _.where(laboratories, {
+                    id: parseInt(laboratoryId, 10)
+                })[0];
+            },
+            getLaboratoryByServiceId: function (serviceId) {
+                return _.where(services, {service_id: serviceId})[0];
+            },
+
+            /*
+             * Macroarea Methods
+             */
+            getMacroarea: function () {
+                return macroarea;
+            },
+
+            /*
+             * Services Methods
+             */
             getDistinctServices: function () {
                 return _.unique(services.map(function (object) {
                     return object.service_category_name;
@@ -35,29 +71,6 @@
                 return _.unique(servicesByLaboratoryId.map(function (object) {
                     return object.service_name;
                 }));
-            },
-            getInstrumentsByInstrumentName: function (instrumentName) {
-                return _.where(instruments, {instrument_category_name: instrumentName});
-            },
-            getInstrumentsByLaboratoryId: function (laboratoryId) {
-                return _.where(instruments, {laboratory_id: laboratoryId});
-            },
-            getLaboratories: function () {
-                return laboratories;
-            },
-            getLaboratoryById: function (laboratoryId) {
-                return _.where(laboratories, {
-                    id: parseInt(laboratoryId, 10)
-                })[0];
-            },
-            getLaboratoryByLaboratoryId: function (laboratoryId) {
-                return _.where(laboratories, {id: laboratoryId})[0];
-            },
-            getLaboratoryByServiceId: function (serviceId) {
-                return _.where(services, {service_id: serviceId})[0];
-            },
-            getMacroarea: function () {
-                return macroarea;
             },
             getServices: function () {
                 return services;
