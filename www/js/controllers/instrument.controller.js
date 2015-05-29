@@ -8,10 +8,8 @@
         return ['$scope', '$stateParams', 'searchFactory', '$http', function ($scope, $stateParams, searchFactory, $http) {
 
             var items,
-                promise,
                 searchAction;
 
-            promise = $http.get('json/instruments.json');
             searchAction = function () {
                 searchFactory.searchObject.call(items, $scope.data.search).then(
                     function (matches) {
@@ -19,18 +17,15 @@
                     }
                 );
             };
-            promise.then(function (payload) {
-                items = servicesUtil.getInstrumentsByInstrumentName($stateParams.name);
-                $scope.instrument_category_name = $stateParams.name;
-                $scope.instruments = items;
-                $scope.search = searchAction;
-                // TODO - DRY see the service controller
-                $scope.data = {
-                    search: $stateParams.search
-                };
-                searchAction();
-            });
-
+            items = servicesUtil.getInstrumentsByInstrumentName($stateParams.name);
+            $scope.instrument_category_name = $stateParams.name;
+            $scope.instruments = items;
+            $scope.search = searchAction;
+            // TODO - DRY see the service controller
+            $scope.data = {
+                search: $stateParams.search
+            };
+            searchAction();
         }];
     });
 }(this.define));

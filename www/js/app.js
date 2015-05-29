@@ -6,13 +6,12 @@
         'route',
         '../locales/app.locale',
         'factories/search.factory',
-        'factories/service.factory',
         'factories/modal.factory',
         'ionicAngular',
         'uiRouter',
         'angularTranslate',
         'angularLeafletDirective'
-    ], function (angular, route, appLocale, searchFactory, serviceFactory, modalFactory) {
+    ], function (angular, route, appLocale, searchFactory, modalFactory) {
 
         var app = angular.module('ipsApp', [
             'ionic',
@@ -22,7 +21,6 @@
         ]);
 
         app.factory('searchFactory', searchFactory);
-        app.factory('serviceFactory', serviceFactory);
         app.factory('modalFactory', modalFactory);
         app.config(route);
         app.config(appLocale);

@@ -7,8 +7,8 @@
     ], function (servicesUtil, _) {
 
 
-        return ['$scope', 'searchFactory', 'serviceFactory',
-                function ($scope, searchFactory, serviceFactory) {
+        return ['$scope', 'searchFactory',
+                function ($scope, searchFactory) {
 
             var items,
                 searchAction,
