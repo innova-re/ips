@@ -7,13 +7,13 @@
     </ion-header-bar>
     <ion-content>
         <ion-list>
-            <ion-item
-                class="service"
-                ng-repeat="instrument in instruments"
-                ui-sref="tabs.map({id: instrument.laboratory_id})">
+            <ion-item class="service" ng-repeat="instrument in instruments">
                 <div class="service-info">{{instrument.instrument_name}}</div>
                 <p class="service-descripiton">{{instrument.instrument_description}}</p>
-                <div class="laboratory-name">{{instrument.laboratory_name}}</div>
+                <div class="laboratory-name"
+                    ng-click="openLaboratoryModal({{ instrument.laboratory_id }})">
+                    {{instrument.laboratory_name}}
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>
