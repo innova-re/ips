@@ -21,7 +21,7 @@
             $scope.mapOn = false;
             $scope.openMap = function () {
                 $scope.markers = geoJsonUtil.getMarkers($scope.laboratories, inputSearch || ' ');
-                $scope.bounds = leafletBoundsHelpers.createBoundsFromArray(geoJsonUtil.getBounds($scope.laboratories));
+                $scope.bounds = geoJsonUtil.getBounds($scope.laboratories, leafletBoundsHelpers);
                 toggleTemplate();
             };
             $scope.closeMap = function () {

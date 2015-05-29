@@ -6,7 +6,7 @@
         </label>
         <button class="button button-balanced" ng-click="openMap()">
             <!-- TODO - use locals -->
-            {{ mapOn && 'Nascondi la mappa' || 'Visualizza sulla mappa' }}
+            {{ mapOn && ('hideMap' | translate) || ('showMap' | translate) }}
         </button>
     </ion-header-bar>
     <ion-content>

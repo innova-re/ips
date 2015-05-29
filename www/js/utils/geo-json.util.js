@@ -48,11 +48,11 @@
                 }
             };
         };
-        getBounds = function (laboratories) {
-            return [
+        getBounds = function (laboratories, leafletBoundsHelpers) {
+            return leafletBoundsHelpers.createBoundsFromArray([
                 [_.min(laboratories, 'lat').lat, _.min(laboratories, 'lng').lng],
                 [_.max(laboratories, 'lat').lat, _.max(laboratories, 'lng').lng]
-            ];
+            ]);
         };
 
         return {
