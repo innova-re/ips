@@ -7,7 +7,7 @@
         'markercluster'
     ], function (servicesUtil, clusteringUtil) {
 
-        return ['$scope', 'leafletData', function ($scope, leafletData) {
+        return ['$scope', 'leafletData', 'modalFactory', function ($scope, leafletData, modalFactory) {
 
             var setLayersMarkers = function (event) {
 
@@ -29,6 +29,11 @@
             setLayersMarkers();
             leafletData.getMap().then(function (map) {
                 map.on('baselayerchange', setLayersMarkers);
+            });
+            modalFactory.init($scope);
+            $scope.$on('leafletDirectiveMarker.click', function (event, args) {
+                event.preventDefault();
+                $scope.openLaboratoryModal($scope.markers[args.markerName].id);
             });
         }];
     });
