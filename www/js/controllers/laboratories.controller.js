@@ -10,8 +10,7 @@
         return ['$scope', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers', function ($scope, searchFactory, modalFactory, leafletBoundsHelpers) {
 
             var items,
-                toggleTemplate,
-                inputSearch;
+                toggleTemplate;
 
             items = servicesUtil.getLaboratories();
             toggleTemplate = function () {
@@ -20,7 +19,7 @@
             $scope.laboratories = items;
             $scope.mapOn = false;
             $scope.openMap = function () {
-                $scope.markers = geoJsonUtil.getMarkers($scope.laboratories, inputSearch || ' ');
+                $scope.markers = geoJsonUtil.getMarkers($scope.laboratories);
                 $scope.bounds = geoJsonUtil.getBounds($scope.laboratories, leafletBoundsHelpers);
                 toggleTemplate();
             };
@@ -28,8 +27,7 @@
                 toggleTemplate();
             };
             $scope.search = function () {
-                inputSearch = $scope.data.search;
-                searchFactory.searchObject.call(items, inputSearch).then(
+                searchFactory.searchObject.call(items, $scope.data.search).then(
                     function (matches) {
                         $scope.laboratories = matches;
                     }

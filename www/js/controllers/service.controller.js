@@ -5,8 +5,8 @@
         '../utils/services.util'
     ], function (servicesUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', 'serviceFactory',
-                function ($scope, $stateParams, searchFactory, serviceFactory) {
+        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory',
+                function ($scope, $stateParams, searchFactory, modalFactory) {
 
             var items,
                 searchAction;
@@ -27,7 +27,7 @@
                 search: $stateParams.search
             };
             searchAction();
-            $scope.showPopup = serviceFactory.showPopup;
+            modalFactory.init($scope);
         }];
     });
 }(this.define));

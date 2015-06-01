@@ -48,7 +48,7 @@
                     layer: object[clusteringName + '_name'],
                     lat: object.lat,
                     lng: object.lng,
-                    message: '<h4>' + object.name + '</h4>' + object.description
+                    id: object.id
                 };
             });
         };

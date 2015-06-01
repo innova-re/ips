@@ -14,12 +14,11 @@
                 class="service"
                 ng-repeat="service in services">
                 <div class="service-info">{{service.service_name}}</div>
-                <p class="service-descripiton"
-                    ng-click="showPopup({{service.service_id}}, 'service')">
+                <p class="service-descripiton">
                     {{service.service_description}}
                 </p>
                 <div class="laboratory-name"
-                    ng-click="showPopup({{service.service_id}}, 'laboratory')">
+                    ng-click="openLaboratoryModal({{ service.laboratory_id }})">
                     {{service.laboratory_name}}
                 </div>
             </ion-item>

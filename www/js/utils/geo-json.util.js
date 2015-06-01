@@ -17,10 +17,13 @@
                 zoom: 17
             };
         };
-        getMarkers = function (laboratories, groupClusteringName) {
+        getMarkers = function (laboratories) {
+
+            var groupName = Math.random().toString();
+
             return laboratories.map(function (laboratory) {
                 return {
-                    group: groupClusteringName,
+                    group: groupName,
                     lat: laboratory.lat,
                     lng: laboratory.lng,
                     id: laboratory.id

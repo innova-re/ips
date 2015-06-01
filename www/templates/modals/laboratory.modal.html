@@ -1,6 +1,6 @@
 <ion-modal-view>
     <ion-header-bar class="bar-positive">
-        <h1 class="title">{{ laboratory.name }}</h1>
+        <h1 class="title">{{ modal.laboratory.name }}</h1>
         <div class="button button-clear" ng-click="modal.hide()">
             <span class="icon ion-close"></span>
         </div>
@@ -9,19 +9,19 @@
         <div class="list card">
             <div class="item item-icon-left">
                 <i class="icon ion-ios-telephone"></i>
-                {{ laboratory.telephone }}
+                {{ modal.laboratory.telephone }}
             </div>
             <div class="item item-icon-left">
                 <i class="icon ion-university"></i>
-                {{ laboratory.ente_name }} <br> {{ laboratory.area_name }}
+                {{ modal.laboratory.ente_name }} <br> {{ laboratory.area_name }}
             </div>
             <div class="item item-icon-left">
                 <i class="icon ion-home"></i>
-                {{ laboratory.sede }} Via ... <!-- TODO - missing sede-->
+                {{ modal.laboratory.sede }} Via ... <!-- TODO - missing sede-->
             </div>
             <div class="item item-icon-left">
                 <i class="icon ion-person"></i>
-                {{ laboratory.responsabile }} Responsabile ... <!-- TODO - missing Responsabile-->
+                {{ modal.laboratory.responsabile }} Responsabile ... <!-- TODO - missing Responsabile-->
             </div>
             <div class="item item-icon-left">
                 <i class="icon ion-ios-paperplane"></i>
@@ -30,47 +30,47 @@
         </div>
         <div class="card">
             <div class="item item-divider">
-                Servizi
+                {{ 'services' | translate }}
             </div>
             <div class="item item-text-wrap">
                 <ion-list>
                     <ion-item
                         class="services"
-                        ng-repeat="service in services">
+                        ng-repeat="service in modal.services">
                         <div class="service-name">{{service}}</div>
                     </ion-item>
                 </ion-list>
             </div>
             <div class="item item-divider">
-                Strumenti
+                {{ 'instruments' | translate }}
             </div>
             <div class="item item-text-wrap">
                 <ion-list>
                     <ion-item
                         class="services"
-                        ng-repeat="instrument in instruments">
+                        ng-repeat="instrument in modal.instruments">
                         <div class="service-name">{{instrument}}</div>
                     </ion-item>
                 </ion-list>
             </div>
             <div class="item item-divider">
-                Descrizione
+                {{ 'description' | translate }}
             </div>
             <div class="item item-text-wrap">
-                {{ laboratory.description }}
+                {{ modal.laboratory.description }}
             </div>
         </div>
     </ion-content>
     <ion-footer-bar class="bar-positive">
         <a class="button button-light"
-            ui-sref="tabs.map({id: laboratory.id})"
+            ui-sref="tabs.map({id: modal.laboratory.id})"
             ng-click="modal.hide()">
             <i class="ion-ios-navigate"></i>
-            Vai al laboratorio
+            {{ 'labs_go' | translate }}
         </a>
         <button class="button button-light"
             ng-click="modal.hide()">
-            Torna indietro
+            {{ 'back' | translate }}
         </button>
     </ion-footer-bar>
 </ion-modal-view>
