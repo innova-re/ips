@@ -3,29 +3,16 @@
 
     define([
         '../utils/services.util',
-        '../utils/geo-json.util',
+        '../utils/clustering-no-layers.util',
         'markercluster'
-    ], function (servicesUtil, geoJsonUtil) {
+    ], function (servicesUtil, clusteringNoLayersUtil) {
 
-        return ['$scope', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers', function ($scope, searchFactory, modalFactory, leafletBoundsHelpers) {
+        return ['$scope', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
+        function ($scope, searchFactory, modalFactory, leafletBoundsHelpers) {
 
-            var items,
-                toggleTemplate;
+            var items = servicesUtil.getLaboratories();
 
-            items = servicesUtil.getLaboratories();
-            toggleTemplate = function () {
-                $scope.mapOn = !$scope.mapOn;
-            };
             $scope.laboratories = items;
-            $scope.mapOn = false;
-            $scope.openMap = function () {
-                $scope.markers = geoJsonUtil.getMarkers($scope.laboratories);
-                $scope.bounds = geoJsonUtil.getBounds($scope.laboratories, leafletBoundsHelpers);
-                toggleTemplate();
-            };
-            $scope.closeMap = function () {
-                toggleTemplate();
-            };
             $scope.search = function () {
                 searchFactory.searchObject.call(items, $scope.data.search).then(
                     function (matches) {
@@ -38,6 +25,7 @@
                 event.preventDefault();
                 $scope.openLaboratoryModal($scope.markers[args.markerName].id);
             });
+            clusteringNoLayersUtil($scope, leafletBoundsHelpers);
         }];
     });
 }(this.define));

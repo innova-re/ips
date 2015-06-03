@@ -37,7 +37,7 @@
             /*
              * Laboratories Methods
              */
-            getLaboratories: function (parameters) {
+            getLaboratories: function () {
                 return laboratories;
             },
             getLaboratoryByLaboratoryId: function (laboratoryId) {
@@ -47,6 +47,18 @@
             },
             getLaboratoryByServiceId: function (serviceId) {
                 return _.where(services, {service_id: serviceId})[0];
+            },
+            getLaboratoriesByServices: function (services) {
+
+                var ids = _.unique(services.map(function (service) {
+                    return service.laboratory_id;
+                }));
+
+                return ids.map(function (laboratoryId) {
+                    return _.where(laboratories, {
+                        id: parseInt(laboratoryId, 10)
+                    })[0];
+                });
             },
 
             /*

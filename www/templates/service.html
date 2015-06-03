@@ -4,12 +4,18 @@
             <i class="icon ion-ios7-search placeholder-icon"></i>
             <input type="search" placeholder="{{ 'services_search' | translate }}" ng-change="search()" ng-model="data.search">
         </label>
-        <button class="button button-light">
-            Visualizza su mappa
+        <button class="button button-balanced" ng-click="openMap()">
+            {{ mapOn && ('hideMap' | translate) || ('showMap' | translate) }}
         </button>
     </ion-header-bar>
     <ion-content>
-        <ion-list>
+
+        <!-- map ion-modal-view -->
+        <leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
+                bounds="bounds" center="center" markers="markers">
+        </leaflet>
+
+        <ion-list ng-if="!mapOn">
             <ion-item
                 class="service"
                 ng-repeat="service in services">

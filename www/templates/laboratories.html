@@ -5,7 +5,6 @@
             <input type="search" placeholder="{{ 'labs_search' | translate }}" ng-change="search()" ng-model="data.search">
         </label>
         <button class="button button-balanced" ng-click="openMap()">
-            <!-- TODO - use locals -->
             {{ mapOn && ('hideMap' | translate) || ('showMap' | translate) }}
         </button>
     </ion-header-bar>

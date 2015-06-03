@@ -2,11 +2,12 @@
     'use strict';
 
     define([
-        '../utils/services.util'
-    ], function (servicesUtil) {
+        '../utils/services.util',
+        '../utils/clustering-no-layers.util'
+    ], function (servicesUtil, clusteringNoLayersUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory',
-                function ($scope, $stateParams, searchFactory, modalFactory) {
+        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
+                function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
 
             var items,
                 searchAction;
@@ -19,8 +20,8 @@
                 );
             };
             items = servicesUtil.getServicesByServiceName($stateParams.name);
-            $scope.service_category_name = $stateParams.name;
             $scope.services = items;
+            $scope.service_category_name = $stateParams.name;
             $scope.search = searchAction;
             // TODO - DRY see the instrument controller
             $scope.data = {
@@ -28,6 +29,8 @@
             };
             searchAction();
             modalFactory.init($scope);
+            $scope.laboratories = servicesUtil.getLaboratoriesByServices($scope.services);
+            clusteringNoLayersUtil($scope, leafletBoundsHelpers);
         }];
     });
 }(this.define));
