@@ -4,28 +4,17 @@
     define([
         '../utils/services.util',
         '../utils/clustering-no-layers.util',
+        '../utils/scope-shared.util',
         'markercluster'
-    ], function (servicesUtil, clusteringNoLayersUtil) {
+    ], function (servicesUtil, clusteringNoLayersUtil, scopeSharedUtil) {
 
-        return ['$scope', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
-        function ($scope, searchFactory, modalFactory, leafletBoundsHelpers) {
-
-            var items = servicesUtil.getLaboratories();
-
-            $scope.laboratories = items;
-            $scope.search = function () {
-                searchFactory.searchObject.call(items, $scope.data.search).then(
-                    function (matches) {
-                        $scope.laboratories = matches;
-                    }
-                );
-            };
-            modalFactory.init($scope);
-            $scope.$on('leafletDirectiveMarker.click', function (event, args) {
-                event.preventDefault();
-                $scope.openLaboratoryModal($scope.markers[args.markerName].id);
+        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
+        function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
+            scopeSharedUtil(arguments, servicesUtil.getLaboratories(), function (values) {
+                $scope.laboratories = values;
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);
+            modalFactory.init($scope);
         }];
     });
 }(this.define));

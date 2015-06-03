@@ -2,31 +2,16 @@
     'use strict';
 
     define([
-        '../utils/services.util'
-    ], function (servicesUtil) {
+        '../utils/services.util',
+        '../utils/scope-shared.util'
+    ], function (servicesUtil, scopeSharedUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory',
-            function ($scope, $stateParams, searchFactory, modalFactory) {
+        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory', function ($scope, $stateParams, searchFactory, modalFactory) {
+            scopeSharedUtil(arguments, servicesUtil.getInstrumentsByInstrumentName($stateParams.name), function (values) {
+                $scope.instruments = values;
 
-            var items,
-                searchAction;
-
-            searchAction = function () {
-                searchFactory.searchObject.call(items, $scope.data.search).then(
-                    function (matches) {
-                        $scope.instruments = matches;
-                    }
-                );
-            };
-            items = servicesUtil.getInstrumentsByInstrumentName($stateParams.name);
+            });
             $scope.instrument_category_name = $stateParams.name;
-            $scope.instruments = items;
-            $scope.search = searchAction;
-            // TODO - DRY see the service controller
-            $scope.data = {
-                search: $stateParams.search
-            };
-            searchAction();
             modalFactory.init($scope);
         }];
     });

@@ -20,6 +20,10 @@
                     $scope.modal.instruments = servicesUtil.getDistinctInstrumentsByLaboratoryId(laboratoryId);
                     $scope.modal.show();
                 };
+                $scope.$on('leafletDirectiveMarker.click', function (event, args) {
+                    event.preventDefault();
+                    $scope.openLaboratoryModal($scope.markers[args.markerName].id);
+                });
             };
 
             return {

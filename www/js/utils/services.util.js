@@ -14,10 +14,8 @@
             /*
              * Instruments Methods
              */
-            getDistinctInstruments: function () {
-                return _.unique(instruments.map(function (object) {
-                    return object.instrument_category_name;
-                }));
+            getInstruments: function () {
+                return instruments;
             },
             getDistinctInstrumentsByLaboratoryId: function (laboratoryId) {
 
@@ -71,11 +69,6 @@
             /*
              * Services Methods
              */
-            getDistinctServices: function () {
-                return _.unique(services.map(function (object) {
-                    return object.service_category_name;
-                }));
-            },
             getDistinctServicesByLaboratoryId: function (laboratoryId) {
 
                 var  servicesByLaboratoryId = _.where(services, {laboratory_id: laboratoryId});
@@ -87,11 +80,20 @@
             getServices: function () {
                 return services;
             },
-            getServicesByServiceName: function (serviceName) {
+            getServicesByCategoryServiceName: function (serviceName) {
                 return _.where(services, {service_category_name: serviceName});
             },
             getServicesByLaboratoryId: function (laboratoryId) {
                 return _.where(services, {laboratory_id: laboratoryId});
+            },
+
+            /*
+             * General Purpose
+             */
+            getDistinctItems: function (items, key) {
+                return _.unique(items.map(function (item) {
+                    return item[key];
+                }));
             }
         };
     });
