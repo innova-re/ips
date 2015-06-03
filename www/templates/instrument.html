@@ -1,12 +1,21 @@
 <ion-view title="{{ 'category' | translate }} {{instrument_category_name}}">
     <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
-        <label class="item-input-wrapper">
+        <label class="item-input-wrapper" ng-if="!mapOn">
             <i class="icon ion-ios7-search placeholder-icon"></i>
             <input type="search" placeholder="{{ 'services_search' | translate }}" ng-change="search()" ng-model="data.search">
         </label>
+        <button class="button button-balanced  pull-right" ng-click="openMap()">
+            {{ mapOn && ('hideMap' | translate) || ('showMap' | translate) }}
+        </button>
     </ion-header-bar>
     <ion-content>
-        <ion-list>
+
+        <!-- map ion-modal-view -->
+        <leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
+                bounds="bounds" center="center" markers="markers">
+        </leaflet>
+
+        <ion-list ng-if="!mapOn">
             <ion-item class="service" ng-repeat="instrument in instruments">
                 <div class="service-info">{{instrument.instrument_name}}</div>
                 <p class="service-descripiton">{{instrument.instrument_description}}</p>

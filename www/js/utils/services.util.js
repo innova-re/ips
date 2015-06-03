@@ -46,10 +46,10 @@
             getLaboratoryByServiceId: function (serviceId) {
                 return _.where(services, {service_id: serviceId})[0];
             },
-            getLaboratoriesByServices: function (services) {
+            getLaboratoriesByItems: function (items) {
 
-                var ids = _.unique(services.map(function (service) {
-                    return service.laboratory_id;
+                var ids = _.unique(items.map(function (item) {
+                    return item.laboratory_id;
                 }));
 
                 return ids.map(function (laboratoryId) {

@@ -11,7 +11,7 @@
                 function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
             scopeSharedUtil(arguments, servicesUtil.getServicesByCategoryServiceName($stateParams.name), function (values) {
                 $scope.services = values;
-                $scope.laboratories = servicesUtil.getLaboratoriesByServices(values);
+                $scope.laboratories = servicesUtil.getLaboratoriesByItems(values);
                 $scope.service_category_name = $stateParams.name;
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);
