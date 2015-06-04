@@ -14,10 +14,8 @@
             /*
              * Instruments Methods
              */
-            getDistinctInstruments: function () {
-                return _.unique(instruments.map(function (object) {
-                    return object.instrument_category_name;
-                }));
+            getInstruments: function () {
+                return instruments;
             },
             getDistinctInstrumentsByLaboratoryId: function (laboratoryId) {
 
@@ -37,7 +35,7 @@
             /*
              * Laboratories Methods
              */
-            getLaboratories: function (parameters) {
+            getLaboratories: function () {
                 return laboratories;
             },
             getLaboratoryByLaboratoryId: function (laboratoryId) {
@@ -47,6 +45,18 @@
             },
             getLaboratoryByServiceId: function (serviceId) {
                 return _.where(services, {service_id: serviceId})[0];
+            },
+            getLaboratoriesByItems: function (items) {
+
+                var ids = _.unique(items.map(function (item) {
+                    return item.laboratory_id;
+                }));
+
+                return ids.map(function (laboratoryId) {
+                    return _.where(laboratories, {
+                        id: parseInt(laboratoryId, 10)
+                    })[0];
+                });
             },
 
             /*
@@ -59,11 +69,6 @@
             /*
              * Services Methods
              */
-            getDistinctServices: function () {
-                return _.unique(services.map(function (object) {
-                    return object.service_category_name;
-                }));
-            },
             getDistinctServicesByLaboratoryId: function (laboratoryId) {
 
                 var  servicesByLaboratoryId = _.where(services, {laboratory_id: laboratoryId});
@@ -75,11 +80,20 @@
             getServices: function () {
                 return services;
             },
-            getServicesByServiceName: function (serviceName) {
+            getServicesByCategoryServiceName: function (serviceName) {
                 return _.where(services, {service_category_name: serviceName});
             },
             getServicesByLaboratoryId: function (laboratoryId) {
                 return _.where(services, {laboratory_id: laboratoryId});
+            },
+
+            /*
+             * General Purpose
+             */
+            getDistinctItems: function (items, key) {
+                return _.unique(items.map(function (item) {
+                    return item[key];
+                }));
             }
         };
     });

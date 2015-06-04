@@ -2,31 +2,19 @@
     'use strict';
 
     define([
-        '../utils/services.util'
-    ], function (servicesUtil) {
+        '../utils/services.util',
+        '../utils/clustering-no-layers.util',
+        '../utils/scope-shared.util'
+    ], function (servicesUtil, clusteringNoLayersUtil, scopeSharedUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory',
-                function ($scope, $stateParams, searchFactory, modalFactory) {
-
-            var items,
-                searchAction;
-
-            searchAction = function () {
-                searchFactory.searchObject.call(items, $scope.data.search).then(
-                    function (matches) {
-                        $scope.services = matches;
-                    }
-                );
-            };
-            items = servicesUtil.getServicesByServiceName($stateParams.name);
-            $scope.service_category_name = $stateParams.name;
-            $scope.services = items;
-            $scope.search = searchAction;
-            // TODO - DRY see the instrument controller
-            $scope.data = {
-                search: $stateParams.search
-            };
-            searchAction();
+        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
+                function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
+            scopeSharedUtil(arguments, servicesUtil.getServicesByCategoryServiceName($stateParams.name), function (values) {
+                $scope.services = values;
+                $scope.laboratories = servicesUtil.getLaboratoriesByItems(values);
+                $scope.service_category_name = $stateParams.name;
+            });
+            clusteringNoLayersUtil($scope, leafletBoundsHelpers);
             modalFactory.init($scope);
         }];
     });

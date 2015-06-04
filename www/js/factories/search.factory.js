@@ -11,7 +11,7 @@
                 matches,
                 searchObject;
 
-            searchObject = function (searchFilterString) {
+            return function (searchFilterString) {
                 matches = this.filter(function (items) {
 
                     var result = !searchFilterString ? true : _.map(searchFilterString.split(' '), function (searchFilter) {
@@ -35,10 +35,6 @@
                 }, 100);
 
                 return deferred.promise;
-            };
-
-            return {
-                searchObject: searchObject
             };
         }];
     });
