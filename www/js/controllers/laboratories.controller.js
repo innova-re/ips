@@ -12,6 +12,7 @@
         function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
             scopeSharedUtil(arguments, servicesUtil.getLaboratories(), function (values) {
                 $scope.laboratories = values;
+                $scope.showMapButton = true;
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);
             modalFactory.init($scope);

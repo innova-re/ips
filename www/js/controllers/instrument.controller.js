@@ -13,6 +13,7 @@
                 $scope.instruments = values;
                 $scope.laboratories = servicesUtil.getLaboratoriesByItems(values);
                 $scope.instrument_category_name = $stateParams.name;
+                $scope.showMapButton = true;
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);
             modalFactory.init($scope);
