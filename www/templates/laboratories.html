@@ -8,9 +8,7 @@
 
         <!-- laboratories ion-list -->
         <ion-list ng-if="!mapOn">
-            <ion-item
-                ng-repeat="laboratory in laboratories"
-                class="laboratory-title">
+            <ion-item ng-repeat="laboratory in laboratories" class="laboratory-title">
                 <div class="laboratory-title"
                     ng-click="openLaboratoryModal({{laboratory.id}})">{{laboratory.name}}
                 </div>

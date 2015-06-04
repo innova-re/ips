@@ -3,7 +3,8 @@
         <i class="icon ion-ios7-search placeholder-icon"></i>
         <input type="search" placeholder="{{ 'services_search' | translate }}" ng-change="search()" ng-model="data.search">
     </label>
-    <button ng-if="showMapButton" class="button button-balanced  pull-right" ng-click="openMap()">
+    <button ng-if="showMapButton" ng-click="openMap()"
+        class="button button-balanced {{ mapOn && ('pull-right') }}" >
         {{ mapOn && ('hideMap' | translate) || ('showMap' | translate) }}
     </button>
 </ion-header-bar>

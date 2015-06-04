@@ -8,9 +8,7 @@
         </leaflet>
 
         <ion-list ng-if="!mapOn">
-            <ion-item
-                class="service"
-                ng-repeat="service in services">
+            <ion-item class="service" ng-repeat="service in services">
                 <div class="service-info">{{service.service_name}}</div>
                 <p class="service-descripiton">
                     {{service.service_description}}

@@ -1,11 +1,8 @@
-<!-- http://codepen.io/calendee/pen/pCwyx -->
 <ion-view title="{{ 'instruments' | translate }}">
     <ips-header-search-directive></ips-header-search-directive>
     <ion-content>
         <ion-list>
-            <ion-item
-                class="instruments"
-                ng-repeat="instrument in instruments" 
+            <ion-item class="instruments" ng-repeat="instrument in instruments"
                 ui-sref="tabs.instrument({name: instrument, search: data.search})">
                 <div class="instrument-name">{{instrument}}</div>
             </ion-item>
