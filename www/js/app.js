@@ -8,11 +8,12 @@
         'factories/search.factory',
         'factories/modal.factory',
         'directives/header-search.directive',
+        'directives/back-button.directive',
         'ionicAngular',
         'uiRouter',
         'angularTranslate',
         'angularLeafletDirective'
-    ], function (angular, route, appLocale, searchFactory, modalFactory, headerSearchDirective) {
+    ], function (angular, route, appLocale, searchFactory, modalFactory, headerSearchDirective, backButtonDirective) {
 
         var app = angular.module('ipsApp', [
             'ionic',
@@ -24,6 +25,7 @@
         app.factory('searchFactory', searchFactory);
         app.factory('modalFactory', modalFactory);
         app.directive('ipsHeaderSearchDirective', headerSearchDirective);
+        app.directive('backButton', backButtonDirective);
         app.config(route);
         app.config(appLocale);
         angular.element().ready(function () {
