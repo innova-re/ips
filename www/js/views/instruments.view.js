@@ -7,7 +7,7 @@
     ], function (instrumentsTemplate, instrumentsController) {
 
         return {
-            url: '/instruments',
+            url: '/instruments/:search',
             views: {
                 'tab-instruments': {
                     template: instrumentsTemplate,

@@ -23,12 +23,12 @@
                                 results.push(value.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1);
                             }
                         });
+
                         return results.indexOf(true) !== -1;
                     });
 
                     return _.every(result, Boolean);
                 });
-
                 deferred = $q.defer();
                 $timeout(function () {
                     deferred.resolve(matches);

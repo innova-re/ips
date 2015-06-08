@@ -25,7 +25,7 @@
         app.factory('searchFactory', searchFactory);
         app.factory('modalFactory', modalFactory);
         app.directive('ipsHeaderSearchDirective', headerSearchDirective);
-        app.directive('backButton', backButtonDirective);
+        app.directive('ipsBackButton', backButtonDirective);
         app.config(route);
         app.config(appLocale);
         angular.element().ready(function () {

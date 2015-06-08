@@ -7,7 +7,7 @@
     ], function (servicesTemplate, servicesController) {
 
         return {
-            url: '/services',
+            url: '/services/:search',
             views: {
                 'tab-services': {
                     template: servicesTemplate,

@@ -3,7 +3,8 @@
     <ion-content>
         <ion-list>
             <ion-item class="instruments" ng-repeat="instrument in instruments"
-                ui-sref="tabs.instrument({name: instrument, search: data.search})">
+                ui-sref="tabs.instrument({name: instrument, search: data.search})"
+                ng-click="changeRoute()">
                 <div class="instrument-name">{{instrument}}</div>
             </ion-item>
         </ion-list>
