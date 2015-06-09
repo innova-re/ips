@@ -6,7 +6,8 @@
         '../utils/scope-shared.util'
     ], function (servicesUtil, scopeSharedUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', function ($scope, $stateParams, searchFactory) {
+        return ['$scope', '$stateParams', 'searchFactory', '$state',
+            function ($scope, $stateParams, searchFactory, $state) {
             scopeSharedUtil(arguments, servicesUtil.getInstruments(), function (values) {
                 $scope.instruments = servicesUtil.getDistinctItems(values, 'instrument_category_name');
             });

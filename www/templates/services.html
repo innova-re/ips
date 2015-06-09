@@ -3,7 +3,8 @@
     <ion-content>
         <ion-list>
             <ion-item class="services" ng-repeat="service in services"
-                ui-sref="tabs.service({name: service, search: data.search})">
+                ui-sref="tabs.service({name: service, search: data.search})"
+                ng-click="changeRoute()">
                 <div class="service-name">{{service}}</div>
             </ion-item>
         </ion-list>

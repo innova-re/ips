@@ -31,10 +31,6 @@
                 map.on('baselayerchange', setLayersMarkers);
             });
             modalFactory.init($scope);
-            $scope.$on('leafletDirectiveMarker.click', function (event, args) {
-                event.preventDefault();
-                $scope.openLaboratoryModal($scope.markers[args.markerName].id);
-            });
         }];
     });
 }(this.define));
