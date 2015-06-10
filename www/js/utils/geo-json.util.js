@@ -8,13 +8,14 @@
         var getCenter,
             getGeoData,
             getBounds,
-            getMarkers;
+            getMarkers,
+            setRouting;
 
-        getCenter = function (laboratory) {
+        getCenter = function (laboratory, zoom) {
             return {
                 lat: laboratory.lat || 0,
                 lng: laboratory.lng || 0,
-                zoom: 17
+                zoom: zoom || 17
             };
         };
         getMarkers = function (laboratories) {
@@ -57,12 +58,25 @@
                 [_.max(laboratories, 'lat').lat, _.max(laboratories, 'lng').lng]
             ]);
         };
+        setRouting = function ($scope, leafletData) {
+            $scope.center = {};
+            leafletData.getMap().then(function (map) {
+                L.Routing.control({
+                  waypoints: [
+                    // TODO - get real local coordinate
+                    L.latLng(39.222074, 9.113754),
+                    L.latLng($scope.laboratory.lat, $scope.laboratory.lng)
+                  ]
+                }).addTo(map);
+            });
+        };
 
         return {
             getCenter: getCenter,
             getGeoData: getGeoData,
             getBounds: getBounds,
-            getMarkers: getMarkers
+            getMarkers: getMarkers,
+            setRouting: setRouting
         };
     });
 }(this.define));

@@ -5,6 +5,10 @@
         return function($translateProvider) {
             $translateProvider
             .translations('en', {
+                map: {
+                    whereIs: 'Where is?',
+                    takeMeAround: 'Take me around'
+                },
                 back: 'Back',
                 category: 'Category: ',
                 description: 'Description',
@@ -14,7 +18,6 @@
                 instruments_text: 'The catalog of the instruments is a service of quick consultation aimed at researchers and companies interested in learning about the supply of equipment related to testing and analysis of the RLAB Sardinia laboratories.',
                 instruments_search: 'Enter some letters to see a list of instruments',
                 labs: 'Laboratories',
-                labs_go: 'Go to the laboratory',
                 labs_text: 'List of laboratories of the regional network RLAB Sardinia',
                 labs_search: 'Enter some letters to see a list of laboratories',
                 services: 'Services',
@@ -24,6 +27,10 @@
                 title: 'Innovare Navigation'
             })
             .translations('it', {
+                map: {
+                    whereIs: 'Dov\'è?',
+                    takeMeAround: 'Portami'
+                },
                 back: 'Indietro',
                 category: 'Categoria: ',
                 description: 'Descrizione',
@@ -33,7 +40,6 @@
                 instruments_text: 'Il catalogo degli strumenti è un servizio di rapida consultazione rivolto ai ricercatori e alle imprese interessati a conoscere l’offerta di apparecchiature legate a sperimentazione e analisi dei laboratori di RLAB Sardegna.',
                 instruments_search: 'Inserire delle lettere per visualizzare un elenco di strumenti',
                 labs: 'Laboratori',
-                labs_go: 'Vai al laboratorio',
                 labs_text: 'Elenco dei laboratori della rete regionale RLAB Sardegna.',
                 labs_search: 'Inserire delle lettere per visualizzare un elenco di laboratori',
                 services: 'Servizi',
