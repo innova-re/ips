@@ -3,8 +3,7 @@
 
     define([
         '../utils/services.util',
-        '../utils/geo-json.util',
-        'leafletRoutingMachine'
+        '../utils/geo-json.util'
     ], function (servicesUtil, geoJsonUtil) {
 
         return ['$scope', '$stateParams', 'leafletData', function ($scope, $stateParams, leafletData) {

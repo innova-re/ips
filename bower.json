@@ -13,6 +13,8 @@
     "lodash": "~3.7.0",
     "requirejs-plugins": "~1.0.3",
     "leaflet.markercluster": "~0.4.0",
-    "leaflet-routing-machine": "~2.3.0"
+    "leaflet-routing-machine": "~2.3.0",
+    "leaflet-control-geocoder": "~1.1.0",
+    "leaflet-icon-label": "*"
   }
 }

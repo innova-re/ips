@@ -1,8 +1,11 @@
-(function (define) {
+(function (define, L) {
     'use strict';
 
     define([
-        'lodash'
+        'lodash',
+        'leafletRoutingMachine',
+        'leafletControlGeocoder',
+        'leafletIconLabel'
     ], function (_) {
 
         var getCenter,
@@ -62,11 +65,19 @@
             $scope.center = {};
             leafletData.getMap().then(function (map) {
                 L.Routing.control({
-                  waypoints: [
-                    // TODO - get real local coordinate
-                    L.latLng(39.222074, 9.113754),
-                    L.latLng($scope.laboratory.lat, $scope.laboratory.lng)
-                  ]
+                    language: 'en',
+                    waypoints: [
+                        // TODO - get real local coordinate
+                        L.latLng(39.220821, 9.113934),
+                        L.latLng($scope.laboratory.lat, $scope.laboratory.lng)
+                    ],
+                    createMarker: function (i, wp) {
+                        return L.marker(wp.latLng, {
+                            draggable: true,
+                            icon: new L.Icon.Label.Default({labelText: String.fromCharCode(65 + i)})
+                        });
+                    },
+                    geocoder: L.Control.Geocoder.nominatim()
                 }).addTo(map);
             });
         };
@@ -79,4 +90,4 @@
             setRouting: setRouting
         };
     });
-}(this.define));
+}(this.define, this.L));
