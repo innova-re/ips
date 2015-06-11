@@ -1,0 +1,14 @@
+<ion-footer-bar class="bar-positive">
+    <a class="button button-light"
+        ui-sref="tabs.map({id: modal.laboratory.id})" ng-click="modal.hide()">
+        {{ 'map.whereIs' | translate }}
+    </a>
+    <a class="button button-light"
+        ui-sref="tabs.map({id: modal.laboratory.id, routingOn: true})" ng-click="modal.hide()">
+        {{ 'map.takeMeAround' | translate }}
+    </a>
+    <button class="button button-light"
+        ng-click="modal.hide()">
+        {{ 'back' | translate }}
+    </button>
+</ion-footer-bar>
