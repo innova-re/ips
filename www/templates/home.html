@@ -1,11 +1,15 @@
 <ion-view title="{{ 'title' | translate }}">
     <ion-content class="padding app-home">
         <div class="list">
-            <!-- TODO: this text must be taken from a json file -->
+            <a class="item item-thumbnail-left">
+                <img src="images/magnifier.png">
+                <!-- TODO - fix the parameter and add a action to search laboratories-->
+                <input type="search" placeholder="{{ 'search' | translate:{items: 'laboratori'} }}" ng-model="data.search" class="ng-pristine ng-valid">
+            </a>
             <a class="item item-thumbnail-left" ui-sref="tabs.services">
                 <img src="images/service.png">
-                <h2>{{ 'services' | translate }}</h2>
-                <p>{{ 'services_text' | translate }}</p>
+                <h2>{{ 'service.name' | translate }}</h2>
+                <p>{{ 'service.description' | translate }}</p>
             </a>
             <a class="item item-thumbnail-left" ui-sref="tabs.laboratories">
                 <img src="images/lab.png">
@@ -14,11 +18,13 @@
             </a>
             <a class="item item-thumbnail-left" ui-sref="tabs.instruments">
                 <img src="images/instrument.png">
-                <h2>{{ 'instruments' | translate }}</h2>
-                <p>{{ 'instruments_text' | translate }}</p>
+                <h2>{{ 'instrument.name' | translate }}</h2>
+                <p>{{ 'instrument.description' | translate }}</p>
             </a>
             <a class="item item-thumbnail-left" ui-sref="tabs.clustering">
                 <img src="images/clustering.png">
+                <h2>{{ 'cluster.title' | translate }}</h2>
+                <p>{{ 'cluster.text' | translate }}</p>
             </a>
         </div>
     </ion-content>

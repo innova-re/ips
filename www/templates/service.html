@@ -1,4 +1,4 @@
-<ion-view title="{{ 'category' | translate }} {{service_category_name}}">
+<ion-view title="{{ 'service.category' | translate }}: {{service_category_name}}">
     <ips-header-search-directive></ips-header-search-directive>
     <ion-content>
 
@@ -10,7 +10,8 @@
         <ion-list ng-if="!mapOn">
             <ion-item class="service" ng-repeat="service in services">
                 <div class="service-info">{{service.service_name}}</div>
-                <p class="service-descripiton">
+                <p class="service-descripiton"
+                    ng-click="openServiceModal({{ service.service_id }})">
                     {{service.service_description}}
                 </p>
                 <div class="laboratory-name"

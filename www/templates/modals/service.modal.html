@@ -1,0 +1,64 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{ modal.service.service_name }}</h1>
+        <div class="button button-clear" ng-click="modal.hide()">
+            <span class="icon ion-close"></span>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <!-- TODO - make a directive named 'lab-info' -->
+        <div class="list card">
+            <div class="item item-icon-left">
+                <i class="icon ion-ios-telephone"></i>
+                {{ modal.laboratory.telephone }}
+            </div>
+            <div class="item item-icon-left">
+                <i class="icon ion-university"></i>
+                {{ modal.laboratory.ente_name }} <br> {{ laboratory.area_name }}
+            </div>
+            <div class="item item-icon-left">
+                <i class="icon ion-home"></i>
+                {{ modal.laboratory.address }}
+            </div>
+            <div class="item item-icon-left">
+                <i class="icon ion-person"></i>
+                {{ modal.laboratory.responsabile }}
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                {{ 'service.category' | translate }}
+            </div>
+            <div class="item item-text-wrap">
+                {{ modal.service.service_category_name }}
+            </div>
+            <div class="item item-divider">
+                {{ 'description' | translate }}
+            </div>
+            <div class="item item-text-wrap">
+                {{ modal.service.service_description }}
+            </div>
+            <div class="item item-divider">
+                {{ 'keywords' | translate }}
+            </div>
+            <div class="item item-text-wrap">
+                {{ modal.service.service_keywords }}
+            </div>
+        </div>
+    </ion-content>
+    <!-- TODO - make a directive named 'modal-footer' -->
+    <ion-footer-bar class="bar-positive">
+        <a class="button button-light"
+            ui-sref="tabs.map({id: modal.laboratory.id})" ng-click="modal.hide()">
+            {{ 'map.whereIs' | translate }}
+        </a>
+        <a class="button button-light"
+            ui-sref="tabs.map({id: modal.laboratory.id, routingOn: true})" ng-click="modal.hide()">
+            {{ 'map.takeMeAround' | translate }}
+        </a>
+        <button class="button button-light"
+            ng-click="modal.hide()">
+            {{ 'back' | translate }}
+        </button>
+    </ion-footer-bar>
+</ion-modal-view>
