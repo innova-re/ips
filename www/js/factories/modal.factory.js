@@ -4,8 +4,9 @@
     define([
         '../utils/services.util',
         'text!../../templates/modals/laboratory.modal.html',
-        'text!../../templates/modals/service.modal.html'
-    ], function (servicesUtil, laboratoryModalTemplate, serviceModalTemplate) {
+        'text!../../templates/modals/service.modal.html',
+        'text!../../templates/modals/instrument.modal.html'
+    ], function (servicesUtil, laboratoryModalTemplate, serviceModalTemplate, instrumentModalTemplate) {
 
         return ['$ionicModal', function ($ionicModal) {
 
@@ -26,10 +27,17 @@
                     $scope.modal.instruments = servicesUtil.getDistinctInstrumentsByLaboratoryId(laboratoryId);
                     $scope.modal.show();
                 };
-                $scope.openServiceModal = function (serviceId) {
+                $scope.openServiceModal = function (service) {
                     _setTemplate($scope, serviceModalTemplate);
-                    $scope.modal.service = servicesUtil.getServiceByServiceId(serviceId);
-                    $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId($scope.modal.service.laboratory_id);
+                    console.log(service);
+                    $scope.modal.service = service;
+                    $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(service.laboratory_id);
+                    $scope.modal.show();
+                };
+                $scope.openInstrumentModal = function (instrument) {
+                    _setTemplate($scope, instrumentModalTemplate);
+                    $scope.modal.instrument = instrument;
+                    $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(instrument.laboratory_id);
                     $scope.modal.show();
                 };
                 $scope.$on('leafletDirectiveMarker.click', function (event, args) {

@@ -80,11 +80,6 @@
             getServices: function () {
                 return services;
             },
-            getServiceByServiceId: function (serviceId) {
-                return _.where(services, {
-                    service_id: parseInt(serviceId, 10)
-                })[0];
-            },
             getServicesByCategoryServiceName: function (serviceName) {
                 return _.where(services, {service_category_name: serviceName});
             },

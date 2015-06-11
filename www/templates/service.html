@@ -11,7 +11,7 @@
             <ion-item class="service" ng-repeat="service in services">
                 <div class="service-info">{{service.service_name}}</div>
                 <p class="service-descripiton"
-                    ng-click="openServiceModal({{ service.service_id }})">
+                    ng-click="openServiceModal({{ service }})">
                     {{service.service_description}}
                 </p>
                 <div class="laboratory-name"
