@@ -16,7 +16,7 @@
                 $scope.showMapButton = true;
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);
-            modalFactory.init($scope);
+            modalFactory($scope);
         }];
     });
 }(this.define));

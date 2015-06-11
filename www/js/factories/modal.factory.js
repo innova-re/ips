@@ -10,16 +10,14 @@
 
         return ['$ionicModal', function ($ionicModal) {
 
-            var init,
-                _setTemplate;
-
-            _setTemplate = function ($scope, template) {
+            var _setTemplate = function ($scope, template) {
                 $scope.modal = $ionicModal.fromTemplate(template, {
                     scope: $scope,
                     animation: 'slide-in-up'
                 });
             };
-            init = function ($scope) {
+
+            return function ($scope) {
                 $scope.openLaboratoryModal = function (laboratoryId) {
                     _setTemplate($scope, laboratoryModalTemplate);
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
@@ -29,7 +27,6 @@
                 };
                 $scope.openServiceModal = function (service) {
                     _setTemplate($scope, serviceModalTemplate);
-                    console.log(service);
                     $scope.modal.service = service;
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(service.laboratory_id);
                     $scope.modal.show();
@@ -44,10 +41,6 @@
                     event.preventDefault();
                     $scope.openLaboratoryModal($scope.markers[args.markerName].id);
                 });
-            };
-
-            return {
-                init: init
             };
         }];
     });

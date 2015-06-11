@@ -30,7 +30,7 @@
             leafletData.getMap().then(function (map) {
                 map.on('baselayerchange', setLayersMarkers);
             });
-            modalFactory.init($scope);
+            modalFactory($scope);
         }];
     });
 }(this.define));
