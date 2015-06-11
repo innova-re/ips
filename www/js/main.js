@@ -19,7 +19,10 @@
             angularTranslate: vendorDir + 'angular-translate/angular-translate',
             leaflet: vendorDir + 'leaflet/dist/leaflet-src',
             // TODO - the angular-leaflet-directive taken with bower does not display the map on android!
-            angularLeafletDirective: 'vendors/angular-leaflet-directive'
+            angularLeafletDirective: 'vendors/angular-leaflet-directive',
+            leafletRoutingMachine: vendorDir + 'leaflet-routing-machine/dist/leaflet-routing-machine',
+            leafletControlGeocoder: vendorDir + 'leaflet-control-geocoder/Control.Geocoder',
+            leafletIconLabel: vendorDir + 'leaflet-icon-label/dist/leaflet.iconlabel'
         },
         shim: {
             angular: {
@@ -28,6 +31,9 @@
             lodash: {
                 exports: '_'
             },
+            leafletRoutingMachine: ['leaflet'],
+            leafletControlGeocoder: ['leafletRoutingMachine'],
+            leafletIconLabel: ['leaflet', 'leafletRoutingMachine'],
             angularLeafletDirective: ['angular', 'leaflet'],
             angularAnimate: ['angular'],
             angularSanitize: ['angular'],

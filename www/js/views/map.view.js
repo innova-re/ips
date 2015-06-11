@@ -6,7 +6,7 @@
         '../controllers/map.controller'
     ], function (mapTemplate, mapController) {
         return {
-            url: '/map/:id',
+            url: '/map/:id/:routingOn',
             views: {
                 'tab-services': {
                     template: mapTemplate,

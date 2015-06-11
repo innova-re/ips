@@ -6,17 +6,15 @@
         '../utils/geo-json.util'
     ], function (servicesUtil, geoJsonUtil) {
 
-        return ['$scope', '$stateParams', function ($scope, $stateParams) {
+        return ['$scope', '$stateParams', 'leafletData', function ($scope, $stateParams, leafletData) {
 
-            $scope.defaults = {
-                tileLayer: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
-                maxZoom: 20
-            };
-            // if missed it raise 'The "center" property is not defined in the main scope'
-            $scope.center = geoJsonUtil.getCenter({});
             $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId($stateParams.id);
-            $scope.center = geoJsonUtil.getCenter($scope.laboratory);
-            $scope.geojson = geoJsonUtil.getGeoData($scope.laboratory);
+            if($stateParams.routingOn) {
+                geoJsonUtil.setRouting($scope, leafletData);
+            } else {
+                $scope.center = geoJsonUtil.getCenter($scope.laboratory, $stateParams.routingOn && 6);
+                $scope.geojson = geoJsonUtil.getGeoData($scope.laboratory);
+            }
         }];
     });
 }(this.define));
