@@ -1,10 +1,10 @@
 <ion-footer-bar class="bar-positive">
-    <a class="button button-light"
-        ui-sref="tabs.map({id: modal.laboratory.id})" ng-click="modal.hide()">
+    <a class="button button-light" ng-click="changeRoute(); modal.hide()"
+        ui-sref="tabs.map({id: modal.laboratory.id})">
         {{ 'map.whereIs' | translate }}
     </a>
-    <a class="button button-light"
-        ui-sref="tabs.map({id: modal.laboratory.id, routingOn: true})" ng-click="modal.hide()">
+    <a class="button button-light" ng-click="changeRoute(); modal.hide()"
+        ui-sref="tabs.map({id: modal.laboratory.id, routingOn: true})" >
         {{ 'map.takeMeAround' | translate }}
     </a>
     <button class="button button-light"

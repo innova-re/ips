@@ -9,9 +9,10 @@
 
         <ion-list ng-if="!mapOn">
             <ion-item class="service" ng-repeat="instrument in instruments">
-                <div class="service-title">{{instrument.instrument_name}}</div>
-                <p ng-click="openInstrumentModal({{ instrument }})">
-                    {{instrument.instrument_description}}</p>
+                <div class="service-title" ng-click="openInstrumentModal({{ instrument }})">
+                    {{instrument.instrument_name}}
+                </div>
+                <p>{{instrument.instrument_description}}</p>
                 <div class="laboratory-name"
                     ng-click="openLaboratoryModal({{ instrument.laboratory_id }})">
                     {{instrument.laboratory_name}}
