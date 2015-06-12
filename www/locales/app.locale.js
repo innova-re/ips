@@ -5,6 +5,11 @@
         return function($translateProvider) {
             $translateProvider
             .translations('en', {
+                button: {
+                    search: 'Search',
+                    hideMap: 'Hide map',
+                    showMap: 'Show map'
+                },
                 cluster: {
                     title: 'Cluster analysis',
                     text: 'Clustering is the task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense or another) to each other than to those in other groups (clusters).'
@@ -18,7 +23,6 @@
                 category: 'Category: ',
                 description: 'Description',
                 getDirection: 'Get Direction',
-                hideMap: 'Hide map',
                 instrument: {
                     category:'Instrument category',
                     description: 'The catalog of the instruments is a service of quick consultation aimed at researchers and companies interested in learning about the supply of equipment related to testing and analysis of the RLAB Sardinia laboratories.',
@@ -32,10 +36,14 @@
                     description: 'The services offered by the laboratories are available and accessible through online form',
                     category:'Service category name'
                 },
-                showMap: 'Show map',
                 title: 'Innovare Navigation'
             })
             .translations('it', {
+                button: {
+                    search: 'Cerca',
+                    hideMap: 'Nascondi la mappa',
+                    showMap: 'Mostra la mappa'
+                },
                 cluster: {
                     title: 'Visualizzazione per gruppi',
                     text: 'Visualizzazione dei laboratori su mappa volte alla selezione e raggruppamento di elementi omogenei.'
@@ -49,7 +57,6 @@
                 category: 'Categoria: ',
                 description: 'Descrizione',
                 getDirection: 'Calcola percorso',
-                hideMap: 'Nascondi la mappa',
                 keywords: 'Parole chiave',
                 labs: 'Laboratori',
                 labs_text: 'Elenco dei laboratori della rete regionale RLAB Sardegna.',
@@ -63,7 +70,6 @@
                     description: 'Il catalogo degli strumenti è un servizio di rapida consultazione rivolto ai ricercatori e alle imprese interessati a conoscere l’offerta di apparecchiature legate a sperimentazione e analisi dei laboratori di RLAB Sardegna.',
                     name: 'Strumenti'
                 },
-                showMap: 'Mostra la mappa',
                 title: 'Navigazione Innovare'
             });
             $translateProvider.preferredLanguage('en');

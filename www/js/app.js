@@ -11,14 +11,16 @@
         'ionicAngular',
         'uiRouter',
         'angularTranslate',
-        'angularLeafletDirective'
+        'angularLeafletDirective',
+        'angularjsGeolocation'
     ], function (angular, route, appLocale, searchFactory, modalFactory, mainDirective) {
 
         var app = angular.module('ipsApp', [
             'ionic',
             'ui.router',
             'pascalprecht.translate',
-            'leaflet-directive'
+            'leaflet-directive',
+            'geolocation'
         ]);
 
         app.factory('searchFactory', searchFactory);

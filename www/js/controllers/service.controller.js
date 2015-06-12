@@ -8,7 +8,7 @@
     ], function (servicesUtil, clusteringNoLayersUtil, scopeSharedUtil) {
 
         return ['$scope', '$stateParams', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
-                function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
+            function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
             scopeSharedUtil(arguments, servicesUtil.getServicesByCategoryServiceName($stateParams.name), function (values) {
                 $scope.services = values;
                 $scope.laboratories = servicesUtil.getLaboratoriesByItems(values);

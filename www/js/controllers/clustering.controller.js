@@ -23,7 +23,6 @@
                 $scope.layers.overlays = clusteringUtil.getOverlays(items, clusteringName);
                 $scope.markers = clusteringUtil.addressPointsToMarkers(items, clusteringName);
             };
-
             $scope.center = clusteringUtil.getCenter();
             $scope.layers = clusteringUtil.getLayers();
             setLayersMarkers();

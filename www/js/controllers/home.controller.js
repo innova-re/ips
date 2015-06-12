@@ -1,8 +1,11 @@
 (function (define) {
     'use strict';
 
-    define([], function () {
-        return ['$scope', '$translate', function ($scope, $translate) {
+    define([
+        '../utils/current-location.util'
+    ], function (currentLocationUtil) {
+        return ['$scope', '$translate', 'geolocation', function ($scope, $translate, geolocation) {
+            currentLocationUtil($scope, geolocation);
             $scope.toggleLang = function () {
                 $translate.use(($translate.use() === 'en') ? 'it' : 'en');
             }
