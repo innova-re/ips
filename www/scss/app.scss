@@ -41,8 +41,16 @@ div.laboratory-title {
  * Map
  */
 .leaflet-map {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+/**
+ * ion-header-bar
+ */
+ion-header-bar .range {
+    padding-right: 85px;
+    width: 100%;
 }
 
 /**

@@ -4,6 +4,11 @@
         <!-- TODO - fix the parameter passed to translate -->
         <input type="search" placeholder="{{ 'search' | translate:{items: 'servizi'} }}" ng-change="search()" ng-model="data.search">
     </label>
+    <div class="range" data-tap-disabled="true" ng-if="mapOn">
+        <input type="range" step="1" min="0" max="200" value="1"
+            ng-model="paths.circle.radiusKm" ng-change="radiusConvert()">
+            {{ paths.circle.radiusKm }} km
+    </div>
     <button ng-if="showMapButton" ng-click="openMap()"
         class="button button-balanced {{ mapOn && ('pull-right') }}" >
         {{ mapOn && ('button.hideMap' | translate) || ('button.showMap' | translate) }}

@@ -3,8 +3,9 @@
     <ion-content>
 
         <!-- map ion-modal-view -->
+        <!-- TODO - make a directive -->
         <leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
-                bounds="bounds" center="center" markers="markers">
+                bounds="bounds" center="center" markers="markers" paths="paths">
         </leaflet>
 
         <ion-list ng-if="!mapOn">
