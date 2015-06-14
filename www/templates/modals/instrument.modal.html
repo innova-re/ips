@@ -1,0 +1,26 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{ modal.instrument.instrument_name }}</h1>
+        <div class="button button-clear" ng-click="modal.hide()">
+            <span class="icon ion-close"></span>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <ips-lab-card-modal></ips-lab-card-modal>
+        <div class="card">
+            <div class="item item-divider">
+                {{ 'instrument.category' | translate }}
+            </div>
+            <div class="item item-text-wrap">
+                {{ modal.instrument.instrument_category_name }}
+            </div>
+            <div class="item item-divider">
+                {{ 'description' | translate }}
+            </div>
+            <div class="item item-text-wrap">
+                {{ modal.instrument.instrument_description }}
+            </div>
+        </div>
+    </ion-content>
+    <ips-footer-modal></ips-footer-modal>
+</ion-modal-view>

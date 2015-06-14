@@ -7,25 +7,25 @@
         '../locales/app.locale',
         'factories/search.factory',
         'factories/modal.factory',
-        'directives/header-search.directive',
-        'directives/back-button.directive',
+        'directives/main.directive',
         'ionicAngular',
         'uiRouter',
         'angularTranslate',
-        'angularLeafletDirective'
-    ], function (angular, route, appLocale, searchFactory, modalFactory, headerSearchDirective, backButtonDirective) {
+        'angularLeafletDirective',
+        'angularjsGeolocation'
+    ], function (angular, route, appLocale, searchFactory, modalFactory, mainDirective) {
 
         var app = angular.module('ipsApp', [
             'ionic',
             'ui.router',
             'pascalprecht.translate',
-            'leaflet-directive'
+            'leaflet-directive',
+            'geolocation'
         ]);
 
         app.factory('searchFactory', searchFactory);
         app.factory('modalFactory', modalFactory);
-        app.directive('ipsHeaderSearchDirective', headerSearchDirective);
-        app.directive('ipsBackButton', backButtonDirective);
+        mainDirective(app);
         app.config(route);
         app.config(appLocale);
         angular.element().ready(function () {

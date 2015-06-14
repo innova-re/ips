@@ -23,14 +23,13 @@
                 $scope.layers.overlays = clusteringUtil.getOverlays(items, clusteringName);
                 $scope.markers = clusteringUtil.addressPointsToMarkers(items, clusteringName);
             };
-
             $scope.center = clusteringUtil.getCenter();
             $scope.layers = clusteringUtil.getLayers();
             setLayersMarkers();
             leafletData.getMap().then(function (map) {
                 map.on('baselayerchange', setLayersMarkers);
             });
-            modalFactory.init($scope);
+            modalFactory($scope);
         }];
     });
 }(this.define));

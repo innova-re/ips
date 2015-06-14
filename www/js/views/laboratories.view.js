@@ -7,7 +7,7 @@
     ], function (laboratoriesTemplate, laboratoriesController) {
 
         return {
-            url: '/laboratories',
+            url: '/laboratories/:search',
             views: {
                 'tab-laboratories': {
                     template: laboratoriesTemplate,

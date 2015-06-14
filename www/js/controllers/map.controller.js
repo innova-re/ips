@@ -7,7 +7,6 @@
     ], function (servicesUtil, geoJsonUtil) {
 
         return ['$scope', '$stateParams', 'leafletData', function ($scope, $stateParams, leafletData) {
-
             $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId($stateParams.id);
             if($stateParams.routingOn) {
                 geoJsonUtil.setRouting($scope, leafletData);

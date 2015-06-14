@@ -7,8 +7,8 @@
         '../utils/scope-shared.util'
     ], function (servicesUtil, clusteringNoLayersUtil, scopeSharedUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
-                function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
+        return ['$scope', '$stateParams', 'searchFactory', '$state', 'modalFactory', 'leafletBoundsHelpers',
+            function ($scope, $stateParams, searchFactory, $state, modalFactory, leafletBoundsHelpers) {
             scopeSharedUtil(arguments, servicesUtil.getServicesByCategoryServiceName($stateParams.name), function (values) {
                 $scope.services = values;
                 $scope.laboratories = servicesUtil.getLaboratoriesByItems(values);
@@ -16,7 +16,7 @@
                 $scope.showMapButton = true;
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);
-            modalFactory.init($scope);
+            modalFactory($scope);
         }];
     });
 }(this.define));

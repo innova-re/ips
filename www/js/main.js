@@ -9,6 +9,7 @@
             angular: vendorDir + 'angular/angular',
             angularAnimate: vendorDir + 'angular-animate/angular-animate',
             angularSanitize: vendorDir + 'angular-sanitize/angular-sanitize',
+            angularjsGeolocation: vendorDir + 'angularjs-geolocation/src/geolocation',
             ionic: vendorDir + 'ionic/js/ionic',
             ionicAngular: vendorDir + 'ionic/js/ionic-angular',
             lodash: vendorDir + 'lodash/lodash',
@@ -28,6 +29,7 @@
             angular: {
                 exports: 'angular'
             },
+            angularjsGeolocation: ['angular'],
             lodash: {
                 exports: '_'
             },

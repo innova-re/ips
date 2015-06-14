@@ -8,14 +8,14 @@
         'markercluster'
     ], function (servicesUtil, clusteringNoLayersUtil, scopeSharedUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', 'modalFactory', 'leafletBoundsHelpers',
-        function ($scope, $stateParams, searchFactory, modalFactory, leafletBoundsHelpers) {
+        return ['$scope', '$stateParams', 'searchFactory', '$state', 'modalFactory', 'leafletBoundsHelpers',
+        function ($scope, $stateParams, searchFactory, $state, modalFactory, leafletBoundsHelpers) {
             scopeSharedUtil(arguments, servicesUtil.getLaboratories(), function (values) {
                 $scope.laboratories = values;
                 $scope.showMapButton = true;
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);
-            modalFactory.init($scope);
+            modalFactory($scope);
         }];
     });
 }(this.define));

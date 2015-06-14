@@ -1,21 +1,20 @@
-<ion-view title="{{ 'category' | translate }} {{service_category_name}}">
-    <ips-header-search-directive></ips-header-search-directive>
+<ion-view title="{{ 'service.category' | translate }}: {{service_category_name}}">
+    <ips-header-search></ips-header-search>
     <ion-content>
 
         <!-- map ion-modal-view -->
         <leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
-                bounds="bounds" center="center" markers="markers">
+                bounds="bounds" center="center" markers="markers" paths="paths">
         </leaflet>
 
         <ion-list ng-if="!mapOn">
             <ion-item class="service" ng-repeat="service in services">
-                <div class="service-info">{{service.service_name}}</div>
-                <p class="service-descripiton">
-                    {{service.service_description}}
-                </p>
-                <div class="laboratory-name"
-                    ng-click="openLaboratoryModal({{ service.laboratory_id }})">
-                    {{service.laboratory_name}}
+                <div class="service-title" ng-click="openServiceModal({{ service }})">
+                    {{service.service_name}}
+                </div>
+                <p>{{ service.service_description }}</p>
+                <div class="laboratory-name" ng-click="openLaboratoryModal({{ service.laboratory_id }})">
+                    {{ service.laboratory_name }}
                 </div>
             </ion-item>
         </ion-list>

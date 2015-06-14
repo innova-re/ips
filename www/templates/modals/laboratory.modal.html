@@ -6,27 +6,10 @@
         </div>
     </ion-header-bar>
     <ion-content>
-        <div class="list card">
-            <div class="item item-icon-left">
-                <i class="icon ion-ios-telephone"></i>
-                {{ modal.laboratory.telephone }}
-            </div>
-            <div class="item item-icon-left">
-                <i class="icon ion-university"></i>
-                {{ modal.laboratory.ente_name }} <br> {{ laboratory.area_name }}
-            </div>
-            <div class="item item-icon-left">
-                <i class="icon ion-home"></i>
-                {{ modal.laboratory.address }}
-            </div>
-            <div class="item item-icon-left">
-                <i class="icon ion-person"></i>
-                {{ modal.laboratory.responsabile }}
-            </div>
-        </div>
+        <ips-lab-card-modal></ips-lab-card-modal>
         <div class="card">
             <div class="item item-divider">
-                {{ 'services' | translate }}
+                {{ 'service.name' | translate }}
             </div>
             <div class="item item-text-wrap">
                 <ion-list>
@@ -38,7 +21,7 @@
                 </ion-list>
             </div>
             <div class="item item-divider">
-                {{ 'instruments' | translate }}
+                {{ 'instrument.name' | translate }}
             </div>
             <div class="item item-text-wrap">
                 <ion-list>
@@ -57,18 +40,5 @@
             </div>
         </div>
     </ion-content>
-    <ion-footer-bar class="bar-positive">
-        <a class="button button-light"
-            ui-sref="tabs.map({id: modal.laboratory.id})" ng-click="modal.hide()">
-            {{ 'map.whereIs' | translate }}
-        </a>
-        <a class="button button-light"
-            ui-sref="tabs.map({id: modal.laboratory.id, routingOn: true})" ng-click="modal.hide()">
-            {{ 'map.takeMeAround' | translate }}
-        </a>
-        <button class="button button-light"
-            ng-click="modal.hide()">
-            {{ 'back' | translate }}
-        </button>
-    </ion-footer-bar>
+    <ips-footer-modal></ips-footer-modal>
 </ion-modal-view>

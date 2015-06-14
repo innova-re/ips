@@ -1,4 +1,5 @@
-(function (define, L) {
+/*global L*/
+(function (define) {
     'use strict';
 
     define([
@@ -34,7 +35,6 @@
                 };
             });
         };
-
         getGeoData = function (laboratory) {
             return {
                 data: {
@@ -65,16 +65,18 @@
             $scope.center = {};
             leafletData.getMap().then(function (map) {
                 L.Routing.control({
-                    language: 'en',
+                    // TODO - update the italian language $translate.use()
+                    language: 'fr',
                     waypoints: [
-                        // TODO - get real local coordinate
-                        L.latLng(39.220821, 9.113934),
+                        L.latLng($scope.coords.lat, $scope.coords.lng),
                         L.latLng($scope.laboratory.lat, $scope.laboratory.lng)
                     ],
                     createMarker: function (i, wp) {
                         return L.marker(wp.latLng, {
                             draggable: true,
-                            icon: new L.Icon.Label.Default({labelText: String.fromCharCode(65 + i)})
+                            icon: new L.Icon.Label.Default({
+                                labelText: String.fromCharCode(65 + i)
+                            })
                         });
                     },
                     geocoder: L.Control.Geocoder.nominatim()
@@ -90,4 +92,4 @@
             setRouting: setRouting
         };
     });
-}(this.define, this.L));
+}(this.define));

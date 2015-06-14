@@ -41,8 +41,16 @@ div.laboratory-title {
  * Map
  */
 .leaflet-map {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+/**
+ * ion-header-bar
+ */
+ion-header-bar .range {
+    padding-right: 85px;
+    width: 100%;
 }
 
 /**
@@ -52,11 +60,8 @@ div.laboratory-title {
     cursor: pointer;
 }
 
-.service div.service-info {
+.service div.service-title {
     font-weight: bold;
-}
-
-.service p.service-descripiton {
     cursor: pointer;
 }
 
