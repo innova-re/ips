@@ -1,11 +1,3 @@
-<leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
-        bounds="bounds" center="center" markers="markers" paths="paths">
-</leaflet>
-
-<div class="item item-divider">
-    {{ 'results' | translate }} {{ laboratories.length }}
-</div>
-
 <ion-list ng-if="!mapOn">
     <ion-item ng-repeat="laboratory in laboratories" class="laboratory-title">
         <div class="laboratory-title"

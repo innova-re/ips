@@ -1,17 +1,3 @@
-<leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
-        bounds="bounds" center="center" markers="markers" paths="paths">
-</leaflet>
-
-<button ng-if="categories.length > 1"
-    class="button button-block button-dark"
-    ng-click="openCategoriesModal({{ 'categories' }})">
-    AFFINARE ({{ categories.length }})
-</button>
-
-<div class="item item-divider">
-    {{ 'results' | translate }}: {{ instruments.length }}
-</div>
-
 <ion-list ng-if="!mapOn">
     <ion-item class="service" ng-repeat="instrument in instruments">
         <div class="service-title" ng-click="openServiceModal({{ instrument }})">

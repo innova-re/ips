@@ -14,6 +14,7 @@
                     title: 'Cluster analysis',
                     text: 'Clustering is the task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense or another) to each other than to those in other groups (clusters).'
                 },
+                hone: 'Hone in on',
                 map: {
                     whereIs: 'Where is?',
                     takeMeAround: 'Take me around'
@@ -49,6 +50,7 @@
                     title: 'Visualizzazione per gruppi',
                     text: 'Visualizzazione dei laboratori su mappa volte alla selezione e raggruppamento di elementi omogenei.'
                 },
+                hone: 'Affinare',
                 map: {
                     whereIs: 'Dov\'è?',
                     takeMeAround: 'Portami'
