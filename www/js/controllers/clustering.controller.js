@@ -19,7 +19,7 @@
                     items;
 
                 clusteringName = event ? event.name : 'ente';
-                items = (clusteringName === 'macroarea') ? servicesUtil.getMacroarea() : servicesUtil.getLaboratories();
+                items = (clusteringName === 'macroarea') ? servicesUtil.getMacroarea() : servicesUtil.get('laboratories', '');
                 $scope.layers.overlays = clusteringUtil.getOverlays(items, clusteringName);
                 $scope.markers = clusteringUtil.addressPointsToMarkers(items, clusteringName);
             };

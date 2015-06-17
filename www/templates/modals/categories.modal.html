@@ -1,0 +1,26 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <div class="button button-clear" ng-click="modal.hide()">
+            <span class="icon ion-close"></span>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="item item-text-wrap">
+            <ion-list>
+                <ion-item
+                    class="services"
+                    ng-repeat="category in modal.categories">
+                    <div class="service-name"
+                        ng-click="modal.hide()"
+                        ui-sref="tabs.search({
+                            key: '{{ stateParams.key }}', 
+                            search: '{{ stateParams.search }}', 
+                            category: '{{ category.name }}'
+                        })">
+                        {{category.name}} ({{category.occurencies}})
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-modal-view>

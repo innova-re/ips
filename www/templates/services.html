@@ -1,12 +1,25 @@
-<ion-view title="{{ 'service.category' | translate }}">
-    <ips-header-search></ips-header-search>
-    <ion-content>
-        <ion-list>
-            <ion-item class="services" ng-repeat="service in services"
-                ui-sref="tabs.service({name: service, search: data.search})"
-                ng-click="changeRoute()">
-                <div class="service-name">{{service}}</div>
-            </ion-item>
-        </ion-list>
-    </ion-content>
-</ion-view>
+<leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
+        bounds="bounds" center="center" markers="markers" paths="paths">
+</leaflet>
+
+<button ng-if="categories.length > 1"
+    class="button button-block button-dark"
+    ng-click="openCategoriesModal({{ 'categories' }})">
+    AFFINARE ({{ categories.length }})
+</button>
+
+<div class="item item-divider">
+    {{ 'results' | translate }} {{ services.length }}
+</div>
+
+<ion-list ng-if="!mapOn">
+    <ion-item class="service" ng-repeat="service in services">
+        <div class="service-title" ng-click="openServiceModal({{ service }})">
+            {{service.service_name}}
+        </div>
+        <p>{{ service.service_description }}</p>
+        <div class="laboratory-name" ng-click="openLaboratoryModal({{ service.laboratory_id }})">
+            {{ service.laboratory_name }}
+        </div>
+    </ion-item>
+</ion-list>

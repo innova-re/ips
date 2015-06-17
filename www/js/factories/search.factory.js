@@ -8,10 +8,10 @@
         return ['$q', '$timeout', function ($q, $timeout) {
 
             var deferred,
-                matches,
-                searchObject;
+                matches;
 
             return function (searchFilterString) {
+
                 matches = this.filter(function (items) {
 
                     var result = !searchFilterString ? true : _.map(searchFilterString.split(' '), function (searchFilter) {

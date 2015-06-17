@@ -1,23 +1,22 @@
 <ion-view title="{{ 'title' | translate }}">
     <ion-content class="padding app-home">
         <div class="list">
-            <a class="item item-thumbnail-left">
+            <a class="item item-thumbnail-left"
+                ui-sref="tabs.search({key: 'laboratories', search:'', category: ''})">
                 <img src="images/magnifier.png">
                 <!-- TODO - fix the parameter and add a action to search laboratories-->
-                <input type="search" placeholder="{{ 'search' | translate:{items: 'laboratori'} }}" class="ng-pristine ng-valid">
+                <input type="search"
+                    placeholder="{{ 'search' | translate:{items: 'laboratori'} }}" class="ng-pristine ng-valid">
             </a>
             <!-- ui-sref initialze controller twice if url has params undefined -->
-            <a class="item item-thumbnail-left" ui-sref="tabs.services({search:''})">
+            <a class="item item-thumbnail-left"
+                ui-sref="tabs.search({key: 'services', search:'', category: ''})">
                 <img src="images/service.png">
                 <h2>{{ 'service.name' | translate }}</h2>
                 <p>{{ 'service.description' | translate }}</p>
             </a>
-            <a class="item item-thumbnail-left" ui-sref="tabs.laboratories({search:''})">
-                <img src="images/lab.png">
-                <h2>{{ 'labs' | translate }}</h2>
-                <p>{{ 'labs_text' | translate }}</p>
-            </a>
-            <a class="item item-thumbnail-left" ui-sref="tabs.instruments({search:''})">
+            <a class="item item-thumbnail-left"
+                ui-sref="tabs.search({key: 'instruments', search:'', category: ''})">
                 <img src="images/instrument.png">
                 <h2>{{ 'instrument.name' | translate }}</h2>
                 <p>{{ 'instrument.description' | translate }}</p>

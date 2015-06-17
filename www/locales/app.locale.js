@@ -36,6 +36,7 @@
                     description: 'The services offered by the laboratories are available and accessible through online form',
                     category:'Service category name'
                 },
+                results: 'Results',
                 title: 'Innovare Navigation'
             })
             .translations('it', {
@@ -70,6 +71,7 @@
                     description: 'Il catalogo degli strumenti è un servizio di rapida consultazione rivolto ai ricercatori e alle imprese interessati a conoscere l’offerta di apparecchiature legate a sperimentazione e analisi dei laboratori di RLAB Sardegna.',
                     name: 'Strumenti'
                 },
+                results: 'Risultati',
                 title: 'Navigazione Innovare'
             });
             $translateProvider.preferredLanguage('en');

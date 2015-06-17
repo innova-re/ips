@@ -1,18 +1,14 @@
-<ion-view title="{{ 'labs' | translate }}">
-    <ips-header-search></ips-header-search>
-    <ion-content>
-        <!-- map ion-modal-view -->
-        <leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
-                bounds="bounds" center="center" markers="markers" paths="paths">
-        </leaflet>
+<leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
+        bounds="bounds" center="center" markers="markers" paths="paths">
+</leaflet>
 
-        <!-- laboratories ion-list -->
-        <ion-list ng-if="!mapOn">
-            <ion-item ng-repeat="laboratory in laboratories" class="laboratory-title">
-                <div class="laboratory-title"
-                    ng-click="openLaboratoryModal({{laboratory.id}})">{{laboratory.name}}
-                </div>
-        </ion-list>
+<div class="item item-divider">
+    {{ 'results' | translate }} {{ laboratories.length }}
+</div>
 
-    </ion-content>
-</ion-view>
+<ion-list ng-if="!mapOn">
+    <ion-item ng-repeat="laboratory in laboratories" class="laboratory-title">
+        <div class="laboratory-title"
+            ng-click="openLaboratoryModal({{laboratory.id}})">{{laboratory.name}}
+        </div>
+</ion-list>
