@@ -11,12 +11,25 @@
         
         return {
 
+            get: function (key, category) {
+
+                var source = (category === '') ? {} : {category: category};
+
+                switch (key) {
+                    case 'services':
+                        return _.where(services, source);
+
+                    case 'instruments':
+                        return _.where(instruments, source);
+
+                    case 'laboratories':
+                        return _.where(laboratories, source);
+                }
+            },
+
             /*
              * Instruments Methods
              */
-            getInstruments: function () {
-                return instruments;
-            },
             getDistinctInstrumentsByLaboratoryId: function (laboratoryId) {
 
                 var  instrumentsByLaboratoryId = _.where(instruments, {laboratory_id: laboratoryId});
@@ -35,9 +48,6 @@
             /*
              * Laboratories Methods
              */
-            getLaboratories: function () {
-                return laboratories;
-            },
             getLaboratoryByLaboratoryId: function (laboratoryId) {
                 return _.where(laboratories, {
                     id: parseInt(laboratoryId, 10)
@@ -76,9 +86,6 @@
                 return _.unique(servicesByLaboratoryId.map(function (object) {
                     return object.service_name;
                 }));
-            },
-            getServices: function () {
-                return services;
             },
             getServicesByCategoryServiceName: function (serviceName) {
                 return _.where(services, {service_category_name: serviceName});

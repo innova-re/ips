@@ -14,6 +14,7 @@
                     title: 'Cluster analysis',
                     text: 'Clustering is the task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense or another) to each other than to those in other groups (clusters).'
                 },
+                hone: 'Hone in on',
                 map: {
                     whereIs: 'Where is?',
                     takeMeAround: 'Take me around'
@@ -36,6 +37,7 @@
                     description: 'The services offered by the laboratories are available and accessible through online form',
                     category:'Service category name'
                 },
+                results: 'Results',
                 title: 'Innovare Navigation'
             })
             .translations('it', {
@@ -48,6 +50,7 @@
                     title: 'Visualizzazione per gruppi',
                     text: 'Visualizzazione dei laboratori su mappa volte alla selezione e raggruppamento di elementi omogenei.'
                 },
+                hone: 'Affinare',
                 map: {
                     whereIs: 'Dov\'è?',
                     takeMeAround: 'Portami'
@@ -70,6 +73,7 @@
                     description: 'Il catalogo degli strumenti è un servizio di rapida consultazione rivolto ai ricercatori e alle imprese interessati a conoscere l’offerta di apparecchiature legate a sperimentazione e analisi dei laboratori di RLAB Sardegna.',
                     name: 'Strumenti'
                 },
+                results: 'Risultati',
                 title: 'Navigazione Innovare'
             });
             $translateProvider.preferredLanguage('en');

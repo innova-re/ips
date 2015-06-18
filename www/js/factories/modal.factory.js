@@ -5,8 +5,9 @@
         '../utils/services.util',
         'text!../../templates/modals/laboratory.modal.html',
         'text!../../templates/modals/service.modal.html',
-        'text!../../templates/modals/instrument.modal.html'
-    ], function (servicesUtil, laboratoryModalTemplate, serviceModalTemplate, instrumentModalTemplate) {
+        'text!../../templates/modals/instrument.modal.html',
+        'text!../../templates/modals/categories.modal.html'
+    ], function (servicesUtil, laboratoryModalTemplate, serviceModalTemplate, instrumentModalTemplate, categoriesModalTemplate) {
 
         return ['$ionicModal', function ($ionicModal) {
 
@@ -35,6 +36,11 @@
                     _setTemplate($scope, instrumentModalTemplate);
                     $scope.modal.instrument = instrument;
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(instrument.laboratory_id);
+                    $scope.modal.show();
+                };
+                $scope.openCategoriesModal = function (categories) {
+                    _setTemplate($scope, categoriesModalTemplate);
+                    $scope.modal.categories = categories;
                     $scope.modal.show();
                 };
                 $scope.$on('leafletDirectiveMarker.click', function (event, args) {

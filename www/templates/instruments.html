@@ -1,12 +1,11 @@
-<ion-view title="{{ 'instrument.category' | translate }}">
-    <ips-header-search></ips-header-search>
-    <ion-content>
-        <ion-list>
-            <ion-item class="instruments" ng-repeat="instrument in instruments"
-                ui-sref="tabs.instrument({name: instrument, search: data.search})"
-                ng-click="changeRoute()">
-                <div class="instrument-name">{{instrument}}</div>
-            </ion-item>
-        </ion-list>
-    </ion-content>
-</ion-view>
+<ion-list ng-if="!mapOn">
+    <ion-item class="service" ng-repeat="instrument in instruments">
+        <div class="service-title" ng-click="openServiceModal({{ instrument }})">
+            {{instrument.instrument_name}}
+        </div>
+        <p>{{ service.service_description }}</p>
+        <div class="laboratory-name" ng-click="openLaboratoryModal({{ instrument.laboratory_id }})">
+            {{ instrument.laboratory_name }}
+        </div>
+    </ion-item>
+</ion-list>
