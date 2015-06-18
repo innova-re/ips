@@ -9,9 +9,10 @@
         'leafletIconLabel'
     ], function (_) {
 
-        var getCenter,
+        var getBounds,
+            getCenter,
             getGeoData,
-            getBounds,
+            getIcon,
             getMarkers,
             setRouting;
 
@@ -21,6 +22,18 @@
                 lng: laboratory.lng || 0,
                 zoom: zoom || 17
             };
+        };
+        getIcon = function (index) {
+
+            var iconObject = {
+                labelText: String.fromCharCode(65 + index)
+            };
+
+            if (index === 0) {
+                iconObject.iconUrl = 'images/marker-start.png';
+            }
+
+            return new L.Icon.Label.Default(iconObject);
         };
         getMarkers = function (laboratories) {
 
@@ -71,12 +84,10 @@
                         L.latLng($scope.coords.lat, $scope.coords.lng),
                         L.latLng($scope.laboratory.lat, $scope.laboratory.lng)
                     ],
-                    createMarker: function (i, wp) {
+                    createMarker: function (index, wp) {
                         return L.marker(wp.latLng, {
                             draggable: true,
-                            icon: new L.Icon.Label.Default({
-                                labelText: String.fromCharCode(65 + i)
-                            })
+                            icon: getIcon(index)
                         });
                     },
                     geocoder: L.Control.Geocoder.nominatim()
