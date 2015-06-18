@@ -31,10 +31,10 @@
                         radius: 1000,
                         latlngs: $scope.markers[0],
                         clickable: false,
-                        weight: 1
+                        weight: 1,
+                        radiusKm: 1
                     }
                 };
-                $scope.paths.circle.radiusKm = 1;
                 $scope.bounds = geoJsonUtil.getBounds($scope.laboratories, leafletBoundsHelpers);
                 toggleTemplate();
             };

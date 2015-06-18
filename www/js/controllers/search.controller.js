@@ -14,7 +14,7 @@
 
             $scope.stateParams = $stateParams;
             $scope.template = {
-                url: '../templates/' + key + '.html'
+                url: 'templates/' + key + '.html'
             };
             scopeSharedUtil(arguments, servicesUtil.get(key, $stateParams.category), function (values) {
                 if ($scope.data.search.length > 2) {
