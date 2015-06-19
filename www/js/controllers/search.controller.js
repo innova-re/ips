@@ -10,13 +10,18 @@
 
         return ['$scope', '$stateParams', 'searchFactory', '$state', 'modalFactory', 'leafletBoundsHelpers', function ($scope, $stateParams, searchFactory, $state, modalFactory, leafletBoundsHelpers) {
 
-            var key = $stateParams.key;
+            var key,
+                args;
 
+            key = $stateParams.key;
+            args = [$scope, $stateParams, searchFactory, $state];
             $scope.stateParams = $stateParams;
             $scope.template = {
                 url: 'templates/' + key + '.html'
             };
-            scopeSharedUtil(arguments, servicesUtil.get(key, $stateParams.category), function (values) {
+            // TODO - try to use instrument.name or service.name local to translate the key
+            $scope.title = key;
+            scopeSharedUtil(args, servicesUtil.get(key, $stateParams.category), function (values) {
                 if ($scope.data.search.length > 2) {
                     $scope[key] = values;
                     $scope.results = values.length;

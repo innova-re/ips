@@ -11,20 +11,21 @@
         
         return {
 
-            get: function (key, category) {
+            get: function (key, category, uniq) {
 
-                var source = (category === '') ? {} : {category: category};
+                var source,
+                    items,
+                    mapKey;
 
-                switch (key) {
-                    case 'services':
-                        return _.where(services, source);
+                mapKey = {
+                    services: services,
+                    instruments: instruments,
+                    laboratories: laboratories
+                };
+                source = (category === '') ? {} : {category: category};
+                items = _.where(mapKey[key], source);
 
-                    case 'instruments':
-                        return _.where(instruments, source);
-
-                    case 'laboratories':
-                        return _.where(laboratories, source);
-                }
+                return uniq ? _.uniq(items, 'id') : items;
             },
 
             /*
@@ -52,9 +53,6 @@
                 return _.where(laboratories, {
                     id: parseInt(laboratoryId, 10)
                 })[0];
-            },
-            getLaboratoryByServiceId: function (serviceId) {
-                return _.where(services, {service_id: serviceId})[0];
             },
             getLaboratoriesByItems: function (items) {
 

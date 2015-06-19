@@ -1,11 +1,30 @@
 <ion-list ng-if="!mapOn">
-    <ion-item class="service" ng-repeat="service in services">
-        <div class="service-title" ng-click="openServiceModal({{ service }})">
-            {{service.service_name}}
+    <ion-item class="row row-center service" ng-repeat="service in services">
+
+        <div>
+            <div class="row">
+                <a class="button" ng-click="changeRoute()"
+                    ui-sref="tabs.map({id: service.laboratory_id})">
+                    <i class="icon ion-android-globe"></i>
+                </a>
+            </div>
+            <div class="row">
+                <a class="button" ng-click="changeRoute()"
+                    ui-sref="tabs.map({id: service.laboratory_id, routingOn: true})">
+                    <i class="icon ion-paper-airplane"></i>
+                </a>
+            </div>
         </div>
-        <p>{{ service.service_description }}</p>
-        <div class="laboratory-name" ng-click="openLaboratoryModal({{ service.laboratory_id }})">
-            {{ service.laboratory_name }}
+
+        <div class="col col-description">
+            <div class="service-title" ng-click="openServiceModal({{ service }})">
+                {{service.service_name}}
+            </div>
+            <p>{{ service.service_description }}</p>
+            <div class="laboratory-name" ng-click="openLaboratoryModal({{ service.laboratory_id }})">
+                {{ service.laboratory_name }}
+            </div>
         </div>
+
     </ion-item>
 </ion-list>

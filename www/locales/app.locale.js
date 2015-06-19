@@ -32,13 +32,16 @@
                 keywords: 'Keywords',
                 labs: 'Laboratories',
                 labs_text: 'List of laboratories of the regional network RLAB Sardinia',
+                laboratories: 'Laboratories',
                 service: {
                     name: 'Services',
                     description: 'The services offered by the laboratories are available and accessible through online form',
                     category:'Service category name'
                 },
+                services: 'Services',
+                instruments: 'Instruments',
                 results: 'Results',
-                title: 'Innovare Navigation'
+                title: 'Home'
             })
             .translations('it', {
                 button: {
@@ -60,6 +63,7 @@
                 category: 'Categoria: ',
                 description: 'Descrizione',
                 getDirection: 'Calcola percorso',
+                instruments: 'Strumenti',
                 keywords: 'Parole chiave',
                 labs: 'Laboratori',
                 labs_text: 'Elenco dei laboratori della rete regionale RLAB Sardegna.',
@@ -73,8 +77,10 @@
                     description: 'Il catalogo degli strumenti è un servizio di rapida consultazione rivolto ai ricercatori e alle imprese interessati a conoscere l’offerta di apparecchiature legate a sperimentazione e analisi dei laboratori di RLAB Sardegna.',
                     name: 'Strumenti'
                 },
+                laboratories: 'Laboratori',
                 results: 'Risultati',
-                title: 'Navigazione Innovare'
+                services: 'Servizi',
+                title: 'Home'
             });
             $translateProvider.preferredLanguage('en');
         }

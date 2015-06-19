@@ -11,7 +11,6 @@
             };
             $scope.toggleLeft = function() {
                 $ionicSideMenuDelegate.toggleLeft();
-                console.log($ionicSideMenuDelegate)
             };
             $scope.items = [
                 {
