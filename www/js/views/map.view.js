@@ -8,7 +8,7 @@
         return {
             url: '/map/:id/:routingOn',
             views: {
-                'tab-services': {
+                'tab-home': {
                     template: mapTemplate,
                     controller: mapController
                 }
