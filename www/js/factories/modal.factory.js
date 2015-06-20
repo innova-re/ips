@@ -21,6 +21,17 @@
             return function ($scope) {
                 $scope.openLaboratoryModal = function (laboratoryId) {
                     _setTemplate($scope, laboratoryModalTemplate);
+                    // Ref. - Add a collapsible list - http://codepen.io/ionic/pen/uJkCz
+                    $scope.toggleGroup = function (group) {
+                        if ($scope.isGroupShown(group)) {
+                            $scope.shownGroup = null;
+                        } else {
+                            $scope.shownGroup = group;
+                        }
+                    };
+                    $scope.isGroupShown = function (group) {
+                        return $scope.shownGroup === group;
+                    };
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
                     $scope.modal.services = servicesUtil.getDistinctServicesByLaboratoryId(laboratoryId);
                     $scope.modal.instruments = servicesUtil.getDistinctInstrumentsByLaboratoryId(laboratoryId);

@@ -8,35 +8,35 @@
     <ion-content>
         <ips-lab-card-modal></ips-lab-card-modal>
         <div class="card">
-            <div class="item item-divider">
+            <div class="item item-divider" ng-click="toggleGroup(modal.services)">
+                <i class="icon" ng-class="isGroupShown(modal.services) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'service.name' | translate }}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.services)">
                 <ion-list>
-                    <!-- TODO - Add a collapsible list - http://codepen.io/ionic/pen/uJkCz -->
-                    <ion-item
-                        class="services"
+                    <ion-item class="services"
                         ng-repeat="service in modal.services">
                         <div class="service-name">{{service}}</div>
                     </ion-item>
                 </ion-list>
             </div>
-            <div class="item item-divider">
+            <div class="item item-divider" ng-click="toggleGroup(modal.instruments)">
+                <i class="icon" ng-class="isGroupShown(modal.instruments) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'instrument.name' | translate }}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.instruments)">
                 <ion-list>
-                    <ion-item
-                        class="services"
+                    <ion-item class="services"
                         ng-repeat="instrument in modal.instruments">
                         <div class="service-name">{{instrument}}</div>
                     </ion-item>
                 </ion-list>
             </div>
-            <div class="item item-divider">
+            <div class="item item-divider" ng-click="toggleGroup(modal.laboratory.description)">
+              <i class="icon" ng-class="isGroupShown(modal.laboratory.description) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'description' | translate }}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.laboratory.description)">
                 {{ modal.laboratory.description }}
             </div>
         </div>
