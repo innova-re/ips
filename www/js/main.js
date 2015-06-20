@@ -10,6 +10,7 @@
             angularAnimate: vendorDir + 'angular-animate/angular-animate',
             angularSanitize: vendorDir + 'angular-sanitize/angular-sanitize',
             angularjsGeolocation: vendorDir + 'angularjs-geolocation/src/geolocation',
+            geolib: vendorDir + 'geolib/dist/geolib',
             ionic: vendorDir + 'ionic/js/ionic',
             ionicAngular: vendorDir + 'ionic/js/ionic-angular',
             lodash: vendorDir + 'lodash/lodash',

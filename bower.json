@@ -16,6 +16,7 @@
     "leaflet-routing-machine": "~2.3.0",
     "leaflet-control-geocoder": "~1.1.0",
     "leaflet-icon-label": "*",
-    "angularjs-geolocation": "~0.1.1"
+    "angularjs-geolocation": "~0.1.1",
+    "geolib": "~2.0.9"
   }
 }

@@ -56,14 +56,21 @@
             },
             getLaboratoriesByItems: function (items) {
 
-                var ids = _.unique(items.map(function (item) {
+                var ids,
+                    allLaboratories;
+
+                ids = _.unique(items.map(function (item) {
                     return item.laboratory_id;
                 }));
 
-                return ids.map(function (laboratoryId) {
+                allLaboratories = ids.map(function (laboratoryId) {
                     return _.where(laboratories, {
                         id: parseInt(laboratoryId, 10)
                     })[0];
+                });
+
+                return _.remove(allLaboratories, function(laboratory) {
+                    return laboratory !== undefined;
                 });
             },
 
