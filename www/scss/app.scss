@@ -14,11 +14,13 @@
  */
 
 .app-home img {
-  background: #145fd7;
+    background: #145fd7;
 }
-
+.app-home .list > a > p {
+    white-space: normal;
+}
 .scroll {
-  height: 100%;
+    height: 100%;
 }
 
 ion-content {

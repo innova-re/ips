@@ -3,23 +3,23 @@
         <div class="list">
             <a class="item item-thumbnail-left"
                 ui-sref="tabs.search({key: 'laboratories', search:'', category: ''})">
-                <img src="images/magnifier.png">
+                <img src="images/lab.png">
                 <!-- TODO - fix the parameter and add a action to search laboratories-->
-                <input type="search"
-                    placeholder="{{ 'search' | translate:{items: 'laboratori'} }}" class="ng-pristine ng-valid">
+                <h2>{{ 'laboratories' | translate }}</h2>
+                <p>{{ 'search' | translate:{items: 'laboratori'} }}</p>
             </a>
             <!-- ui-sref initialze controller twice if url has params undefined -->
             <a class="item item-thumbnail-left"
                 ui-sref="tabs.search({key: 'services', search:'', category: ''})">
                 <img src="images/service.png">
                 <h2>{{ 'service.name' | translate }}</h2>
-                <p>{{ 'service.description' | translate }}</p>
+                <p>{{ 'search' | translate:{items: 'servizi'} }}</p>
             </a>
             <a class="item item-thumbnail-left"
                 ui-sref="tabs.search({key: 'instruments', search:'', category: ''})">
                 <img src="images/instrument.png">
                 <h2>{{ 'instrument.name' | translate }}</h2>
-                <p>{{ 'instrument.description' | translate }}</p>
+                <p>{{ 'search' | translate:{items: 'strumenti'} }}</p>
             </a>
             <a class="item item-thumbnail-left" ui-sref="tabs.clustering">
                 <img src="images/clustering.png">

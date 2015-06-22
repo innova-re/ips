@@ -19,6 +19,11 @@
                     href: 'tabs.home'
                 },
                 {
+                    name: 'laboratories',
+                    icon: 'ion-erlenmeyer-flask',
+                    href: 'tabs.search({key: "laboratories", search:"", category: ""})'
+                },
+                {
                     name: 'service.name',
                     icon: 'ion-gear-a',
                     href: 'tabs.search({key: "services", search:"", category: ""})'
@@ -27,11 +32,6 @@
                     name: 'instruments',
                     icon: 'ion-settings',
                     href: 'tabs.search({key: "instruments", search:"", category: ""})'
-                },
-                {
-                    name: 'labs',
-                    icon: 'ion-erlenmeyer-flask',
-                    href: 'tabs.search({key: "laboratories", search:"", category: ""})'
                 },
                 {
                     name: 'cluster.title',
