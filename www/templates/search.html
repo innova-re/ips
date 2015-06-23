@@ -4,13 +4,11 @@
         <leaflet class="leaflet-map" data-tap-disabled="true" ng-if="mapOn"
                 bounds="bounds" center="center" markers="markers" paths="paths">
         </leaflet>
-
         <div class="item item-divider">
             {{ 'results' | translate }}: {{ results || 0 }}
         </div>
         <ng-include src="template.url"></ng-include>
     </ion-content>
-
     <ion-footer-bar class="bar-positive" ng-if="categories.length > 1">
         <h1 class="title" ng-click="openCategoriesModal({{ 'categories' }})">
             {{ 'hone' | translate }} ({{ categories.length }})

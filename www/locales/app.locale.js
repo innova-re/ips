@@ -7,7 +7,6 @@
             .translations('en', {
                 button: {
                     search: 'Search',
-                    hideMap: 'Hide map',
                     showMap: 'Show map'
                 },
                 cluster: {
@@ -47,7 +46,6 @@
             .translations('it', {
                 button: {
                     search: 'Cerca',
-                    hideMap: 'Nascondi la mappa',
                     showMap: 'Mostra la mappa'
                 },
                 cluster: {

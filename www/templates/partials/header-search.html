@@ -13,8 +13,8 @@
             ng-model="paths.circle.radiusKm" ng-change="radiusConvert()">
             {{ paths.circle.radiusKm }} km
     </div>
+    <!-- TODO - add the back button functionality -->
     <button ng-if="categories.length > 0" ng-click="openMap()"
-        class="button button-balanced {{ mapOn && ('pull-right') }}" >
-        {{ mapOn && ('button.hideMap' | translate) || ('button.showMap' | translate) }}
+        class="button {{ mapOn && ('pull-right button-assertive') }} icon ion-map" >
     </button>
 </ion-header-bar>

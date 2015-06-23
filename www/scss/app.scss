@@ -55,15 +55,22 @@ ion-header-bar .range {
     width: 100%;
 }
 
+// TODO - remove all reference to laboratory, service and intruments list
+/**
+ * Search List
+ */
+.search-title {
+    font-weight: bold;
+    cursor: pointer;
+}
+.search-distance {
+    float: right;
+}
+
 /**
  * Service
  */
 .service a {
-    cursor: pointer;
-}
-
-.service div.service-title {
-    font-weight: bold;
     cursor: pointer;
 }
 
