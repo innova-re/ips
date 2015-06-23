@@ -3,11 +3,12 @@
 
     define([
         '../utils/services.util',
+        '../utils/collapse.util',
         'text!../../templates/modals/laboratory.modal.html',
         'text!../../templates/modals/service.modal.html',
         'text!../../templates/modals/instrument.modal.html',
         'text!../../templates/modals/categories.modal.html'
-    ], function (servicesUtil, laboratoryModalTemplate, serviceModalTemplate, instrumentModalTemplate, categoriesModalTemplate) {
+    ], function (servicesUtil, collapseUtil, laboratoryModalTemplate, serviceModalTemplate, instrumentModalTemplate, categoriesModalTemplate) {
 
         return ['$ionicModal', function ($ionicModal) {
 
@@ -21,17 +22,7 @@
             return function ($scope) {
                 $scope.openLaboratoryModal = function (laboratoryId) {
                     _setTemplate($scope, laboratoryModalTemplate);
-                    // Ref. - Add a collapsible list - http://codepen.io/ionic/pen/uJkCz
-                    $scope.toggleGroup = function (group) {
-                        if ($scope.isGroupShown(group)) {
-                            $scope.shownGroup = null;
-                        } else {
-                            $scope.shownGroup = group;
-                        }
-                    };
-                    $scope.isGroupShown = function (group) {
-                        return $scope.shownGroup === group;
-                    };
+                    collapseUtil($scope);
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
                     $scope.modal.services = servicesUtil.getDistinctServicesByLaboratoryId(laboratoryId);
                     $scope.modal.instruments = servicesUtil.getDistinctInstrumentsByLaboratoryId(laboratoryId);

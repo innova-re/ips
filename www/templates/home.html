@@ -1,31 +1,13 @@
 <ion-view title="{{ 'title' | translate }}">
-    <ion-content padding="true" class="app-home">
-        <div class="list">
-            <a class="item item-thumbnail-left"
-                ui-sref="tabs.search({key: 'laboratories', search:'', category: ''})">
-                <img src="images/lab.png">
-                <!-- TODO - fix the parameter and add a action to search laboratories-->
-                <h2>{{ 'laboratories' | translate }}</h2>
-                <p>{{ 'search' | translate:{items: 'laboratori'} }}</p>
-            </a>
-            <!-- ui-sref initialze controller twice if url has params undefined -->
-            <a class="item item-thumbnail-left"
-                ui-sref="tabs.search({key: 'services', search:'', category: ''})">
-                <img src="images/service.png">
-                <h2>{{ 'service.name' | translate }}</h2>
-                <p>{{ 'search' | translate:{items: 'servizi'} }}</p>
-            </a>
-            <a class="item item-thumbnail-left"
-                ui-sref="tabs.search({key: 'instruments', search:'', category: ''})">
-                <img src="images/instrument.png">
-                <h2>{{ 'instrument.name' | translate }}</h2>
-                <p>{{ 'search' | translate:{items: 'strumenti'} }}</p>
-            </a>
-            <a class="item item-thumbnail-left" ui-sref="tabs.clustering">
-                <img src="images/clustering.png">
-                <h2>{{ 'cluster.title' | translate }}</h2>
-                <p>{{ 'cluster.text' | translate }}</p>
-            </a>
-        </div>
+    <ion-content padding="true" class="ips-home">
+        <a class="item item-icon-left" ui-sref="{{ item.href }}" ng-repeat="item in items" ng-show="!$first">
+            <div>
+                <button class="button button-large button-positive icon {{ item.icon }}"></button>
+            </div>
+            <div class="ips-home ips-home-description">
+                {{ item.name | translate }}
+                <p> {{ item.search | translate }} </p>
+            </div>
+        </a>
     </ion-content>
 </ion-view>

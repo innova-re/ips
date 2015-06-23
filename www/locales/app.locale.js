@@ -19,21 +19,25 @@
                     whereIs: 'Where is?',
                     takeMeAround: 'Take me around'
                 },
-                search: 'Enter some keywords to find a list of {{ items }}',
                 back: 'Back',
                 category: 'Category: ',
                 description: 'Description',
                 getDirection: 'Get Direction',
                 instrument: {
                     category:'Instrument category',
-                    name: 'Instruments'
+                    name: 'Instruments',
+                    search: 'Enter some keywords to find a list of instruments'
                 },
                 keywords: 'Keywords',
                 labs_text: 'List of laboratories of the regional network RLAB Sardinia',
-                laboratories: 'Laboratories',
+                laboratory: {
+                    name: 'Laboratories',
+                    search: 'Enter some keywords to find a list of laboratories'
+                },
                 service: {
                     name: 'Services',
-                    category:'Service category name'
+                    category:'Service category name',
+                    search: 'Enter some keywords to find a list of services'
                 },
                 services: 'Services',
                 instruments: 'Instruments',
@@ -55,7 +59,7 @@
                     whereIs: 'Dov\'è?',
                     takeMeAround: 'Portami'
                 },
-                search: 'Inserire delle parole chiave per visualizzare un elenco di {{ items }}',
+                search: ' {{ item }}',
                 back: 'Indietro',
                 category: 'Categoria: ',
                 description: 'Descrizione',
@@ -65,13 +69,18 @@
                 labs_text: 'Elenco dei laboratori della rete regionale RLAB Sardegna.',
                 service: {
                     name: 'Servizi',
-                    category:'Categoria servizio'
+                    category:'Categoria servizio',
+                    search: 'Inserire delle parole chiave per visualizzare un elenco di servizi'
                 },
                 instrument: {
                     category:'Categoria strumento',
-                    name: 'Strumenti'
+                    name: 'Strumenti',
+                    search: 'Inserire delle parole chiave per visualizzare un elenco di strumenti'
                 },
-                laboratories: 'Laboratori',
+                laboratory: {
+                    name: 'Laboratori',
+                    search: 'Inserire delle parole chiave per visualizzare un elenco di laboratori'
+                },
                 results: 'Risultati',
                 services: 'Servizi',
                 title: 'Home'

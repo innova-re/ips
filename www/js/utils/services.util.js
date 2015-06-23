@@ -6,8 +6,9 @@
         'json!../../json/laboratories.json',
         'json!../../json/services.json',
         'json!../../json/instruments.json',
-        'json!../../json/macroarea.json'
-    ], function (_, laboratories, services, instruments, macroarea) {
+        'json!../../json/macroarea.json',
+        'json!../../json/menu-items.json'
+    ], function (_, laboratories, services, instruments, macroarea, menuItems) {
         
         return {
 
@@ -106,6 +107,10 @@
                 return _.unique(items.map(function (item) {
                     return item[key];
                 }));
+            },
+
+            getMenu: function () {
+                return menuItems;
             }
         };
     });
