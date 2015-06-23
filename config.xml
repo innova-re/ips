@@ -26,6 +26,10 @@
   <feature name="Launch Navigator">
     <param name="id" value="uk.co.workingedge.phonegap.plugin.LaunchNavigator"/>
   </feature>
+  <feature name="Geolocation">
+      <param name="ios-package" value="CDVLocation" />
+      <param name="android-package" value="org.apache.cordova.GeoBroker" />
+  </feature>
   <platform name="ios">
     <icon height="57" src="resources/ios/icon/icon.png" width="57"/>
     <icon height="114" src="resources/ios/icon/icon@2x.png" width="114"/>
@@ -55,3 +59,4 @@
     <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320"/>
   </platform>
 </widget>
+

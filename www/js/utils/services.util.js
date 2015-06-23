@@ -6,8 +6,9 @@
         'json!../../json/laboratories.json',
         'json!../../json/services.json',
         'json!../../json/instruments.json',
-        'json!../../json/macroarea.json'
-    ], function (_, laboratories, services, instruments, macroarea) {
+        'json!../../json/macroarea.json',
+        'json!../../json/menu-items.json'
+    ], function (_, laboratories, services, instruments, macroarea, menuItems) {
         
         return {
 
@@ -56,14 +57,21 @@
             },
             getLaboratoriesByItems: function (items) {
 
-                var ids = _.unique(items.map(function (item) {
+                var ids,
+                    allLaboratories;
+
+                ids = _.unique(items.map(function (item) {
                     return item.laboratory_id;
                 }));
 
-                return ids.map(function (laboratoryId) {
+                allLaboratories = ids.map(function (laboratoryId) {
                     return _.where(laboratories, {
                         id: parseInt(laboratoryId, 10)
                     })[0];
+                });
+
+                return _.remove(allLaboratories, function(laboratory) {
+                    return laboratory !== undefined;
                 });
             },
 
@@ -99,6 +107,10 @@
                 return _.unique(items.map(function (item) {
                     return item[key];
                 }));
+            },
+
+            getMenu: function () {
+                return menuItems;
             }
         };
     });

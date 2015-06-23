@@ -13,12 +13,14 @@
  * --------------------------------------------------
  */
 
-.app-home img {
-  background: #145fd7;
+.ips-home.ips-home-description {
+    padding-left: 40px;
 }
-
+.ips-home.ips-home-description p {
+    white-space: normal;
+}
 .scroll {
-  height: 100%;
+    height: 100%;
 }
 
 ion-content {
