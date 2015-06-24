@@ -4,7 +4,7 @@
     define([], function () {
         return function($translateProvider) {
             $translateProvider
-            .translations('en', {
+            .translations('gb', {
                 button: {
                     search: 'Search',
                     showMap: 'Show map'
@@ -83,7 +83,8 @@
                 services: 'Servizi',
                 title: 'Home'
             });
-            $translateProvider.preferredLanguage('en');
+            // TODO Detecting The Language Preference
+            $translateProvider.preferredLanguage('it');
         }
     });
 }(this.define));
