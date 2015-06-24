@@ -3,9 +3,13 @@
         <div class="search-title" ng-click="openServiceModal({{ instrument }})">
             {{instrument.instrument_name}}
         </div>
-        <p>{{ service.service_description }}</p>
-        <div class="laboratory-name" ng-click="openLaboratoryModal({{ instrument.laboratory_id }})">
+        <p>{{ instrument.instrument_description }}</p>
+        <span class="laboratory-name" ng-click="openLaboratoryModal({{ instrument.laboratory_id }})">
             {{ instrument.laboratory_name }}
-        </div>
+        </span>
+        <button class="button button-light button-small icon ion-paper-airplane search-distance"
+            ui-sref="tabs.map({id: instrument.laboratory_id, routingOn: true})">
+            <span class="item-note"> {{ instrument.distance || 100 }}km</span>
+        </button>
     </ion-item>
 </ion-list>

@@ -5,9 +5,8 @@
         '../utils/services.util',
         '../utils/clustering-no-layers.util',
         '../utils/scope-shared.util',
-        '../utils/categories.util',
-        'geolib'
-    ], function (servicesUtil, clusteringNoLayersUtil, scopeSharedUtil, categoriesUtil, geolib) {
+        '../utils/categories.util'
+    ], function (servicesUtil, clusteringNoLayersUtil, scopeSharedUtil, categoriesUtil) {
 
         return ['$scope', '$stateParams', 'searchFactory', '$state', 'modalFactory', 'leafletBoundsHelpers', function ($scope, $stateParams, searchFactory, $state, modalFactory, leafletBoundsHelpers) {
 
@@ -29,18 +28,12 @@
                     categoriesUtil.setCategories($scope, key);
                 }
                 if (key === 'laboratories') {
+                    servicesUtil.setDistance($scope.laboratories, $scope.coords);
 
-                    var distance;
-
-                    _.map($scope.laboratories, function (laboratory) {
-                        distance = geolib.getPathLength([
-                            {latitude: laboratory.lat, longitude: laboratory.lng},
-                            {latitude: $scope.coords.lat, longitude: $scope.coords.lng}
-                        ]);
-                        laboratory.distance = geolib.convertUnit('km', distance, 2);
-                    });
                 } else {
                     $scope.laboratories = servicesUtil.getLaboratoriesByItems(values);
+                    servicesUtil.setCoords($scope[key]);
+                    servicesUtil.setDistance($scope[key], $scope.coords);
                 }
             });
             clusteringNoLayersUtil($scope, leafletBoundsHelpers);

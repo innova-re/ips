@@ -1,10 +1,11 @@
 <ion-list ng-if="!mapOn">
     <ion-item class="laboratory-title"
         ng-repeat="laboratory in laboratories | orderBy:'distance'">
-        <div class="laboratory-title" ng-click="openLaboratoryModal({{ laboratory.id }})">
+        <span class="laboratory-title" ng-click="openLaboratoryModal({{ laboratory.id }})">
             {{ laboratory.name }}
-            <span class="item-note">
-                ({{ laboratory.distance}} km)
-            </span>
-        </div>
+        </span>
+        <button class="button button-light button-small icon ion-paper-airplane search-distance"
+            ui-sref="tabs.map({id: laboratory.id, routingOn: true})">
+            <span class="item-note">{{ laboratory.distance }}km</span>
+        </button>
 </ion-list>

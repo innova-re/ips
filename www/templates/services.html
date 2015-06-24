@@ -1,5 +1,5 @@
 <ion-list ng-if="!mapOn">
-    <ion-item class="row row-center service" ng-repeat="service in services">
+    <ion-item class="row row-center service" ng-repeat="service in services | orderBy:'distance'">
         <div class="col">
             <div class="search-title" ng-click="openServiceModal({{ service }})">
                 {{service.service_name}}
