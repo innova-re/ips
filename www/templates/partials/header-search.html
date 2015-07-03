@@ -1,5 +1,5 @@
 <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
-    <label class="item-input-wrapper" ng-if="!mapOn">
+    <label class="item-input-wrapper">
         <span on-tap="search(); changeRoute()">
             <i class="icon ion-ios7-search placeholder-icon"></i>
         </span>
@@ -8,13 +8,12 @@
             placeholder="{{ 'search' | translate:{items: 'servizi'} }}"
             ng-model="data.search">
     </label>
-    <div class="range" data-tap-disabled="true" ng-if="mapOn">
-        <input type="range" step="1" min="0" max="200" value="1"
-            ng-model="paths.circle.radiusKm" ng-change="radiusConvert()">
-            {{ paths.circle.radiusKm }} km
-    </div>
-    <button ng-if="categories.length > 0" ng-click="openMap()"
-        class="button button-balanced {{ mapOn && ('pull-right') }}" >
-        {{ mapOn && ('button.hideMap' | translate) || ('button.showMap' | translate) }}
+    <button ng-if="categories.length > 0"
+        ui-sref="tabs.clusteringNoLayers({
+            key: '{{ stateParams.key }}',
+            search: '{{ stateParams.search }}',
+            category: '{{ category.name }}',
+        })"
+        class="button icon ion-map" >
     </button>
 </ion-header-bar>

@@ -4,10 +4,9 @@
     define([], function () {
         return function($translateProvider) {
             $translateProvider
-            .translations('en', {
+            .translations('gb', {
                 button: {
                     search: 'Search',
-                    hideMap: 'Hide map',
                     showMap: 'Show map'
                 },
                 cluster: {
@@ -47,7 +46,6 @@
             .translations('it', {
                 button: {
                     search: 'Cerca',
-                    hideMap: 'Nascondi la mappa',
                     showMap: 'Mostra la mappa'
                 },
                 cluster: {
@@ -85,7 +83,8 @@
                 services: 'Servizi',
                 title: 'Home'
             });
-            $translateProvider.preferredLanguage('en');
+            // TODO Detecting The Language Preference
+            $translateProvider.preferredLanguage('it');
         }
     });
 }(this.define));

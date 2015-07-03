@@ -11,6 +11,12 @@
                 searchFactory = args[2],
                 $state = args[3];
 
+            // controller initialized twice when the url parameter is defined but not passed in ui-sref
+            _.map($state.params, function (value, key) {
+                if(value === null) {
+                    $stateParams[key] = '';
+                }
+            });
             $scope.data = {
                 search: $stateParams.search
             };

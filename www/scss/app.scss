@@ -7,6 +7,7 @@
 @import "../lib/leaflet.markercluster/dist/MarkerCluster.Default.css";
 @import "../lib/leaflet-routing-machine/dist/leaflet-routing-machine.css";
 @import "../lib/leaflet-icon-label/src/Icon.Label.css";
+@import "../lib/flag-icon-css/css/flag-icon.min.css";
 
 /**
  * Home
@@ -51,19 +52,25 @@ div.laboratory-title {
  * ion-header-bar
  */
 ion-header-bar .range {
-    padding-right: 85px;
     width: 100%;
+}
+
+// TODO - remove all reference to laboratory, service and intruments list
+/**
+ * Search List
+ */
+.search-title {
+    font-weight: bold;
+    cursor: pointer;
+}
+.search-distance {
+    float: right;
 }
 
 /**
  * Service
  */
 .service a {
-    cursor: pointer;
-}
-
-.service div.service-title {
-    font-weight: bold;
     cursor: pointer;
 }
 
