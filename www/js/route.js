@@ -6,8 +6,9 @@
         'views/home.view',
         'views/search.view',
         'views/map.view',
-        'views/clustering.view'
-    ], function (tabView, homeView, searchView, mapView, clusteringView) {
+        'views/clustering.view',
+        'views/clustering-no-layers.view'
+    ], function (tabView, homeView, searchView, mapView, clusteringView, clusteringNoLayersView) {
 
         return function ($stateProvider, $urlRouterProvider) {
 
@@ -17,6 +18,7 @@
                 .state('tabs.search', searchView)
                 .state('tabs.map', mapView)
                 .state('tabs.clustering', clusteringView)
+                .state('tabs.clusteringNoLayers', clusteringNoLayersView)
             $urlRouterProvider.otherwise('/tab/home');
         };
     });

@@ -1,0 +1,17 @@
+<ion-view title="{{ laboratory.name }}">
+    <ion-header-bar class="bar-subheader item-input-inset" title="Servizi">
+        <div  class="range" data-tap-disabled="true">
+            <input type="range" step="1" min="0" max="200" value="1"
+                ng-model="paths.circle.radiusKm" ng-change="radiusConvert()">
+                {{ paths.circle.radiusKm }} km
+        </div>
+    </ion-header-bar>
+    <ion-content has-header="true" padding="false">
+
+        <leaflet class="leaflet-map" data-tap-disabled="true"
+            ng-if="showClusteringNoLayers"
+            center="center" geojson="geojson"
+            bounds="bounds" markers="markers" paths="paths">
+        </leaflet>
+    </ion-content>
+</ion-view>
