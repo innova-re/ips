@@ -80,6 +80,12 @@ for Windows Phone 8.1 you can run:
     cordova platform add wp8
     ionic build wp8
     ionic emulate wp8
+    
+### Inject the app with adb in android
+
+    adb kill-server
+    adb start-server
+    adb devices
 
 ## Supported Platforms
 
