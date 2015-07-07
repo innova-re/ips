@@ -20,6 +20,7 @@
                 url: 'templates/' + key + '.html'
             };
             $scope.title = key;
+            $scope.isFocused = true;
             // TODO - change the name scopeSharedUtil
             scopeSharedUtil(args, servicesUtil.get(key, $stateParams.category), function (values) {
                 if ($scope.data.search.length > 2) {
