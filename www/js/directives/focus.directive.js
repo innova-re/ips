@@ -4,18 +4,18 @@
 
     define([], function () {
 
-        return ['$timeout', function ($timeout) {
+        var isKeyboard = window.cordova && window.cordova.plugins.Keyboard;
+
+        return function () {
 
             return {
                 link: function (scope, element) {
-                    scope.$watch('trigger', function (value) {
-                        $timeout(function () {
-                            element[0].focus();
-                            scope.trigger = false;
-                        });
-                    });
+                    element[0].focus();
+                    if (isKeyboard) {
+                        scope.data.search === '' ? isKeyboard.show() : isKeyboard.hide();
+                    }
                 }
             };
-        }];
+        };
     });
 }(window.define));
