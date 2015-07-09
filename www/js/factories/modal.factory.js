@@ -19,6 +19,8 @@
                 });
             };
 
+            var _isModalOn;
+
             return function ($scope) {
                 $scope.openLaboratoryModal = function (laboratoryId) {
                     _setTemplate($scope, laboratoryModalTemplate);
@@ -27,18 +29,30 @@
                     $scope.modal.services = servicesUtil.getDistinctServicesByLaboratoryId(laboratoryId);
                     $scope.modal.instruments = servicesUtil.getDistinctInstrumentsByLaboratoryId(laboratoryId);
                     $scope.modal.show();
+                    _isModalOn = {
+                        id: laboratoryId,
+                        method: 'openLaboratoryModal'
+                    };
                 };
                 $scope.openServiceModal = function (service) {
                     _setTemplate($scope, serviceModalTemplate);
                     $scope.modal.service = service;
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(service.laboratory_id);
                     $scope.modal.show();
+                    _isModalOn = {
+                        id: service,
+                        method: 'openServiceModal'
+                    };
                 };
                 $scope.openInstrumentModal = function (instrument) {
                     _setTemplate($scope, instrumentModalTemplate);
                     $scope.modal.instrument = instrument;
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(instrument.laboratory_id);
                     $scope.modal.show();
+                    _isModalOn = {
+                        id: instrument,
+                        method: 'openInstrumentModal'
+                    };
                 };
                 $scope.openCategoriesModal = function (categories) {
                     _setTemplate($scope, categoriesModalTemplate);
@@ -49,6 +63,12 @@
                     event.preventDefault();
                     $scope.openLaboratoryModal($scope.markers[args.markerName].id);
                 });
+                $scope.$on('modal.removed', function() {
+                    _isModalOn = false;
+                });
+                if (_isModalOn) {
+                    $scope[_isModalOn.method](_isModalOn.id)
+                }
             };
         }];
     });

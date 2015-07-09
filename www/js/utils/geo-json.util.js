@@ -84,6 +84,7 @@
                         L.latLng($scope.coords.lat, $scope.coords.lng),
                         L.latLng($scope.laboratory.lat, $scope.laboratory.lng)
                     ],
+                    show: false,
                     createMarker: function (index, wp) {
                         return L.marker(wp.latLng, {
                             draggable: true,
