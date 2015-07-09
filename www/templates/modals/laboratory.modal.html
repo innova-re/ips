@@ -15,7 +15,7 @@
             <div class="item item-text-wrap" ng-show="isGroupShown(modal.services)">
                 <ion-list>
                     <ion-item class="services"
-                        ng-repeat="service in modal.services">
+                        ng-repeat="service in modal.services | orderBy">
                         <div class="service-name">{{service}}</div>
                     </ion-item>
                 </ion-list>
@@ -27,7 +27,7 @@
             <div class="item item-text-wrap" ng-show="isGroupShown(modal.instruments)">
                 <ion-list>
                     <ion-item class="services"
-                        ng-repeat="instrument in modal.instruments">
+                        ng-repeat="instrument in modal.instruments | orderBy">
                         <div class="service-name">{{instrument}}</div>
                     </ion-item>
                 </ion-list>
