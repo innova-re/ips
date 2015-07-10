@@ -1,7 +1,7 @@
 <ion-list ng-if="!mapOn">
-    <ion-item class="laboratory-title"
-        ng-repeat="laboratory in laboratories | orderBy:'distance'">
-        <span class="laboratory-title" ng-click="openLaboratoryModal({{ laboratory.id }})">
+    <ion-item ng-repeat="laboratory in laboratories | orderBy:'distance'">
+        <span class="search-laboratory"
+            ng-click="openLaboratoryModal({{ laboratory.id }})">
             {{ laboratory.name }}
         </span>
         <button class="button button-light button-small icon ion-paper-airplane search-distance"

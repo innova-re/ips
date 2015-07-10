@@ -33,14 +33,6 @@ object {
 }
 
 /**
- * Laboratory
- */
-div.laboratory-title {
-    cursor: pointer;
-    white-space: normal;
-}
-
-/**
  * Map
  */
 .leaflet-map {
@@ -55,41 +47,18 @@ ion-header-bar .range {
     width: 100%;
 }
 
-// TODO - remove all reference to laboratory, service and intruments list
 /**
  * Search List
  */
 .search-title {
-    font-weight: bold;
     cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
 }
 .search-distance {
     float: right;
 }
-
-/**
- * Service
- */
-.service a {
-    cursor: pointer;
-}
-
-.service div.laboratory-name {
+.search-laboratory {
     cursor: pointer;
     text-decoration: underline;
-}
-
-/**
- * Services
- */
-.services div.service-name {
-    cursor: pointer;
-}
-
-
-/**
- * Instruments
- */
-.instruments div.instrument-name {
-    cursor: pointer;
 }

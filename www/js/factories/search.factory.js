@@ -18,6 +18,7 @@
 
                         var results = [];
 
+                        searchFilter = searchFilter.slice(0, -1);
                         _.forIn(items, function (value) {
                             if (typeof value === 'string') {
                                 results.push(value.toLowerCase().indexOf(searchFilter.toLowerCase()) !== -1);
