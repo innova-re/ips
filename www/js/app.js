@@ -5,15 +5,14 @@
         'angular',
         'route',
         '../locales/app.locale',
-        'factories/search.factory',
-        'factories/modal.factory',
+        'factories/main.factory',
         'directives/main.directive',
         'ionicAngular',
         'uiRouter',
         'angularTranslate',
         'angularLeafletDirective',
         'angularjsGeolocation'
-    ], function (angular, route, appLocale, searchFactory, modalFactory, mainDirective) {
+    ], function (angular, route, appLocale, mainFactory, mainDirective) {
 
         var app = angular.module('ipsApp', [
             'ionic',
@@ -23,9 +22,8 @@
             'geolocation'
         ]);
 
-        app.factory('searchFactory', searchFactory);
-        app.factory('modalFactory', modalFactory);
         mainDirective(app);
+        mainFactory(app);
         app.config(route);
         app.config(appLocale);
         angular.element().ready(function () {

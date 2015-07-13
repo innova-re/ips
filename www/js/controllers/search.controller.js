@@ -8,7 +8,8 @@
         '../utils/categories.util'
     ], function (_, servicesUtil, scopeSharedUtil, categoriesUtil) {
 
-        return ['$scope', '$stateParams', 'searchFactory', '$state', 'modalFactory', function ($scope, $stateParams, searchFactory, $state, modalFactory) {
+        return ['$scope', '$stateParams', '$log', 'searchFactory', '$state', 'modalFactory', 'dataService',
+            function ($scope, $stateParams, $log, searchFactory, $state, modalFactory, dataService) {
 
             var key,
                 args;
@@ -35,6 +36,10 @@
                     servicesUtil.setDistance($scope[key], $scope.coords);
                 }
                 modalFactory($scope);
+            });
+            // TODO - When the server will be available you should use the dataService promise instead of servicesUtil
+            dataService(key).then(function (items) {
+                $log.info(items);
             });
         }];
     });
