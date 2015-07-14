@@ -2,19 +2,34 @@
 (function (define) {
     'use strict';
 
-    define([], function () {
+    define([
+        'lodash',
+        'json!../../json/instruments.json',
+        'json!../../json/laboratories.json',
+        'json!../../json/services.json'
+    ], function (_, instruments, laboratories, services) {
 
         return ['$q', '$http', '$log', function ($q, $http, $log) {
 
-            return function (item) {
+            var localData = {
+                instruments: instruments,
+                laboratories: laboratories,
+                services: services
+            };
+
+            return function (key, category) {
 
                 var deferred = $q.defer();
+                var filterData;
+                var source = (category === '') ? {} : {category: category};
 
-                $http.get('http://localhost:8080/' + item).success(function (data) {
-                    deferred.resolve(data);
+                $http.get('http://localhost:8080/' + key).success(function (data) {
+                    filterData = _.where(data, source);
+                    deferred.resolve(filterData);
                 }).error(function (msg, code) {
-                    deferred.reject(msg);
                     $log.error(msg, code);
+                    filterData = _.where(localData[key], source);
+                    deferred.resolve(filterData);
                 });
 
                 return deferred.promise;
