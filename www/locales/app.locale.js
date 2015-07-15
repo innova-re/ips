@@ -40,6 +40,7 @@
                 },
                 services: 'Services',
                 instruments: 'Instruments',
+                laboratories: 'Laboratories',
                 results: 'Results',
                 title: 'Home'
             })
@@ -63,6 +64,7 @@
                 description: 'Descrizione',
                 getDirection: 'Calcola percorso',
                 instruments: 'Strumenti',
+                laboratories: 'Laboratori',
                 keywords: 'Parole chiave',
                 labs_text: 'Elenco dei laboratori della rete regionale RLAB Sardegna.',
                 service: {
