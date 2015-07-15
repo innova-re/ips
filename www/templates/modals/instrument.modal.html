@@ -8,16 +8,19 @@
     <ion-content>
         <ips-lab-card-modal></ips-lab-card-modal>
         <div class="card">
-            <div class="item item-divider">
+            <!-- TODO - make a directive <ips-collapse-button> -->
+            <div class="item item-divider" ng-click="toggleGroup(modal.instrument.category)">
+                <i class="icon" ng-class="isGroupShown(modal.instrument.category) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'instrument.category' | translate }}
             </div>
-            <div class="item item-text-wrap">
-                {{ modal.instrument.instrument_category_name }}
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.instrument.category)">
+                {{ modal.instrument.category }}
             </div>
-            <div class="item item-divider">
+            <div class="item item-divider" ng-click="toggleGroup(modal.instrument.instrument_description)">
+                <i class="icon" ng-class="isGroupShown(modal.instrument.instrument_description) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'description' | translate }}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.instrument.instrument_description)">
                 {{ modal.instrument.instrument_description }}
             </div>
         </div>

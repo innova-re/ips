@@ -36,6 +36,7 @@
                 };
                 $scope.openServiceModal = function (service) {
                     _setTemplate($scope, serviceModalTemplate);
+                    collapseUtil($scope);
                     $scope.modal.service = service;
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(service.laboratory_id);
                     $scope.modal.show();
@@ -46,6 +47,7 @@
                 };
                 $scope.openInstrumentModal = function (instrument) {
                     _setTemplate($scope, instrumentModalTemplate);
+                    collapseUtil($scope);
                     $scope.modal.instrument = instrument;
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(instrument.laboratory_id);
                     $scope.modal.show();

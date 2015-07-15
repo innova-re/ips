@@ -8,6 +8,7 @@
     <ion-content>
         <ips-lab-card-modal></ips-lab-card-modal>
         <div class="card">
+            <!-- TODO - make a directive <ips-collapse-button> -->
             <div class="item item-divider" ng-click="toggleGroup(modal.services)">
                 <i class="icon" ng-class="isGroupShown(modal.services) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'service.name' | translate }}
