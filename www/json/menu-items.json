@@ -1,0 +1,34 @@
+[  
+    {  
+        "name":"Home",
+        "icon":"ion-home",
+        "href":"tabs.home"
+    },
+    {  
+        "name":"laboratory.name",
+        "icon":"ion-erlenmeyer-flask",
+        "href":"tabs.search({key: \"laboratories\", category: \"\"})",
+        "search":"laboratory.search",
+        "showKeyboard": "true"
+    },
+    {  
+        "name":"service.name",
+        "icon":"ion-gear-a",
+        "href":"tabs.search({key: \"services\", category: \"\"})",
+        "search":"service.search",
+        "showKeyboard": "true"
+    },
+    {  
+        "name":"instruments",
+        "icon":"ion-settings",
+        "href":"tabs.search({key: \"instruments\", category: \"\"})",
+        "search":"instrument.search",
+        "showKeyboard": "true"
+    },
+    {  
+        "name":"cluster.title",
+        "icon":"ion-map",
+        "href":"tabs.clustering",
+        "search":"cluster.text"
+    }
+]

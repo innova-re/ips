@@ -6,7 +6,6 @@ platforms/
 plugins/
 www/css
 www/lib
-www/json
 .DS_Store
 # Source code analysis directory
 report
