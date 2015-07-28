@@ -1,5 +1,5 @@
 <ion-list ng-if="!mapOn">
-    <ion-item class="service" ng-repeat="instrument in instruments | orderBy:'distance'">
+    <ion-item class="service" ng-repeat="instrument in instruments | orderBy: ['-foundWords.length', 'distance', 'instrument_name']">
         <div class="search-title" ng-click="openInstrumentModal({{ instrument }})">
             {{instrument.instrument_name}}
         </div>
@@ -7,9 +7,17 @@
         <span class="search-laboratory" ng-click="openLaboratoryModal({{ instrument.laboratory_id }})">
             {{ instrument.laboratory_name }}
         </span>
-        <button class="button button-light button-small icon ion-paper-airplane search-distance"
-            ui-sref="tabs.map({id: instrument.laboratory_id, routingOn: true})">
-            <span class="item-note"> {{ instrument.distance || 100 }}km</span>
-        </button>
+        <div>
+            <button class="button button-light button-small icon ion-paper-airplane search-distance"
+                ui-sref="tabs.map({id: instrument.laboratory_id, routingOn: true})">
+                <span class="item-note"> {{ instrument.distance || 100 }}km</span>
+            </button>
+            <span class="search-words">
+                {{ 'foundWords' | translate }}:
+                <span class="search-words-badge" ng-repeat="fondWords in instrument.foundWords">
+                    {{ fondWords }}
+                </span>
+            </span>
+        </div>
     </ion-item>
 </ion-list>

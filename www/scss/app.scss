@@ -62,3 +62,17 @@ ion-header-bar .range {
     cursor: pointer;
     text-decoration: underline;
 }
+
+.search-words {
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    margin: 5px 0 0 0;
+}
+
+.search-words-badge {
+    background: #ddd;
+    border-radius: 6px;
+    margin: 0 3px;
+    padding: 2px 4px 2px 6px;
+}
