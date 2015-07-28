@@ -10,7 +10,7 @@
         'json!../../json/macroarea.json',
         'json!../../json/menu-items.json'
     ], function (_, geolib, laboratories, services, instruments, macroarea, menuItems) {
-        
+
         return {
 
             get: function (key, category, uniq) {

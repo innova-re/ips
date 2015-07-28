@@ -97,6 +97,17 @@ for Windows Phone 8.1 you can run:
 
 - Windows Phone 8.1
 
+## Backend server?
+
+If the backend is not running the application will continue to work getting cached data.
+
+To start the backend you need to run the following commands:
+
+    sudo mysql.server start
+    git clone git@github.com:innova-re/ips_db.git
+    cd ips
+    node app.js
+
 ## Source Code Analysis 
 
 ### Installation

@@ -7,7 +7,7 @@
         'markercluster'
     ], function (servicesUtil, clusteringUtil) {
 
-        return ['$scope', 'leafletData', 'modalFactory', function ($scope, leafletData, modalFactory) {
+        return ['$scope', '$log', 'leafletData', 'modalFactory', 'dataService', function ($scope, $log, leafletData, modalFactory, dataService) {
 
             var setLayersMarkers = function (event) {
 
@@ -30,6 +30,12 @@
                 map.on('baselayerchange', setLayersMarkers);
             });
             modalFactory($scope);
+
+            // TODO - When the server will be available you should use the dataService promise instead of servicesUtil
+            dataService('laboratories').then(function (items) {
+                $log.info(items);
+            });
+
         }];
     });
 }(this.define));

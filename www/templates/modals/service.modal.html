@@ -8,22 +8,26 @@
     <ion-content>
         <ips-lab-card-modal></ips-lab-card-modal>
         <div class="card">
-            <div class="item item-divider">
+            <div class="item item-divider" ng-click="toggleGroup(modal.service.category)">
+                <i class="icon" ng-class="isGroupShown(modal.service.category) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'service.category' | translate }}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.service.category)">
                 {{ modal.service.category }}
             </div>
-            <div class="item item-divider">
+            <!-- TODO - make a directive <ips-collapse-button> -->
+            <div class="item item-divider" ng-click="toggleGroup(modal.service.service_description)">
+                <i class="icon" ng-class="isGroupShown(modal.service.service_description) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'description' | translate }}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.service.service_description)">
                 {{ modal.service.service_description }}
             </div>
-            <div class="item item-divider">
+            <div class="item item-divider" ng-click="toggleGroup(modal.service.service_keywords)">
+                <i class="icon" ng-class="isGroupShown(modal.service.service_keywords) ? 'ion-minus' : 'ion-plus'"></i>&nbsp;
                 {{ 'keywords' | translate }}
             </div>
-            <div class="item item-text-wrap">
+            <div class="item item-text-wrap" ng-show="isGroupShown(modal.service.service_keywords)">
                 {{ modal.service.service_keywords }}
             </div>
         </div>

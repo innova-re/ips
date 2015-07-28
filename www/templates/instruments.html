@@ -1,6 +1,6 @@
 <ion-list ng-if="!mapOn">
     <ion-item class="service" ng-repeat="instrument in instruments | orderBy:'distance'">
-        <div class="search-title" ng-click="openServiceModal({{ instrument }})">
+        <div class="search-title" ng-click="openInstrumentModal({{ instrument }})">
             {{instrument.instrument_name}}
         </div>
         <p>{{ instrument.instrument_description }}</p>
