@@ -21,6 +21,7 @@
                 back: 'Back',
                 category: 'Category: ',
                 description: 'Description',
+                foundWords: 'Found words',
                 getDirection: 'Get Direction',
                 instrument: {
                     category:'Instrument category',
@@ -62,6 +63,7 @@
                 back: 'Indietro',
                 category: 'Categoria: ',
                 description: 'Descrizione',
+                foundWords: 'Parole trovate',
                 getDirection: 'Calcola percorso',
                 instruments: 'Strumenti',
                 laboratories: 'Laboratori',
