@@ -6,16 +6,24 @@
 
         var isKeyboard = window.cordova && window.cordova.plugins.Keyboard;
 
-        return function () {
+        return ['$timeout', function ($timeout) {
 
             return {
                 link: function (scope, element) {
-                    element[0].focus();
-                    if (isKeyboard) {
-                        scope.data.search === '' ? isKeyboard.show() : isKeyboard.hide();
-                    }
+                    $timeout(function () {
+                        if (isKeyboard) {
+
+                            var isScopeDataSearch = scope && scope.data && scope.data.search;
+
+                            if (isScopeDataSearch === '') {
+                                element[0].focus();
+                                isKeyboard.show();
+                            }
+                        }
+                    // TODO - the delay 0 causes the element[0] to be undefined in the simulator
+                    }, 500);
                 }
             };
-        };
+        }];
     });
 }(window.define));

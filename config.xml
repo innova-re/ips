@@ -30,6 +30,10 @@
       <param name="ios-package" value="CDVLocation" />
       <param name="android-package" value="org.apache.cordova.GeoBroker" />
   </feature>
+  <feature name="Keyboard">
+    <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
+    <param name="onload" value="true" />
+  </feature>
   <platform name="ios">
     <icon height="57" src="resources/ios/icon/icon.png" width="57"/>
     <icon height="114" src="resources/ios/icon/icon@2x.png" width="114"/>
