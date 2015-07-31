@@ -18,6 +18,10 @@
 
                     var result = !searchFilterString ? true : _.map(searchFilterString.split(' '), function (searchFilter) {
 
+                        if (searchFilter.length < 4) {
+                            return false;
+                        }
+
                         var results = [];
                         var searchFilterNoLastVowel;
 
@@ -26,6 +30,7 @@
                             if (typeof value === 'string' && value.toLowerCase().indexOf(searchFilterNoLastVowel.toLowerCase()) !== -1) {
                                 results.push(true);
                                 items.foundWords.push(searchFilter);
+                                return false;
                             }
                         });
 

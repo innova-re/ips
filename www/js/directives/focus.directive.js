@@ -21,7 +21,7 @@
                             }
                         }
                     // TODO - the delay 0 causes the element[0] to be undefined in the simulator
-                    }, 100);
+                    }, 500);
                 }
             };
         }];
