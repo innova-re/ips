@@ -5,6 +5,7 @@
         return function($translateProvider) {
             $translateProvider
             .translations('gb', {
+                search: 'Enter some keywords to find a list of results',
                 button: {
                     search: 'Search',
                     showMap: 'Show map'
@@ -25,19 +26,16 @@
                 getDirection: 'Get Direction',
                 instrument: {
                     category:'Instrument category',
-                    name: 'Instruments',
-                    search: 'Enter some keywords to find a list of instruments'
+                    name: 'Instruments'
                 },
                 keywords: 'Keywords',
                 labs_text: 'List of laboratories of the regional network RLAB Sardinia',
                 laboratory: {
-                    name: 'Laboratories',
-                    search: 'Enter some keywords to find a list of laboratories'
+                    name: 'Laboratories'
                 },
                 service: {
                     name: 'Services',
-                    category:'Service category name',
-                    search: 'Enter some keywords to find a list of services'
+                    category:'Service category name'
                 },
                 services: 'Services',
                 instruments: 'Instruments',
@@ -71,19 +69,17 @@
                 labs_text: 'Elenco dei laboratori della rete regionale RLAB Sardegna.',
                 service: {
                     name: 'Servizi',
-                    category:'Categoria servizio',
-                    search: 'Inserire delle parole chiave per visualizzare un elenco di servizi'
+                    category:'Categoria servizio'
                 },
                 instrument: {
                     category:'Categoria strumento',
-                    name: 'Strumenti',
-                    search: 'Inserire delle parole chiave per visualizzare un elenco di strumenti'
+                    name: 'Strumenti'
                 },
                 laboratory: {
-                    name: 'Laboratori',
-                    search: 'Inserire delle parole chiave per visualizzare un elenco di laboratori'
+                    name: 'Laboratori'
                 },
                 results: 'Risultati',
+                search: 'Inserire delle parole chiave per visualizzare un elenco di risultati',
                 services: 'Servizi',
                 title: 'Home'
             });
