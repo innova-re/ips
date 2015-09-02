@@ -57,7 +57,6 @@
                     whereIs: 'Dov\'è?',
                     takeMeAround: 'Portami'
                 },
-                search: ' {{ item }}',
                 back: 'Indietro',
                 category: 'Categoria: ',
                 description: 'Descrizione',
