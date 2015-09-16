@@ -67,19 +67,19 @@ Depending on the platform you want to simulate, for ios you can run:
 
     cordova platform add ios
     ionic build ios
-    ionic emulate ios
+    ionic emulate ios -l -s -c
 
 for android you can run:
 
     cordova platform add android
     ionic build android
-    ionic emulate android
+    ionic emulate android -l -s -c
 
 for Windows Phone 8.1 you can run:
 
     cordova platform add wp8
     ionic build wp8
-    ionic emulate wp8
+    ionic emulate wp8 -l -s -c
     
 ### Inject the app with adb in android
 
