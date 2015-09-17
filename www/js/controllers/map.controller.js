@@ -9,6 +9,7 @@
         return ['$scope', '$stateParams', 'leafletData', function ($scope, $stateParams, leafletData) {
             $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId($stateParams.id);
             if($stateParams.routingOn) {
+                // Insert the code to use launchnavigator
                 geoJsonUtil.setRouting($scope, leafletData);
             } else {
                 $scope.center = geoJsonUtil.getCenter($scope.laboratory, $stateParams.routingOn && 6);

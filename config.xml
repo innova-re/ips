@@ -18,21 +18,13 @@
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
-  <feature name="phonegap-googlemaps-plugin">
-    <param name="id" value="plugin.google.maps"/>
-    <param name="API_KEY_FOR_ANDROID" value="AIzaSyDmdIdfqK3xDDZWJQKiIUvc4Upkeabapyg"/>
-    <param name="API_KEY_FOR_IOS" value="AIzaSyBUkx6Cc7RFcz0upcokG-HVcNC-vjBY9kQ"/>
-  </feature>
-  <feature name="Launch Navigator">
-    <param name="id" value="uk.co.workingedge.phonegap.plugin.LaunchNavigator"/>
-  </feature>
   <feature name="Geolocation">
-      <param name="ios-package" value="CDVLocation" />
-      <param name="android-package" value="org.apache.cordova.GeoBroker" />
+    <param name="ios-package" value="CDVLocation"/>
+    <param name="android-package" value="org.apache.cordova.GeoBroker"/>
   </feature>
   <feature name="Keyboard">
-    <param name="android-package" value="com.ionic.keyboard.IonicKeyboard" />
-    <param name="onload" value="true" />
+    <param name="android-package" value="com.ionic.keyboard.IonicKeyboard"/>
+    <param name="onload" value="true"/>
   </feature>
   <platform name="ios">
     <icon height="57" src="resources/ios/icon/icon.png" width="57"/>

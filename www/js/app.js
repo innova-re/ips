@@ -26,6 +26,10 @@
         mainFactory(app);
         app.config(route);
         app.config(appLocale);
+        app.config(function ($ionicConfigProvider) {
+            // to take the text from the ion-nav-back-button tag content
+            $ionicConfigProvider.backButton.previousTitleText(false).text('');
+        });
         angular.element().ready(function () {
             angular.bootstrap(document, ['ipsApp']);
         });
