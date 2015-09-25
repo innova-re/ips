@@ -63,7 +63,7 @@
                 };
                 $scope.$on('leafletDirectiveMarker.click', function (event, args) {
                     event.preventDefault();
-                    $scope.openLaboratoryModal($scope.markers[args.markerName].id);
+                    $scope.openLaboratoryModal(args.model.id);
                 });
                 $scope.$on('modal.removed', function() {
                     _isModalOn = false;
