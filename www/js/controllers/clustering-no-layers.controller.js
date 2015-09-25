@@ -14,6 +14,7 @@
             var key,
                 args;
 
+            $scope.bounds = {}; // Used to prevent the TypeError: Cannot read property 'address' of undefined
             key = $stateParams.key;
             args = [$scope, $stateParams, searchFactory, $state];
             $scope.stateParams = $stateParams;
