@@ -24,6 +24,7 @@
                 description: 'Description',
                 foundWords: 'Found words',
                 getDirection: 'Get Direction',
+                hours: 'Mon – Fri | 9am to 5pm',
                 instrument: {
                     category:'Instrument category',
                     name: 'Instruments',
@@ -65,6 +66,7 @@
                 description: 'Descrizione',
                 foundWords: 'Parole trovate',
                 getDirection: 'Calcola percorso',
+                hours: 'Lun - Ven | 9:30 - 17:00',
                 instruments: 'Strumenti',
                 laboratories: 'Laboratori',
                 keywords: 'Parole chiave',
