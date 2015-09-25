@@ -26,16 +26,19 @@
                 getDirection: 'Get Direction',
                 instrument: {
                     category:'Instrument category',
-                    name: 'Instruments'
+                    name: 'Instruments',
+                    search: 'Enter some keywords to find a list of results'
                 },
                 keywords: 'Keywords',
                 labs_text: 'List of laboratories of the regional network RLAB Sardinia',
                 laboratory: {
-                    name: 'Laboratories'
+                    name: 'Laboratories',
+                    search: 'Enter some keywords to find a list of results'
                 },
                 service: {
                     name: 'Services',
-                    category:'Service category name'
+                    category:'Service category name',
+                    search: 'Enter some keywords to find a list of results'
                 },
                 services: 'Services',
                 instruments: 'Instruments',
@@ -68,14 +71,17 @@
                 labs_text: 'Elenco dei laboratori della rete regionale RLAB Sardegna.',
                 service: {
                     name: 'Servizi',
-                    category:'Categoria servizio'
+                    category:'Categoria servizio',
+                    search: 'Inserire delle parole chiave per visualizzare un elenco di risultati'
                 },
                 instrument: {
                     category:'Categoria strumento',
-                    name: 'Strumenti'
+                    name: 'Strumenti',
+                    search: 'Inserire delle parole chiave per visualizzare un elenco di risultati'
                 },
                 laboratory: {
-                    name: 'Laboratori'
+                    name: 'Laboratori',
+                    search: 'Inserire delle parole chiave per visualizzare un elenco di risultati'
                 },
                 results: 'Risultati',
                 search: 'Inserire delle parole chiave per visualizzare un elenco di risultati',

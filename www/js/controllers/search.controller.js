@@ -19,6 +19,14 @@
             key = $stateParams.key;
             args = [$scope, $stateParams, searchFactory, $state];
             $scope.stateParams = $stateParams;
+
+            // TODO - you should implement this logic in the template search.html ion-view title parameter
+            if ($stateParams.category) {
+                $scope.ionViewTitleParam = '/' + $stateParams.category;
+            } else {
+                $scope.ionViewTitleParam = $stateParams.category;
+            }
+
             $scope.template = {
                 url: 'templates/' + key + '.html'
             };
