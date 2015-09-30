@@ -6,7 +6,8 @@
         'text!../../templates/clustering-no-layers.html'
     ], function (clusteringNoLayersController, clusteringNoLayersTemplate) {
         return {
-            url: '/clusteringNoLayers/:key/:search/:category',
+            // TODO - redefine the logic removing the map parameter
+            url: '/clusteringNoLayers/:key/:search/:category/:map',
             views: {
                 'tab-home': {
                     template: clusteringNoLayersTemplate,

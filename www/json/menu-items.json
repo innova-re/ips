@@ -28,7 +28,7 @@
     {  
         "name":"cluster.title",
         "icon":"ion-map",
-        "href":"tabs.clustering",
+        "href":"tabs.clustering({key: \"laboratories\", map: \"1\"})",
         "search":"cluster.text"
     }
 ]

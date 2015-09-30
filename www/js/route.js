@@ -17,7 +17,7 @@
                 .state('tabs.home', homeView)
                 .state('tabs.search', searchView)
                 .state('tabs.map', mapView)
-                .state('tabs.clustering', clusteringView)
+                .state('tabs.clustering', clusteringNoLayersView)
                 .state('tabs.clusteringNoLayers', clusteringNoLayersView)
             $urlRouterProvider.otherwise('/tab/home');
         };

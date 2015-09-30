@@ -30,7 +30,7 @@
                     $scope.changeRoute();
                 }
             };
-            searchFactory.call(items, $scope.data.search).then(setScope);
+            $stateParams.map == 1 ? setScope(items) : searchFactory.call(items, $scope.data.search).then(setScope);
         };
     });
 }(this.define, this.location));
