@@ -7,9 +7,14 @@
         </div>
     </ion-header-bar>
     <ion-content has-header="true" padding="false">
-
         <leaflet class="leaflet-map" data-tap-disabled="true"
             bounds="bounds" geojson="geojson" markers="markers" paths="paths">
         </leaflet>
     </ion-content>
+    <!-- TODO change the logic to show/hide the hone button -->
+    <ion-footer-bar class="bar-assertive" ng-if="data.map.length > 0">
+        <h1 class="title" ng-click="openMapModal()">
+            {{ 'hone' | translate }}
+        </h1>
+    </ion-footer-bar>
 </ion-view>

@@ -83,6 +83,13 @@
                 return macroarea;
             },
 
+            getMacroareaNames: function () {
+
+                return _.unique(macroarea.map(function (object) {
+                    return object.macroarea_name;
+                }));
+            },
+
             /*
              * Services Methods
              */

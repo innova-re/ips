@@ -30,6 +30,10 @@
                     servicesUtil.setCoords($scope[key]);
                     servicesUtil.setDistance($scope[key], $scope.coords);
                 }
+                // TODO - try to change the logic for deciding to get macroareaNames
+                if($scope.stateParams.map === '1') {
+                    $scope.macroareaNames = servicesUtil.getMacroareaNames();
+                }
                 args = [$scope, leafletBoundsHelpers, $stateParams];
                 clusteringNoLayersUtil(args);
                 modalFactory($scope);

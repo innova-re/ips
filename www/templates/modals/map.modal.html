@@ -1,0 +1,44 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <div class="button button-clear" ng-click="modal.hide()">
+            <span class="icon ion-close"></span>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <!-- TODO use locals for the input-label and use the ng-repeat value for "Provincia" end "Ente"-->
+            <label class="item item-select item-stacked-label">
+                <span class="input-label">
+                    Macroarea
+                </span>
+                <select>
+                    <option value="Tutti">Tutto</option>
+                    <option ng-repeat="macroarea in macroareaNames" value="{{macroarea}}">{{macroarea}}</option>
+                </select>
+            </label>
+            <label class="item item-select item-stacked-label">
+                <div class="input-label">
+                    Ente
+                </div>
+                <select>
+                    <option value="Tutti">Tutto</option>
+                    <option value="Cagliari">Cagliari</option>
+                    <option value="Sassari">Sassari</option>
+                </select>
+            </label>
+            <label class="item item-select item-stacked-label">
+                <div class="input-label">
+                    Provincia
+                </div>
+                <select>
+                    <option value="Tutti">Tutto</option>
+                    <option value="Cagliari">Cagliari</option>
+                    <option value="Sassari">Sassari</option>
+                </select>
+            </label>
+            <button class="button button-block button-positive icon-left ion-search" ng-click="modal.hide()">
+                Cerca
+            </button>
+        </div>
+    </ion-content>
+</ion-modal-view>
