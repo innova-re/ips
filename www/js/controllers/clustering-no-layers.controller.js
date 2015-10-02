@@ -31,8 +31,19 @@
                     servicesUtil.setDistance($scope[key], $scope.coords);
                 }
                 // TODO - try to change the logic for deciding to get macroareaNames
+                // You should move this piece of code in another module map-cluster.controller.js
                 if($scope.stateParams.map === '1') {
+                    $scope[key] = servicesUtil.getLaboratoriesByKeys($stateParams);
                     $scope.macroareaNames = servicesUtil.getMacroareaNames();
+                    $scope.researchLaboratories = function () {
+                        $state.go('tabs.clusteringNoLayers', {
+                            key: 'laboratories',
+                            map: '1',
+                            provinciaName: $scope.data.provinciaName,
+                            enteName: $scope.data.enteName
+                        });
+                        $scope.modal.hide();
+                    };
                 }
                 args = [$scope, leafletBoundsHelpers, $stateParams];
                 clusteringNoLayersUtil(args);

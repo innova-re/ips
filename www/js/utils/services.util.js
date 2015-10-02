@@ -56,6 +56,14 @@
                     id: parseInt(laboratoryId, 10)
                 })[0];
             },
+
+            /*
+             * This method returns the laboratories
+             * which id is listed into instruments or services
+             */
+            // TODO - you should split this into two function:
+            // 1. getIds (you get an array of ids from any array of objects)
+            // 2. getLaboratoryByLaboratoryIds which returns an array of labs
             getLaboratoriesByItems: function (items) {
 
                 var ids,
@@ -74,6 +82,25 @@
                 return _.remove(allLaboratories, function (laboratory) {
                     return laboratory !== undefined;
                 });
+            },
+
+            /*
+             * It returns the laboratories filtered by the valuesToMatch object ('provincia' and 'ente')
+             */
+            getLaboratoriesByKeys: function (stateParameters) {
+
+                var valuesToMatch = {};
+                var provinciaName = stateParameters.provinciaName;
+                var enteName = stateParameters.enteName;
+
+                if (provinciaName !== undefined && provinciaName !== '') {
+                    valuesToMatch.provincia_name = provinciaName;
+                }
+                if (enteName !== undefined && enteName !== '') {
+                    valuesToMatch.ente_name = enteName;
+                }
+
+                return _.where(laboratories, valuesToMatch);
             },
 
             /*

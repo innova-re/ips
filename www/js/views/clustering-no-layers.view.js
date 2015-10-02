@@ -6,8 +6,8 @@
         'text!../../templates/clustering-no-layers.html'
     ], function (clusteringNoLayersController, clusteringNoLayersTemplate) {
         return {
-            // TODO - redefine the logic removing the map parameter
-            url: '/clusteringNoLayers/:key/:search/:category/:map',
+            // TODO - redefine the logic removing the map parameter and creating the map-cluster.view.js
+            url: '/clusteringNoLayers/:key/:search/:category/:map/:enteName/:provinciaName',
             views: {
                 'tab-home': {
                     template: clusteringNoLayersTemplate,
