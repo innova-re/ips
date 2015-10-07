@@ -32,7 +32,6 @@
                 }
             };
             $scope.bounds = geoJsonUtil.getBounds($scope.laboratories, leafletBoundsHelpers);
-            $scope.showClusteringNoLayers = true;
         };
     });
 }(this.define));

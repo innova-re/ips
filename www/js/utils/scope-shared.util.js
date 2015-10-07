@@ -18,7 +18,9 @@
                 }
             });
             $scope.data = {
-                search: $stateParams.search
+                search: $stateParams.search,
+                // TODO this key/value is needed to hide/show the hone button into clustering-no-layers.html
+                map: $stateParams.map
             };
             $scope.changeRoute = function () {
                 location.hash = $state.$current.url.prefix + _.map($state.params, function (value, key) {
@@ -30,7 +32,7 @@
                     $scope.changeRoute();
                 }
             };
-            searchFactory.call(items, $scope.data.search).then(setScope);
+            $stateParams.map == 1 ? setScope(items) : searchFactory.call(items, $scope.data.search).then(setScope);
         };
     });
 }(this.define, this.location));
