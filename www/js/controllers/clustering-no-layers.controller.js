@@ -34,7 +34,8 @@
                 // You should move this piece of code in another module map-cluster.controller.js
                 if($scope.stateParams.map === '1') {
                     $scope[key] = servicesUtil.getLaboratoriesByKeys($stateParams);
-                    $scope.macroareaNames = servicesUtil.getMacroareaNames();
+                    $scope.enteNames = servicesUtil.getEnteNames();
+                    $scope.provinciaNames = servicesUtil.getProvinciaNames();
                     $scope.researchLaboratories = function () {
                         $state.go('tabs.clusteringNoLayers', {
                             key: 'laboratories',

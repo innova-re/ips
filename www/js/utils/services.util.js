@@ -138,9 +138,15 @@
             /*
              * General Purpose
              */
-            getDistinctItems: function (items, key) {
-                return _.unique(items.map(function (item) {
-                    return item[key];
+            getEnteNames: function () {
+                return _.unique(laboratories.map(function (item) {
+                    return item['ente_name'];
+                }));
+            },
+
+            getProvinciaNames: function () {
+                return _.unique(laboratories.map(function (item) {
+                    return item['provincia_name'];
                 }));
             },
 
