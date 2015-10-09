@@ -5,6 +5,8 @@
         return function($translateProvider) {
             $translateProvider
             .translations('gb', {
+                all: 'All',
+                company: 'Corporation',
                 search: 'Enter some keywords to find a list of results',
                 button: {
                     search: 'Search',
@@ -14,6 +16,7 @@
                     title: 'Laboratory Map',
                     text: 'Clustering is the task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense or another) to each other than to those in other groups (clusters).'
                 },
+                district: 'District',
                 hone: 'Hone in on',
                 map: {
                     whereIs: 'Where is?',
@@ -48,14 +51,17 @@
                 title: 'Home'
             })
             .translations('it', {
+                all: 'Tutto',
                 button: {
                     search: 'Cerca',
                     showMap: 'Mostra la mappa'
                 },
+                company: 'Ente',
                 cluster: {
                     title: 'Mappa laboratori',
                     text: 'Visualizzazione dei laboratori su mappa volte alla selezione e raggruppamento di elementi omogenei.'
                 },
+                district: 'Provincia',
                 hone: 'Affinare',
                 map: {
                     whereIs: 'Dov\'è?',

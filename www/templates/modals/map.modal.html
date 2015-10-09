@@ -8,26 +8,26 @@
         <div class="list">
             <label for="enteName" class="item item-select item-stacked-label">
                 <div class="input-label">
-                    Ente
+                    {{ 'company' | translate }}
                 </div>
                 <select name="enteName" ng-model="data.enteName">
-                    <option value="">Tutto</option>
+                    <option value="">{{ 'all' | translate }}</option>
                     <option ng-repeat="ente in enteNames" value="{{ente}}">{{ente}}</option>
                 </select>
             </label>
             <label for="provinciaName" class="item item-select item-stacked-label">
                 <div class="input-label">
-                    Provincia
+                    {{ 'district' | translate }}
                 </div>
                 <select name="provinciaName" ng-model="data.provinciaName">
-                    <option value="">Tutto</option>
+                    <option value="">{{ 'all' | translate }}</option>
                     <option ng-repeat="provincia in provinciaNames" value="{{provincia}}">{{provincia}}</option>
                 </select>
             </label>
             <button
                 class="button button-block button-positive icon-left ion-search"
                 ng-click="researchLaboratories()">
-                Cerca
+                {{ 'button.search' | translate }}
             </button>
         </div>
     </ion-content>
