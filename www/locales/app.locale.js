@@ -24,6 +24,7 @@
                 },
                 back: 'Back',
                 category: 'Category: ',
+                categoryHelp: 'Click on a category to view the results.',
                 description: 'Description',
                 foundWords: 'Found words',
                 getDirection: 'Get Direction',
@@ -47,7 +48,7 @@
                 services: 'Services',
                 instruments: 'Instruments',
                 laboratories: 'Laboratories',
-                results: 'Results',
+                results: 'results for',
                 title: 'Home'
             })
             .translations('it', {
@@ -69,6 +70,7 @@
                 },
                 back: 'Indietro',
                 category: 'Categoria: ',
+                categoryHelp: 'Clicca su una categoria per visualizzare i risultati.',
                 description: 'Descrizione',
                 foundWords: 'Parole trovate',
                 getDirection: 'Calcola percorso',
@@ -91,7 +93,7 @@
                     name: 'Laboratori',
                     search: 'Inserire delle parole chiave per visualizzare un elenco di risultati'
                 },
-                results: 'Risultati',
+                results: 'risultati per',
                 search: 'Inserire delle parole chiave per visualizzare un elenco di risultati',
                 services: 'Servizi',
                 title: 'Home'
