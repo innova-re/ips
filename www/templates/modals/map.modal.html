@@ -1,4 +1,3 @@
-<!-- TODO use locals for the input-label and use the ng-repeat value for "Provincia" end "Ente"-->
 <ion-modal-view>
     <ion-header-bar class="bar-positive">
         <div class="button button-clear" ng-click="modal.hide()">
@@ -7,39 +6,28 @@
     </ion-header-bar>
     <ion-content>
         <div class="list">
-            <label class="item item-select item-stacked-label">
-                <span class="input-label">
-                    Macroarea
-                </span>
-                <select>
-                    <option value="Tutti">Tutto</option>
-                    <option ng-repeat="macroarea in macroareaNames" value="{{macroarea}}">{{macroarea}}</option>
-                </select>
-            </label>
             <label for="enteName" class="item item-select item-stacked-label">
                 <div class="input-label">
-                    Ente
+                    {{ 'company' | translate }}
                 </div>
                 <select name="enteName" ng-model="data.enteName">
-                    <option value="">Tutto</option>
-                    <option value="Università degli Studi di Cagliari">Università degli Studi di Cagliari</option>
-                    <option value="Università degli Studi di Sassari">Università degli Studi di Sassari</option>
+                    <option value="">{{ 'all' | translate }}</option>
+                    <option ng-repeat="ente in enteNames" value="{{ente}}">{{ente}}</option>
                 </select>
             </label>
             <label for="provinciaName" class="item item-select item-stacked-label">
                 <div class="input-label">
-                    Provincia
+                    {{ 'district' | translate }}
                 </div>
                 <select name="provinciaName" ng-model="data.provinciaName">
-                    <option value="">Tutto</option>
-                    <option value="Cagliari">Cagliari</option>
-                    <option value="Sassari">Sassari</option>
+                    <option value="">{{ 'all' | translate }}</option>
+                    <option ng-repeat="provincia in provinciaNames" value="{{provincia}}">{{provincia}}</option>
                 </select>
             </label>
             <button
                 class="button button-block button-positive icon-left ion-search"
                 ng-click="researchLaboratories()">
-                Cerca
+                {{ 'button.search' | translate }}
             </button>
         </div>
     </ion-content>
