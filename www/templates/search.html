@@ -1,9 +1,9 @@
 <ion-view title="{{ title | translate }}">
     <ips-header-search></ips-header-search>
     <ion-content>
-        <div class="card ips-card">
+        <div class="card ips-card" ng-if="stateParams.search.length > 0">
             {{ results || 0 }} {{ 'results' | translate }}
-            <span class="search-words-badge">{{ data.search }}</span>
+            <span class="search-words-badge">{{ stateParams.search }}</span>
             <span class="" ng-if="categories.length == 1">
                 nella categoria
                 <span class="search-words-badge">{{ stateParams.category }}</span>
@@ -11,9 +11,14 @@
         </div>
         <ng-include src="template.url"></ng-include>
     </ion-content>
-    <ion-footer-bar class="bar-stable" ng-if="categories.length > 1">
+    <ion-footer-bar class="bar-positive" ng-if="categories.length > 1">
         <h1 class="title" ng-click="openCategoriesModal({{ 'categories' }})">
-            <i class="icon ion-ios-search"></i> {{ 'hone' | translate }} ({{ categories.length }})
+            <i class="icon ion-android-search"></i> {{ 'hone' | translate }} ({{ categories.length }})
+        </h1>
+    </ion-footer-bar>
+    <ion-footer-bar class="bar-positive" ng-if="categories.length == 1">
+        <h1 class="title">
+            <i class="icon ion-close-circled"></i> {{ stateParams.category }}
         </h1>
     </ion-footer-bar>
 </ion-view>

@@ -70,7 +70,7 @@
                 },
                 back: 'Indietro',
                 category: 'Categoria: ',
-                categoryHelp: 'Clicca su una categoria per visualizzare i risultati.',
+                categoryHelp: 'Clicca su una categoria per visualizzare i risultati di',
                 description: 'Descrizione',
                 foundWords: 'Parole trovate',
                 getDirection: 'Calcola percorso',
