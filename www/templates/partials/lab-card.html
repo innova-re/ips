@@ -11,7 +11,9 @@
         <i class="icon ion-university"></i>
         {{ modal.laboratory.ente_name }} <br> {{ laboratory.area_name }}
     </div>
-    <div class="item item-icon-left">
+    <div class="item item-icon-left"
+        ng-click="changeRoute(); modal.hide()"
+        ui-sref="tabs.map({id: modal.laboratory.id})">
         <i class="icon ion-home"></i>
         {{ modal.laboratory.address }}
     </div>
