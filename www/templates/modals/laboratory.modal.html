@@ -17,7 +17,9 @@
                 <ion-list>
                     <ion-item class="services"
                         ng-repeat="service in modal.services | orderBy">
-                        <div class="service-name">{{service}}</div>
+                        <div class="service-name" ng-click="openServiceModal({{ service }})">
+                            {{ service.service_name }}
+                        </div>
                     </ion-item>
                 </ion-list>
             </div>
@@ -29,7 +31,9 @@
                 <ion-list>
                     <ion-item class="services"
                         ng-repeat="instrument in modal.instruments | orderBy">
-                        <div class="service-name">{{instrument}}</div>
+                        <div class="service-name" ng-click="openInstrumentModal({{ instrument }})">
+                            {{ instrument.instrument_name }}
+                        </div>
                     </ion-item>
                 </ion-list>
             </div>
