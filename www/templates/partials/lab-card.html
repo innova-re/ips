@@ -1,4 +1,9 @@
 <div class="list card">
+    <div class="item item-icon-left" ng-if="modal.services === undefined"
+        ng-click="openLaboratoryModal({{ modal.laboratory.id }})">
+        <i class="icon ion-erlenmeyer-flask"></i>
+        {{ modal.laboratory.name }}
+    </div>
     <div class="item item-icon-left">
         <i class="icon ion-ios-telephone"></i>
         {{ modal.laboratory.telephone }}

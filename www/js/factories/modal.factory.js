@@ -32,6 +32,7 @@
 
             return function ($scope) {
                 $scope.openLaboratoryModal = function (laboratoryId) {
+                    _removeModal($scope);
                     _setTemplate($scope, laboratoryModalTemplate);
                     collapseUtil($scope);
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
