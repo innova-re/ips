@@ -1,8 +1,14 @@
 <div class="list card">
-    <div class="item item-icon-left">
-        <i class="icon ion-ios-telephone"></i>
-        {{ modal.laboratory.telephone }}
+    <div class="item item-icon-left" ng-if="modal.services === undefined"
+        ng-click="openLaboratoryModal({{ modal.laboratory.id }})">
+        <i class="icon ion-erlenmeyer-flask"></i>
+        {{ modal.laboratory.name }}
     </div>
+    <a href="tel:+39-{{ modal.laboratory.telephone }}">
+        <div class="item item-icon-left">
+            <i class="icon ion-ios-telephone"></i>{{ modal.laboratory.telephone }}
+        </div>
+    </a>
     <div class="item item-icon-left">
         <i class="icon ion-clock"></i>
         {{ 'hours' | translate }}
@@ -11,7 +17,9 @@
         <i class="icon ion-university"></i>
         {{ modal.laboratory.ente_name }} <br> {{ laboratory.area_name }}
     </div>
-    <div class="item item-icon-left">
+    <div class="item item-icon-left"
+        ng-click="changeRoute(); modal.hide()"
+        ui-sref="tabs.map({id: modal.laboratory.id})">
         <i class="icon ion-home"></i>
         {{ modal.laboratory.address }}
     </div>

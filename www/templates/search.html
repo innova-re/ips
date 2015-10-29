@@ -18,7 +18,7 @@
     </ion-footer-bar>
     <ion-footer-bar class="bar-positive" ng-if="categories.length == 1">
         <h1 class="title">
-            <i class="icon ion-close-circled"></i> {{ stateParams.category }}
+            <i class="icon ion-close" ng-click="$ionicGoBack()"></i> {{ stateParams.category }}
         </h1>
     </ion-footer-bar>
 </ion-view>

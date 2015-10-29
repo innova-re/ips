@@ -38,7 +38,7 @@
                 var instrumentsByLaboratoryId = _.where(instruments, {laboratory_id: laboratoryId});
 
                 return _.unique(instrumentsByLaboratoryId.map(function (object) {
-                    return object.instrument_name;
+                    return object;
                 }));
             },
             getInstrumentsByInstrumentName: function (instrumentName) {
@@ -125,7 +125,7 @@
                 var servicesByLaboratoryId = _.where(services, {laboratory_id: laboratoryId});
 
                 return _.unique(servicesByLaboratoryId.map(function (object) {
-                    return object.service_name;
+                    return object;
                 }));
             },
             getServicesByCategoryServiceName: function (serviceName) {

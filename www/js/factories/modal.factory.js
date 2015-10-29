@@ -20,10 +20,19 @@
                 });
             };
 
+            // TODO - if you want to keep the history when making "openLaboratoryModal"
+            // you should not use the modal!
+            var _removeModal = function ($scope) {
+                if ($scope.modal) {
+                    $scope.modal.remove();
+                }
+            };
+
             var _isModalOn;
 
             return function ($scope) {
                 $scope.openLaboratoryModal = function (laboratoryId) {
+                    _removeModal($scope);
                     _setTemplate($scope, laboratoryModalTemplate);
                     collapseUtil($scope);
                     $scope.modal.laboratory = servicesUtil.getLaboratoryByLaboratoryId(laboratoryId);
@@ -36,6 +45,7 @@
                     };
                 };
                 $scope.openServiceModal = function (service) {
+                    _removeModal($scope);
                     _setTemplate($scope, serviceModalTemplate);
                     collapseUtil($scope);
                     $scope.modal.service = service;
@@ -47,6 +57,7 @@
                     };
                 };
                 $scope.openInstrumentModal = function (instrument) {
+                    _removeModal($scope);
                     _setTemplate($scope, instrumentModalTemplate);
                     collapseUtil($scope);
                     $scope.modal.instrument = instrument;
