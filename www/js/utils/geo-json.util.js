@@ -69,9 +69,12 @@
             };
         };
         getBounds = function (laboratories, leafletBoundsHelpers) {
+
+            var fixZoom = 0.5;
+
             return leafletBoundsHelpers.createBoundsFromArray([
-                [_.min(laboratories, 'lat').lat, _.min(laboratories, 'lng').lng],
-                [_.max(laboratories, 'lat').lat, _.max(laboratories, 'lng').lng]
+                [_.min(laboratories, 'lat').lat - fixZoom, _.min(laboratories, 'lng').lng - fixZoom],
+                [_.max(laboratories, 'lat').lat + fixZoom, _.max(laboratories, 'lng').lng + fixZoom]
             ]);
         };
         setRouting = function ($scope, leafletData) {
