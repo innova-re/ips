@@ -10,6 +10,10 @@
             var leafletBoundsHelpers = args[1];
             var $stateParams = args[2];
 
+            $scope.tiles = {
+                // Without this object the emulator assumes a local file for the tiles
+                url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            };
             $scope.markers = [{
                 lat: $scope.coords.lat,
                 lng: $scope.coords.lng,
