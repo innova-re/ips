@@ -19,7 +19,8 @@
                 lng: $scope.coords.lng,
                 clickable: false,
                 icon: {
-                    iconUrl: 'images/marker-start.png'
+                    // TODO change the icon
+                    // iconUrl: 'images/marker-start.png'
                 }
             }].concat(geoJsonUtil.getMarkers($scope.laboratories));
             $scope.radiusConvert = function () {
