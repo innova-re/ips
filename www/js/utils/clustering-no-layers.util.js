@@ -10,12 +10,17 @@
             var leafletBoundsHelpers = args[1];
             var $stateParams = args[2];
 
+            $scope.tiles = {
+                // Without this object the emulator assumes a local file for the tiles
+                url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            };
             $scope.markers = [{
                 lat: $scope.coords.lat,
                 lng: $scope.coords.lng,
                 clickable: false,
                 icon: {
-                    iconUrl: 'images/marker-start.png'
+                    // TODO change the icon
+                    // iconUrl: 'images/marker-start.png'
                 }
             }].concat(geoJsonUtil.getMarkers($scope.laboratories));
             $scope.radiusConvert = function () {
