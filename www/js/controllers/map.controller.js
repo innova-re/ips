@@ -7,6 +7,10 @@
     ], function (servicesUtil, geoJsonUtil) {
 
         return ['$scope', '$stateParams', 'leafletData', function ($scope, $stateParams, leafletData) {
+            $scope.tiles = {
+                // Without this object the emulator assumes a local file for the tiles
+                url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            };
             $scope.laboratory = servicesUtil.getLaboratoryByLaboratoryId($stateParams.id);
             if($stateParams.routingOn) {
                 // Insert the code to use launchnavigator
