@@ -1,24 +1,27 @@
 <ion-list>
     <ion-item class="row row-center service" ng-repeat="service in services | orderBy: ['-foundWords.length', 'distance', 'service_name']">
-        <div class="col">
-            <div class="search-title" ng-click="openServiceModal({{ service }})">
-                {{service.service_name}}
-            </div>
-            <p>{{ service.service_description }}</p>
-            <span class="search-laboratory" ng-click="openLaboratoryModal({{ service.laboratory_id }})">
-                {{ service.laboratory_name }}
-            </span>
-            <div>
-                <button class="button button-light button-small icon ion-paper-airplane search-distance"
-                    ui-sref="tabs.map({id: service.laboratory_id, routingOn: true})">
-                    <span class="item-note"> {{ service.distance || 100 }}km</span>
-                </button>
-                <span class="search-words">
-                    {{ 'foundWords' | translate }}:
-                    <span class="search-words-badge" ng-repeat="fondWords in service.foundWords">
-                        {{ fondWords }}
-                    </span>
+        <div class="col item item-thumbnail-left">
+            <img src="images/monserrato.png">
+            <div class="search-item-text">
+                <div class="search-title " ng-click="openServiceModal({{ service }})">
+                     {{service.service_name}}
+                </div>
+                <p>{{ service.service_description }}</p>
+                <span class="search-laboratory" ng-click="openLaboratoryModal({{ service.laboratory_id }})">
+                    {{ service.laboratory_name }}
                 </span>
+                <div>
+                    <button class="button button-light button-small icon ion-paper-airplane search-distance"
+                        ui-sref="tabs.map({id: service.laboratory_id, routingOn: true})">
+                        <span class="item-note"> {{ service.distance || 100 }}km</span>
+                    </button>
+                    <span class="search-words">
+                        {{ 'foundWords' | translate }}:
+                        <span class="search-words-badge" ng-repeat="fondWords in service.foundWords">
+                            {{ fondWords }}
+                        </span>
+                    </span>
+                </div>
             </div>
         </div>
     </ion-item>
