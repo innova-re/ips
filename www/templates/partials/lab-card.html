@@ -4,11 +4,11 @@
         <i class="icon ion-erlenmeyer-flask"></i>
         {{ modal.laboratory.name }}
     </div>
-    <a href="tel:+39-{{ modal.laboratory.telephone }}">
-        <div class="item item-icon-left">
+    <div class="item item-icon-left">
+        <a href="tel:+39-{{ modal.laboratory.telephone }}">
             <i class="icon ion-ios-telephone"></i>{{ modal.laboratory.telephone }}
-        </div>
-    </a>
+        </a>
+    </div>
     <div class="item item-icon-left">
         <i class="icon ion-clock"></i>
         {{ 'hours' | translate }}
