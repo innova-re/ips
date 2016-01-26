@@ -6,6 +6,7 @@
             $translateProvider
             .translations('gb', {
                 all: 'All',
+                addFavorites: 'Add favorites',
                 company: 'Corporation',
                 search: 'Enter some keywords to find a list of results',
                 button: {
@@ -53,6 +54,7 @@
             })
             .translations('it', {
                 all: 'Tutto',
+                addFavorites: 'Aggiungi ai preferiti',
                 button: {
                     search: 'Cerca',
                     showMap: 'Mostra la mappa'
