@@ -4,6 +4,7 @@
         <i class="icon ion-erlenmeyer-flask"></i>
         {{ modal.laboratory.name }}
     </div>
+    <ion-checkbox ng-model="filter.blue">{{ 'addFavorites' | translate }}</ion-checkbox>
     <div class="item item-icon-left">
         <a href="tel:+39-{{ modal.laboratory.telephone }}">
             <i class="icon ion-ios-telephone"></i>{{ modal.laboratory.telephone }}
