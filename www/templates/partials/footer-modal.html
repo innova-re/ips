@@ -9,6 +9,11 @@
         ui-sref="tabs.map({id: modal.laboratory.id, routingOn: true})" >
         {{ 'map.takeMeAround' | translate }}
     </a>
+    <!-- TODO: implement the action to add the lab to the favorite's list -->
+    <a class="button button-light icon ion-star"
+        ng-click="">
+        {{ 'favorites' | translate }}
+    </a>
     <button class="button button-light icon ion-arrow-left-c"
         ng-click="modal.remove()">
         {{ 'back' | translate }}
